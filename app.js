@@ -7,10 +7,41 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var app = express();
+
+/*
 var db = require('./db');
+db = new db('localhost', '27017', 'victoriasite');
+db.connectDB();
+const Schema = db.getConnect().Schema;
+const userScheme = new Schema({
+  name: String,
+  age: Number
+});
+ 
+const User = db.getConnect().model("User", userScheme);
+const user = new User({
+  name: "Bill",
+  age: 41
+});
+ 
+user.save(function(err){
+  db.getConnect().disconnect();  // отключение от базы данных
+    
+  if(err) return console.log(err);
+  console.log("Сохранен объект", user);
+});
+*/
 
-db = new db('localhost', '27017', 'psih');
 
+/*
+db.connectDB((err) => {
+    if (err) {
+      console.log(err);
+    }
+});
+ 
+console.log(db.getConnect());
+*/
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
