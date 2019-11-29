@@ -8,30 +8,55 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var app = express();
 
-/*
+
 var db = require('./db');
 db = new db('localhost', '27017', 'victoriasite');
 db.connectDB();
-const Schema = db.getConnect().Schema;
-const userScheme = new Schema({
-  name: String,
-  age: Number
-});
- 
-const User = db.getConnect().model("User", userScheme);
-const user = new User({
-  name: "Bill",
-  age: 41
-});
- 
-user.save(function(err){
-  db.getConnect().disconnect();  // отключение от базы данных
-    
-  if(err) return console.log(err);
-  console.log("Сохранен объект", user);
+//const Schema = db.getConnect().Schema;
+
+var users = require('./models/users.js');
+users = new users();
+
+
+users.create({name: "Adls", 
+            role: "admin", 
+            lasTime: "2017-03-14T14:10:20.391",
+            timeReg: "2017-03-14T14:10:20.391"}, 
+            (err) => {
+              if (err) {
+                console.log(err);
+              }
+              console.log("data is push");
+      });
+      
+/*
+users.getAll((err, docs) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(docs);
+});      
+*/
+/*
+users.remove({ name: "Adls"}, (err, result) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(result);
 });
 */
 
+users.update({name: "Adls"}, {name: "kek"}, (err, result) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(result);
+})
+/*
+users.getById("5de0e074bec4d2b365cddca4", (err, docs) => {
+  console.log(docs);
+})
+*/
 
 /*
 db.connectDB((err) => {
