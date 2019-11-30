@@ -6,14 +6,11 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var usersContollers = require('./controllers/users');
+var servicesRouter = require('./routes/services');
 var app = express();
-
-
 var db = require('./db');
 db = new db('localhost', '27017', 'victoriasite');
 db.connectDB();
-usersContollers = new usersContollers();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -26,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/services', servicesRouter);
 
 
 // catch 404 and forward to error handler

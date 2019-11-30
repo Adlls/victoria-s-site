@@ -1,12 +1,11 @@
 var express = require('express');
-var usersContollers = require('../controllers/users');
+var serviceContollers = require('../controllers/services');
 var router = express.Router();
-usersContollers = new usersContollers();
+serviceContollers = new serviceContollers();
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
-  usersContollers.view(req, res);
+  serviceContollers.view(req, res);
 });
-
 
 module.exports = router;

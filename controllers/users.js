@@ -8,7 +8,7 @@ class users {
         this._Users = new this._Users();
     }
 
-    view(req, res) {
+      view(req, res) {
         this._Users.getAll((err, docs) => {
             if (err) {
               console.log(err);
