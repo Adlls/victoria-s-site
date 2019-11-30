@@ -14,7 +14,7 @@ class users {
               console.log(err);
               return res.sendStatus(500);
             }
-            res.send(docs);
+            res.render('index',{dataset:docs});
         });
     }
 }

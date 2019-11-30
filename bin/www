@@ -4,10 +4,10 @@
  * Module dependencies.
  */
 
+require('dotenv').config();
 var app = require('../app');
 var debug = require('debug')('victoria-s-site:server');
 var http = require('http');
-
 /**
  * Get port from environment and store in Express.
  */
