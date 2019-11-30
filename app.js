@@ -15,9 +15,10 @@ db.connectDB();
 //const Schema = db.getConnect().Schema;
 
 var users = require('./models/users.js');
+var services = require('./models/services.js');
 users = new users();
-
-
+services = new services();
+/*
 users.create({name: "Adls", 
             role: "admin", 
             lasTime: "2017-03-14T14:10:20.391",
@@ -29,29 +30,39 @@ users.create({name: "Adls",
               console.log("data is push");
       });
       
-/*
-users.getAll((err, docs) => {
+services.create({service_name: "Consult",
+                price: 10000}, 
+                (err) => {
+                  if (err) {
+                    console.log(err);
+                  }
+                  console.log("data is push");
+});      
+*/
+
+services.getAll((err, docs) => {
   if (err) {
     console.log(err);
   }
   console.log(docs);
 });      
-*/
-/*
-users.remove({ name: "Adls"}, (err, result) => {
+
+
+services.remove({ service_name: "Consult"}, (err, result) => {
   if (err) {
     console.log(err);
   }
   console.log(result);
 });
-*/
 
+/*
 users.update({name: "Adls"}, {name: "kek"}, (err, result) => {
   if (err) {
     console.log(err);
   }
   console.log(result);
 })
+*/
 /*
 users.getById("5de0e074bec4d2b365cddca4", (err, docs) => {
   console.log(docs);
