@@ -2,10 +2,13 @@
 <html>
   <head>
     <title>{{title}}</title>
-    {{>styles}}
+    {{>headInclude}}
   </head>
   <body>
-    {{{body}}}
-    {{>scripts}}
+  <div class="">
+      {{>menu}}
+      {{>header}}
+      {{>footer}}
+  </div>
   </body>
 </html>
