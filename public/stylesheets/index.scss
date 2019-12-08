@@ -8,6 +8,7 @@ body {
  font-size: $defaultFontSize;
  color: $defaultFontSize;
  font-family: $defaultFont;
+ min-width: 320px;
 } 
 .wrapper {
   margin: 0 auto;
@@ -113,7 +114,6 @@ header {
       margin-top: 215px;
     }
     .bottom-col-1 {
-      width: 328px;
       line-height: 21px;
       font-size: 16px;
       margin-top: 189px;
@@ -177,11 +177,70 @@ header {
     .title {
       margin-top: 150px;
       width: 240px;
-      border: 1px solid black
     }
     .bottom-col-1 {
-      width: 240px;
+      margin-top: 263px;
      }
-  }
 
+     .col-2 {
+      .overlay {
+          p {
+            margin-bottom: 159px;    
+            font-size: 14px;
+            line-height: 17px;  
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  header {
+    height: 807px;
+    
+    .title {
+      margin-top: 0;
+      width: 287px;
+      margin-top: 329px;
+      position: absolute;
+      bottom: 0;
+      left: 16px;
+    }
+    .title h2 {
+      font-size: 22px;
+      line-height: 24px;
+      margin-bottom: 6px;
+    }
+    .title p {
+      font-size: 16px;
+      line-height: 21px;
+      font-style: normal;
+    }
+    .bottom-col-1 {
+        margin-top: 26px;
+    }
+    .col-1 {
+      position: relative;
+      color: #ffff;
+      width: 0%;
+      height: inherit;
+      z-index: 10; 
+    }
+    .col-2 {
+      width: 100%;
+      background-image: url('/images/MJ1C4952 2.png');
+      .overlay {
+        p {
+          display: none;
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 420px) {
+  header {
+    height: 607px;
+  }
 }

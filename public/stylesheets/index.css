@@ -3,6 +3,7 @@ body {
   font-size: 16px;
   color: 16px;
   font-family: "Didact Gothic";
+  min-width: 320px;
 }
 
 .wrapper {
@@ -104,7 +105,6 @@ header .col-2 .overlay p {
     margin-top: 215px;
   }
   header .bottom-col-1 {
-    width: 328px;
     line-height: 21px;
     font-size: 16px;
     margin-top: 189px;
@@ -153,10 +153,59 @@ header .col-2 .overlay p {
   header .title {
     margin-top: 150px;
     width: 240px;
-    border: 1px solid black;
   }
   header .bottom-col-1 {
-    width: 240px;
+    margin-top: 263px;
+  }
+  header .col-2 .overlay p {
+    margin-bottom: 159px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+@media screen and (max-width: 720px) {
+  header {
+    height: 807px;
+  }
+  header .title {
+    margin-top: 0;
+    width: 287px;
+    margin-top: 329px;
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+  }
+  header .title h2 {
+    font-size: 22px;
+    line-height: 24px;
+    margin-bottom: 6px;
+  }
+  header .title p {
+    font-size: 16px;
+    line-height: 21px;
+    font-style: normal;
+  }
+  header .bottom-col-1 {
+    margin-top: 26px;
+  }
+  header .col-1 {
+    position: relative;
+    color: #ffff;
+    width: 0%;
+    height: inherit;
+    z-index: 10;
+  }
+  header .col-2 {
+    width: 100%;
+    background-image: url("/images/MJ1C4952 2.png");
+  }
+  header .col-2 .overlay p {
+    display: none;
+  }
+}
+@media screen and (max-width: 420px) {
+  header {
+    height: 607px;
   }
 }
 
