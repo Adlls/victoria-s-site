@@ -194,16 +194,20 @@ header {
 }
 
 @media screen and (max-width: 720px) {
+
   header {
     height: 807px;
-    
+    position: relative;
     .title {
       margin-top: 0;
       width: 287px;
       margin-top: 329px;
-      position: absolute;
+      //position: absolute;
       bottom: 0;
-      left: 16px;
+      position: absolute;
+      z-index: 1000;
+
+      
     }
     .title h2 {
       font-size: 22px;
@@ -219,13 +223,15 @@ header {
         margin-top: 26px;
     }
     .col-1 {
-      position: relative;
-      width: 0%;
+      position: absolute;
+      width: 100%;
       height: inherit;
-      z-index: 10; 
       color: #ffffff !important;
     }
     .col-2 {
+      z-index: 100;
+      position: absolute;
+      height: inherit;
       width: 100%;
       background-image: url('/images/MJ1C4952 2.png');
       .overlay {
@@ -239,6 +245,9 @@ header {
 }
 
 @media screen and (max-width: 420px) {
+  .wrapper {
+    width: 80%;
+  }
   header {
     height: 607px;
   }
