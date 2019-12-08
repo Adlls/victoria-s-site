@@ -181,7 +181,6 @@ header {
     .bottom-col-1 {
       margin-top: 263px;
      }
-
      .col-2 {
       .overlay {
           p {
@@ -210,18 +209,19 @@ header {
       font-size: 22px;
       line-height: 24px;
       margin-bottom: 6px;
+      color: #ffff;
     }
     .title p {
       font-size: 16px;
       line-height: 21px;
       font-style: normal;
+      color: #ffff;
     }
     .bottom-col-1 {
         margin-top: 26px;
     }
     .col-1 {
       position: relative;
-      color: #ffff;
       width: 0%;
       height: inherit;
       z-index: 10; 
