@@ -209,13 +209,11 @@ header {
       font-size: 22px;
       line-height: 24px;
       margin-bottom: 6px;
-      color: #ffff !important;
     }
     .title p {
       font-size: 16px;
       line-height: 21px;
       font-style: normal;
-      color: #ffff !important;
     }
     .bottom-col-1 {
         margin-top: 26px;
@@ -225,6 +223,7 @@ header {
       width: 0%;
       height: inherit;
       z-index: 10; 
+      color: #ffffff !important;
     }
     .col-2 {
       width: 100%;
@@ -242,10 +241,6 @@ header {
 @media screen and (max-width: 420px) {
   header {
     height: 607px;
-
-    .title p, .title h2 {
-      color: #ffff !important;
-    }
   }
 
 }

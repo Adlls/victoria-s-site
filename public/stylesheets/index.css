@@ -179,13 +179,11 @@ header .col-2 .overlay p {
     font-size: 22px;
     line-height: 24px;
     margin-bottom: 6px;
-    color: #ffff !important;
   }
   header .title p {
     font-size: 16px;
     line-height: 21px;
     font-style: normal;
-    color: #ffff !important;
   }
   header .bottom-col-1 {
     margin-top: 26px;
@@ -195,6 +193,7 @@ header .col-2 .overlay p {
     width: 0%;
     height: inherit;
     z-index: 10;
+    color: #ffffff !important;
   }
   header .col-2 {
     width: 100%;
@@ -207,9 +206,6 @@ header .col-2 .overlay p {
 @media screen and (max-width: 420px) {
   header {
     height: 607px;
-  }
-  header .title p, header .title h2 {
-    color: #ffff !important;
   }
 }
 
