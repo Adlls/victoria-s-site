@@ -208,6 +208,9 @@ header .col-2 .overlay p {
   header {
     height: 607px;
   }
+  header .title p, header .title h2 {
+    color: #ffff !important;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

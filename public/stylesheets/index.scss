@@ -242,5 +242,10 @@ header {
 @media screen and (max-width: 420px) {
   header {
     height: 607px;
+
+    .title p, .title h2 {
+      color: #ffff !important;
+    }
   }
+
 }
