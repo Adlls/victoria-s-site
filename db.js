@@ -14,7 +14,9 @@ class db {
        this._host = host;  
        this._port = port;
        this._name = name;   
-       console.log(this.getUrl());  
+       console.log(this.getUrl());
+
+
   }
 
 connectDB() {
