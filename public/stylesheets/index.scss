@@ -91,10 +91,11 @@ header {
     position: relative;
     margin-bottom: 128px;
   }
-  .social-icons img {
+  .social-icons a {
     margin-left: 16px;
+    text-decoration: none;
   }
-  .social-icons img:nth-child(1) {
+  .social-icons a:nth-child(1) {
     margin-left: 0;
   }
   .social-icons {
@@ -121,29 +122,140 @@ header {
     margin: 0;
     padding: 0;
     font-size: 48px;
+    line-height: 53px;
+    font-weight: bold;
+    font-style: normal;
     font-family: 'Open Sans';
     }
     nav {
-      border: 1px solid black;
+      border-bottom: 0.5px solid rgba(29, 29, 29, 0.25);;
       font-family: 'Open Sans';
       font-size: 18px;
       margin-top: 32px;
     }
     nav ul {
-
       list-style: none;
       margin: 0;
       padding: 0;
+      .active {
+        color: #1D1D1D;
+        border-bottom: 1px solid #1D1D1D;
+      }
       li {
         display: inline-block;
         margin: 0;
         padding: 0;
         margin-right: 16px;
+        line-height: 20px;
+        color: rgba(29, 29, 29, 0.4);
+        padding-bottom: 8px;
         cursor: pointer;
       }
       li:last-child {
           margin-right: 0;
       }
+    }
+  }
+
+  .body {
+    margin-top: 32px;
+    width: 850px;
+    color: #2C2C2C;
+    h6 {
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      line-height: 23px;
+      font-style: normal;
+      font-weight: 300;
+      margin-bottom: 19px;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 22px;
+      line-height: 34px;
+    }
+  }
+
+  button {
+    margin-top: 64px;
+    width: 440px;
+    height: 64px;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    background-color: #000000;
+    border: 0;
+  }
+}
+
+.about {
+    margin-top: 100px;
+    h2 {
+      margin: 0;
+      padding: 0;
+      font-size: 48px;
+      line-height: 53px;
+      font-weight: bold;
+      font-style: normal;
+      font-family: 'Open Sans';
+      color: #2C2C2C;
+      margin-bottom: 31px;
+    }
+  .about-items-1 {
+    margin-bottom: 128px;
+    position: relative;
+
+    .photo-items-1 {
+      position: absolute;
+      width: 44.8%;
+      height: 586px;
+      right: 0;
+      top: 0;
+      background-image: url('/images/MJ1C4970 2.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      line-height: 24px;
+      color: #000000;
+      text-align: left;
+      width: 49%;
+    }
+  }
+
+  .about-items-2 {
+    position: relative;
+    .wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+    p {
+      width: 57%;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    .photo-items-2 {
+      position: absolute;
+      left: 0;
+      top:0;
+      background-image: url('/images/MJ1C4875 1.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      width: 37.8%;
+      height: 624px;
     }
   }
 
@@ -157,7 +269,6 @@ header {
   .wrapper {
     width: 77.1%;
   }
-
   header {
     height: 802px;
 
@@ -185,7 +296,14 @@ header {
       }
     }
   }
+
+  .consultation {
+    button {
+      width: 415px;
+    }
+  }
 }
+
 //Tablet
 @media screen and (max-width: 1024px) {
 
@@ -212,49 +330,49 @@ header {
     .subtitle {
       margin-bottom: 78px;
     }
-
-    .overlay {
-      //background: linear-gradient(360deg, #010101 41.07%, rgba(1, 1, 1, 0) 95%);
-      //height: 318px;
-    }
-
   }
 
-
-  /*
-  header {
-    height: 770px;
-
-    .title h2 {
-        margin-bottom: 26px;
-    }
-    .title {
-      margin-top: 197px;
-    }
-    .bottom-col-1 {
-      margin-top: 203px;
-    }
-    .social-icons {
-      display: none;
-    }
-    .col-2 {
-      .overlay { 
-          p {
-            margin-bottom: 109px;      
-          }
+  .consultation {
+    .header {
+      h2 {
+        font-size: 44px;
+        line-height: 48px;
       }
     }
   }
-  */
 }
 
 @media screen and (max-width: 1000px) {
- header { 
-  .overlay {
-      background: linear-gradient(360deg, #010101 31.07%, rgba(1, 1, 1, 0) 100%);
-      //height: 318px;
+  header { 
+    .overlay {
+        background: linear-gradient(360deg, #010101 31.07%, rgba(1, 1, 1, 0) 100%);
+      }
+  }
+
+  .consultation {
+    .header {
+      nav {
+        font-size: 16px;
+        line-height: 19px;
+      }
     }
-}
+
+    .body {
+      width: 610px;
+      h6 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 26px;
+      }
+    }
+    button {
+      width: 385px;
+    }
+  }
+
 }
 
 @media screen and (max-width: 920px) {
@@ -278,54 +396,17 @@ header {
     .subtitle {
       width: 230px;
       p {
-      font-size: 16px;
-      line-height: 18px;
-      }
-    }
-    
-    }
-
-}
-/*
-  header {
-    height: 820px;
-
-    .title h2 {
-      font-size: 35px;
-      line-height: 36px;
-    }
-
-    .title p {
-      font-size: 14px;
-      line-height: 17px;
-    }
-
-    .title {
-      margin-top: 150px;
-      width: 240px;
-    }
-    .bottom-col-1 {
-      margin-top: 263px;
-     }
-     .col-2 {
-      .overlay {
-          p {
-            margin-bottom: 159px;    
-            font-size: 14px;
-            line-height: 17px;  
+        font-size: 16px;
+        line-height: 18px;
         }
       }
     }
-  }
-  */
-
+}
 
 @media screen and (max-width: 670px) {
-
   .wrapper {
     width: 90%;
   }
-
   header {
     background-size: cover;
     background-image: url('/images/MJ1C4952 2.png');
@@ -366,54 +447,16 @@ header {
       }
     }
   }
-/*
-  header {
-    height: 807px;
-    position: relative;
-    .title {
-      margin-top: 0;
-      width: 287px;
-      margin-top: 329px;
-      bottom: 0;
-      position: absolute;
-      z-index: 1000;
 
-      
-    }
-    .title h2 {
-      font-size: 22px;
-      line-height: 24px;
-      margin-bottom: 6px;
-    }
-    .title p {
-      font-size: 16px;
-      line-height: 21px;
-      font-style: normal;
-    }
-    .bottom-col-1 {
-        margin-top: 26px;
-    }
-    .col-1 {
-      position: absolute;
-      width: 100%;
-      height: inherit;
-      color: #ffffff !important;
-    }
-    .col-2 {
-      z-index: 100;
-      position: absolute;
-      height: inherit;
-      width: 100%;
-      background-image: url('/images/MJ1C4952 2.png');
-      .overlay {
-        p {
-          display: none;
-        }
+  .consultation {
+    .header {
+      h2 {
+        font-size: 32px;
+        line-height: 28px;
       }
     }
-
   }
-  */
+
 }
 
 @media screen and (max-width: 420px) {
@@ -424,4 +467,17 @@ header {
     height: 607px;
   }
 
+  .consultation {
+    .header {
+      h2 {
+        font-size: 26px;
+      }
+      nav {
+        font-size: 13px;
+        ul li {
+          line-height: 18px;
+        }
+      }
+    }
+  }
 }
