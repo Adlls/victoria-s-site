@@ -294,7 +294,6 @@ header {
     }
   }
 
-
   .optionsIndividualProgram {
     display: flex;
     flex-direction: row;
@@ -329,6 +328,7 @@ header {
             background-color:rgba(98, 32, 0, 0.1);
             height: 64px;
             width: 100%;
+            letter-spacing: 0.02em;
             cursor: pointer;
           }
         }
@@ -348,7 +348,6 @@ header {
       }
     }
   }
-
   .orderIndividualProgram {
       margin-top: 66px;
       color: #2C2C2C;
@@ -391,13 +390,138 @@ header {
           font-family: 'Open Sans';
           line-height: 30px;
           font-size: 22px;
+          letter-spacing: 0.02em;
           cursor: pointer;
         }
       }
   }
-
 }
 
+@mixin setIconWorkshops {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+  }
+  p {
+    @extend .noindentation;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+    margin-left: 54.96px;
+    color: rgba(44, 44, 44, 0.75);
+  }
+}
+
+.workshops {
+  font-family: 'Open Sans';
+  margin-top: 100px;
+  h2 {
+    @extend .noindentation;
+    font-size: 48px;
+    line-height: 53px;   
+    font-weight: bold;
+    font-style: normal;
+    width: 80%;
+  }
+  .seminars {
+    margin-top: 36px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+
+    &-item {
+      height: 520px;
+      background: rgba(98, 32, 0, 0.1);
+      position: relative;
+
+      .wrapper {
+        width: 92.28%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        
+      }
+
+      .owner-cont {
+        width: 100%;
+        height: 80.7%;
+        position: relative;
+       
+      }
+
+      .type {
+        @extend .noindentation;
+        margin-top: 16px;
+        font-size: 20px;
+        line-height: 22px;
+        font-family: 'Didact Gothic';
+        font-weight: normal;
+        font-style: normal;
+        color: rgba(44, 44, 44, 0.75);
+      }
+
+      .title {        
+        height: 100px;
+        margin-top: 8px;
+        margin-bottom: 66px;
+          h4 {
+            @extend .noindentation;
+            font-size: 26px;
+            line-height: 28px;
+            font-style: normal;
+            font-weight: 600;
+            color: #2C2C2C;
+          }
+      }
+     .cont-desc { 
+       position: absolute;
+       bottom: 0;
+       width: inherit;
+        .group {
+          position: relative;
+          &::before {
+            background-image: url('/images/audience.svg');
+          }
+          @include setIconWorkshops;
+        }
+
+        .time {
+          position: relative;
+          margin-top: 20px;
+          &::before {
+            background-image: url('/images/time.svg');
+          }
+          @include setIconWorkshops;
+        }
+    }
+      button {
+        width: inherit;
+        height: 64px;
+        position: absolute;
+        bottom: 16px;
+        cursor: pointer;
+        border: 0;
+        background-color: #2C2C2C;
+        color: #ffffff;
+        font-size: 22px;
+        line-height: 30px;
+        letter-spacing: 0.02em;
+        font-family: Open Sans;
+        font-style: normal;
+      }
+    }
+  }
+}
 
 //Laptop
 @media screen and (max-width: 1280px) {
