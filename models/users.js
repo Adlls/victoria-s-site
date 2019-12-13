@@ -3,21 +3,13 @@
 const crud = require('./crud');
 
 class users extends crud {
-
-  /*
-   _objShema = {
-    name: String,
-    role: String,
-    lastTime: Date,
-    timeReg: Date
-   }
- */  
+  
     constructor() {
         super({
           name: String,
           role: String,
           lastTime: Date,
-          timeReg: Date
+          tieReg: Date
          }, "Users");
     } 
 }

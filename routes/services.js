@@ -5,7 +5,8 @@ serviceContollers = new serviceContollers();
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
-  serviceContollers.view(req, res);
+ serviceContollers.view(req, res);
+
 });
 
 module.exports = router;

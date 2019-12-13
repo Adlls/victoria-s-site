@@ -5,11 +5,10 @@
    _Scheme;
    _Model;
    _db = require('../db.js');
-   
+    mongoose = require('mongoose');
+    Schema = this.mongoose.Schema;
     constructor(shema, collection) {
-        //this._userScheme = new this._db.MongoClient.Schema(this.objShema);
-        //this._User = this._db.MongoClient.model("Users", this._userScheme);
-        this._Scheme = new this._db.MongoClient.Schema(shema);
+        this._Scheme = new this.Schema(shema);
         this._Model = this._db.MongoClient.model(collection, this._Scheme);
     } 
 

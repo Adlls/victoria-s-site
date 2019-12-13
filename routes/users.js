@@ -5,7 +5,8 @@ usersContollers = new usersContollers();
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
-  usersContollers.view(req, res);
+ usersContollers.view(req, res);
+  
 });
 
 

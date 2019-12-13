@@ -7,13 +7,14 @@ const expressHbs = require('express-handlebars');
 const hbs = require("hbs");
 const hbshelpers = require('handlebars-helpers');
 const multihelpers = hbshelpers();
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var servicesRouter = require('./routes/services');
 var app = express();
 var db = require('./db');
-db = new db('localhost', '27017', 'victoriasite');
+db = new db(process.env.hostDB || 'localhost', process.env.portDB || 27017, process.env.nameDB || 'victoriasite');
 db.connectDB();
+//var servicesRouter = require('./routes/services');
+//var consultaionsRouter = require('./routes/consultations');
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 
 // view engine
 app.engine(
@@ -44,8 +45,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/services', servicesRouter);
+//app.use('/users', usersRouter);
+//app.use('/services', servicesRouter);
+//app.use('/consultations', consultaionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

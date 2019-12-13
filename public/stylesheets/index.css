@@ -17,7 +17,7 @@ body {
   clear: both;
 }
 
-.noindentation, .workshops .seminars-item .cont-desc .time p, .workshops .seminars-item .cont-desc .group p, .workshops .seminars-item .title h4, .workshops .seminars-item .type, .workshops h2, .individualProgram .orderIndividualProgram p, .individualProgram .orderIndividualProgram h3, .individualProgram .optionsIndividualProgram .options-items .options ul li, .individualProgram .optionsIndividualProgram .options-items .options ul, .individualProgram .optionsIndividualProgram .options-items p, .consultation .body h6 {
+.noindentation, .workshops .seminars-item .title h4, .workshops .seminars-item .type, .workshops h2, .individualProgram .orderIndividualProgram p, .individualProgram .orderIndividualProgram h3, .individualProgram .optionsIndividualProgram .options-items .options ul li, .individualProgram .optionsIndividualProgram .options-items .options ul, .individualProgram .optionsIndividualProgram .options-items p, .consultation .body h6 {
   margin: 0;
   padding: 0;
 }
@@ -257,10 +257,10 @@ header .overlay {
   padding: 0;
   color: #2C2C2C;
 }
-.individualProgram p:nth-child(1) {
+.individualProgram .subtitle {
   font-size: 20px;
   line-height: 26px;
-  margin-bottom: 16px;
+  margin-bottom: 26px;
   font-style: normal;
   font-weight: normal;
 }
@@ -350,13 +350,12 @@ header .overlay {
   margin-top: 6px;
   font-size: 20px;
   line-height: 26px;
+  width: 80%;
   font-style: normal;
   font-weight: normal;
-  width: 400px;
   text-align: left;
 }
 .individualProgram .orderIndividualProgram .clickOrder {
-  border: 1px solid black;
   position: absolute;
   right: 0;
   top: 0;
@@ -454,6 +453,8 @@ header .overlay {
   height: 35px;
 }
 .workshops .seminars-item .cont-desc .group p {
+  margin: 0;
+  padding: 0;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -464,6 +465,7 @@ header .overlay {
 .workshops .seminars-item .cont-desc .time {
   position: relative;
   margin-top: 20px;
+  margin-bottom: 26px;
 }
 .workshops .seminars-item .cont-desc .time::before {
   background-image: url("/images/time.svg");
@@ -480,6 +482,8 @@ header .overlay {
   height: 35px;
 }
 .workshops .seminars-item .cont-desc .time p {
+  margin: 0;
+  padding: 0;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -585,6 +589,28 @@ header .overlay {
   .consultation button {
     width: 385px;
   }
+
+  .seminars-item .owner-cont .cont-desc .group::before, .seminars-item .owner-cont .cont-desc .time::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+  }
+  .seminars-item .owner-cont .cont-desc .group p, .seminars-item .owner-cont .cont-desc .time p {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    margin-left: 54.96px;
+    color: rgba(44, 44, 44, 0.75);
+  }
 }
 @media screen and (max-width: 920px) {
   header .overlay {
@@ -607,6 +633,72 @@ header .overlay {
   header .subtitle p {
     font-size: 16px;
     line-height: 18px;
+  }
+
+  .individualProgram p:nth-child(1) {
+    font-size: 18px;
+    line-height: 23px;
+  }
+  .individualProgram p:nth-child(3) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .individualProgram p:nth-child(4) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .individualProgram p:nth-child(5) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .individualProgram p:nth-child(6) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .individualProgram .optionsIndividualProgram .options-items .options ul li {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .individualProgram .orderIndividualProgram h3 {
+    font-size: 32px;
+    line-height: 44px;
+  }
+  .individualProgram .orderIndividualProgram p {
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .individualProgram .orderIndividualProgram .clickOrder button {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .workshops .seminars {
+    display: block !important;
+  }
+  .workshops .seminars-item {
+    margin-bottom: 15px;
+    height: 401px !important;
+  }
+  .workshops .seminars-item .owner-cont .cont-desc .group::before, .workshops .seminars-item .owner-cont .cont-desc .time::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 35px;
+    height: 35px;
+  }
+  .workshops .seminars-item .owner-cont .cont-desc .group p, .workshops .seminars-item .owner-cont .cont-desc .time p {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: 54.96px;
+    color: rgba(44, 44, 44, 0.75);
   }
 }
 @media screen and (max-width: 670px) {
@@ -653,6 +745,45 @@ header .overlay {
   .consultation .header h2 {
     font-size: 32px;
     line-height: 28px;
+  }
+
+  .individualProgram .optionsIndividualProgram {
+    display: block;
+  }
+  .individualProgram .optionsIndividualProgram .options-items {
+    width: 100% !important;
+  }
+  .individualProgram .optionsIndividualProgram .options-items button {
+    height: 39.53px !important;
+  }
+  .individualProgram .optionsIndividualProgram .options-items:nth-child(2) {
+    margin-left: 0px;
+    margin-top: 33px;
+  }
+  .individualProgram .optionsIndividualProgram .options-items:nth-child(2) .options ul li {
+    width: 50%;
+  }
+  .individualProgram .orderIndividualProgram {
+    height: 142px;
+  }
+  .individualProgram .orderIndividualProgram h3 {
+    font-size: 32px;
+    line-height: 44px;
+  }
+  .individualProgram .orderIndividualProgram p {
+    font-size: 13px;
+    line-height: 17px;
+  }
+  .individualProgram .orderIndividualProgram .clickOrder {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    width: 100%;
+    height: 42px;
+  }
+  .individualProgram .orderIndividualProgram .clickOrder button {
+    line-height: 25px;
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 420px) {

@@ -119,18 +119,17 @@ header {
   }
 }
 
-//consultation
 .consultation {
   margin-top: 100px;
   .header {
     h2 {
-    margin: 0;
-    padding: 0;
-    font-size: 48px;
-    line-height: 53px;
-    font-weight: bold;
-    font-style: normal;
-    font-family: 'Open Sans';
+      margin: 0;
+      padding: 0;
+      font-size: 48px;
+      line-height: 53px;
+      font-weight: bold;
+      font-style: normal;
+      font-family: 'Open Sans';
     }
     nav {
       border-bottom: 0.5px solid rgba(29, 29, 29, 0.25);;
@@ -277,10 +276,10 @@ header {
     padding: 0;
     color: #2C2C2C;
   }
-  p:nth-child(1) {
+  .subtitle {
       font-size: 20px;
       line-height: 26px;     
-      margin-bottom: 16px;
+      margin-bottom: 26px;
       font-style: normal;
       font-weight: normal;
   }
@@ -299,7 +298,6 @@ header {
     flex-direction: row;
     margin-top: 36px;
     font-family: 'Open Sans';
-
     .options-items { 
       p {
         @extend .noindentation;
@@ -368,14 +366,14 @@ header {
         margin-top: 6px;
         font-size: 20px;
         line-height: 26px;
+        width: 80%;
         font-style: normal;
         font-weight: normal;
-        width: 400px;
         text-align: left;
       }
 
       .clickOrder {
-        border: 1px solid black;
+       // border: 1px solid black;
         position: absolute;
         right: 0;
         top: 0;
@@ -397,7 +395,7 @@ header {
   }
 }
 
-@mixin setIconWorkshops {
+@mixin setIconWorkshops($fonts, $lineh) {
   &::before {
     content: "";
     position: absolute;
@@ -410,11 +408,12 @@ header {
     height: 35px;
   }
   p {
-    @extend .noindentation;
+    margin: 0;
+    padding: 0;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 27px;
+    font-size: $fonts;
+    line-height: $lineh;
     margin-left: 54.96px;
     color: rgba(44, 44, 44, 0.75);
   }
@@ -492,16 +491,17 @@ header {
           &::before {
             background-image: url('/images/audience.svg');
           }
-          @include setIconWorkshops;
+          @include setIconWorkshops(20px, 27px);
         }
 
         .time {
           position: relative;
           margin-top: 20px;
+          margin-bottom: 26px;
           &::before {
             background-image: url('/images/time.svg');
           }
-          @include setIconWorkshops;
+          @include setIconWorkshops(20px, 27px);
         }
     }
       button {
@@ -631,7 +631,17 @@ header {
       width: 385px;
     }
   }
-
+  .seminars {
+    &-item {
+      .owner-cont {  
+        .cont-desc { 
+          .group, .time {
+            @include setIconWorkshops(18px, 25px);
+          }
+      }
+    }
+  }
+  }
 }
 
 @media screen and (max-width: 920px) {
@@ -660,6 +670,70 @@ header {
         }
       }
     }
+
+
+  .individualProgram {
+
+      p:nth-child(1) {
+        font-size: 18px;
+        line-height: 23px;     
+    }
+  
+    @for $i from 3 through 6 {
+      p:nth-child(#{$i}) {
+        font-size: 18px;
+        line-height: 28px;         
+      }
+    }
+
+      .optionsIndividualProgram {
+        .options-items {
+          .options ul li {
+            font-size: 18px;
+            line-height: 25px;
+          }
+        }
+      }
+
+      .orderIndividualProgram {
+        h3 {
+          font-size: 32px;
+          line-height: 44px;
+        }
+        p {
+          font-size: 13px;
+          line-height: 17px;
+        }
+        .clickOrder {
+          button {
+            font-size: 18px;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+
+    .workshops {
+    .wrapper {
+     // width: 100%;
+    }
+    
+    .seminars {
+      display: block !important;
+      &-item {
+        margin-bottom: 15px;
+        height: 401px !important;
+        .owner-cont { 
+          .cont-desc {
+            .group, .time {
+              @include setIconWorkshops(16px, 22px);
+            }
+          }
+        }
+      }
+    }
+  }
+  
 }
 
 @media screen and (max-width: 670px) {
@@ -712,6 +786,50 @@ header {
       h2 {
         font-size: 32px;
         line-height: 28px;
+      }
+    }
+  }
+
+  .individualProgram {
+
+    .optionsIndividualProgram {
+      display: block;
+      .options-items {
+         width: 100% !important;
+        button {
+          height: 39.53px !important;
+        }
+      }
+
+      .options-items:nth-child(2) {
+        margin-left: 0px;
+        margin-top: 33px;
+        .options ul li  {
+          width: 50%;
+      }
+    }
+    }
+
+    .orderIndividualProgram {
+      height: 142px;
+      h3 {
+        font-size: 32px;
+        line-height: 44px;
+      }
+      p {
+        font-size: 13px;
+        line-height: 17px;
+      }
+      .clickOrder {
+        top: auto;
+        right: auto;
+        bottom: 0;
+        width: 100%;
+        height: 42px;
+        button {
+          line-height: 25px;
+          font-size: 18px;
+        }
       }
     }
   }
