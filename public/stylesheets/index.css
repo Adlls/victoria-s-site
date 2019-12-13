@@ -207,7 +207,7 @@ header .overlay {
   top: 0;
   background-image: url("/images/MJ1C4970 2.png");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: top center;
   background-size: cover;
 }
 .about .about-items-1 p {
@@ -237,7 +237,7 @@ header .overlay {
   top: 0;
   background-image: url("/images/MJ1C4875 1.png");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: top center;
   background-size: cover;
   width: 37.8%;
   height: 624px;
@@ -700,6 +700,33 @@ header .overlay {
     margin-left: 54.96px;
     color: rgba(44, 44, 44, 0.75);
   }
+
+  .about .about-items-1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .about .about-items-1 .photo-items-1 {
+    align-self: flex-end;
+    position: static;
+    width: 52%;
+    height: 379px;
+    margin-top: 30px;
+  }
+  .about .about-items-1 p {
+    width: 100%;
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .about .about-items-2 p {
+    width: 100%;
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .about .about-items-2 .photo-items-2 {
+    position: static;
+    width: 100%;
+    margin-top: 30px;
+  }
 }
 @media screen and (max-width: 670px) {
   .wrapper {
@@ -785,6 +812,13 @@ header .overlay {
     line-height: 25px;
     font-size: 18px;
   }
+
+  .about .about-items-1 .photo-items-1 {
+    width: 82%;
+  }
+  .about .about-items-2 .photo-items-2 {
+    height: 500px;
+  }
 }
 @media screen and (max-width: 420px) {
   .wrapper {
@@ -803,6 +837,10 @@ header .overlay {
   }
   .consultation .header nav ul li {
     line-height: 18px;
+  }
+
+  .about .about-items-2 .photo-items-2 {
+    height: 346px;
   }
 }
 
