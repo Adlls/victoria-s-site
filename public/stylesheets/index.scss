@@ -819,13 +819,35 @@ header {
   .consultation {
     .header {
       h2 {
-        font-size: 32px;
+        font-size: 26px;
         line-height: 28px;
       }
+    }
+
+    .body {
+      h2 {
+        font-size: 16px;
+        line-height: 21px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 25px;
+      }
+    }
+    button {
+      width: 100%;
+      font-size: 18px;
+      line-height: 25px;
+      height: 42px;
     }
   }
 
   .individualProgram {
+
+    h2 {
+      font-size: 22px;
+      line-height: 24px;
+    }
 
     .optionsIndividualProgram {
       display: block;
@@ -846,7 +868,7 @@ header {
     }
 
     .orderIndividualProgram {
-      height: 142px;
+      height: 152px;
       h3 {
         font-size: 32px;
         line-height: 44px;
@@ -872,6 +894,10 @@ header {
 
 
   .about {
+    h2 {
+      font-size: 26px;
+      line-height: 28px;
+    }
     .about-items-1 {
       .photo-items-1 {
         width: 82%;
@@ -881,6 +907,13 @@ header {
       .photo-items-2 {
         height: 500px;
       }
+    }
+  }
+
+  .workshops {
+    h2 {
+      font-size: 22px;
+      line-height: 24px;
     }
   }
 

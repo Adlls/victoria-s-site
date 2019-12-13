@@ -770,10 +770,28 @@ header .overlay {
   }
 
   .consultation .header h2 {
-    font-size: 32px;
+    font-size: 26px;
     line-height: 28px;
   }
+  .consultation .body h2 {
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .consultation .body p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .consultation button {
+    width: 100%;
+    font-size: 18px;
+    line-height: 25px;
+    height: 42px;
+  }
 
+  .individualProgram h2 {
+    font-size: 22px;
+    line-height: 24px;
+  }
   .individualProgram .optionsIndividualProgram {
     display: block;
   }
@@ -791,7 +809,7 @@ header .overlay {
     width: 50%;
   }
   .individualProgram .orderIndividualProgram {
-    height: 142px;
+    height: 152px;
   }
   .individualProgram .orderIndividualProgram h3 {
     font-size: 32px;
@@ -813,11 +831,20 @@ header .overlay {
     font-size: 18px;
   }
 
+  .about h2 {
+    font-size: 26px;
+    line-height: 28px;
+  }
   .about .about-items-1 .photo-items-1 {
     width: 82%;
   }
   .about .about-items-2 .photo-items-2 {
     height: 500px;
+  }
+
+  .workshops h2 {
+    font-size: 22px;
+    line-height: 24px;
   }
 }
 @media screen and (max-width: 420px) {
