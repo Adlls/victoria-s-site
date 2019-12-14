@@ -374,6 +374,7 @@ header {
       }
 
       .clickOrder {
+        
        // border: 1px solid black;
         position: absolute;
         right: 0;
@@ -396,7 +397,7 @@ header {
   }
 }
 
-@mixin setIconWorkshops($fonts, $lineh) {
+@mixin setIconWorkshops($fonts, $lineh, $widthIcon, $heightIcon) {
   &::before {
     content: "";
     position: absolute;
@@ -405,8 +406,8 @@ header {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    width: 35px;
-    height: 35px;
+    width: $widthIcon;
+    height: $heightIcon;
   }
   p {
     margin: 0;
@@ -492,17 +493,17 @@ header {
           &::before {
             background-image: url('/images/audience.svg');
           }
-          @include setIconWorkshops(20px, 27px);
+          @include setIconWorkshops(20px, 27px, 34px, 34px);
         }
 
         .time {
           position: relative;
           margin-top: 20px;
-          margin-bottom: 26px;
+          //margin-bottom: 5px;
           &::before {
             background-image: url('/images/time.svg');
           }
-          @include setIconWorkshops(20px, 27px);
+          @include setIconWorkshops(20px, 27px, 34px, 34px);
         }
     }
       button {
@@ -635,9 +636,9 @@ header {
   .seminars {
     &-item {
       .owner-cont {  
-        .cont-desc { 
+        .cont-desc {
           .group, .time {
-            @include setIconWorkshops(18px, 25px);
+            @include setIconWorkshops(18px, 25px, 24px, 24px);
           }
       }
     }
@@ -715,21 +716,26 @@ header {
     }
 
     .workshops {
-    .wrapper {
-     // width: 100%;
-    }
     
     .seminars {
       display: block !important;
       &-item {
+    
         margin-bottom: 15px;
         height: 401px !important;
+
         .owner-cont { 
           .cont-desc {
             .group, .time {
-              @include setIconWorkshops(16px, 22px);
+              @include setIconWorkshops(16px, 22px, 24px, 24px);
             }
           }
+        }
+
+        button {
+          height: 42px;
+          font-size: 18px;
+          line-height: 25px;
         }
       }
     }
@@ -891,8 +897,6 @@ header {
     }
   }
 
-
-
   .about {
     h2 {
       font-size: 26px;
@@ -915,6 +919,19 @@ header {
       font-size: 22px;
       line-height: 24px;
     }
+  }
+
+  .workshops {
+    .wrapper:nth-child(2) {
+      width: 100%;
+    }
+
+    .seminars {
+      &-item {
+        height: 520px !important;
+      }
+    }
+
   }
 
 }
@@ -950,4 +967,19 @@ header {
       }
     }
   }
+
+.workshops {
+  .seminars {
+    &-item {
+     // height: 590px !important;
+
+      .title {
+        h4 {
+          font-size: 22px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+}
 }

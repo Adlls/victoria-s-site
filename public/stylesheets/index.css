@@ -449,8 +449,8 @@ header .overlay {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  width: 35px;
-  height: 35px;
+  width: 34px;
+  height: 34px;
 }
 .workshops .seminars-item .cont-desc .group p {
   margin: 0;
@@ -465,7 +465,6 @@ header .overlay {
 .workshops .seminars-item .cont-desc .time {
   position: relative;
   margin-top: 20px;
-  margin-bottom: 26px;
 }
 .workshops .seminars-item .cont-desc .time::before {
   background-image: url("/images/time.svg");
@@ -478,8 +477,8 @@ header .overlay {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  width: 35px;
-  height: 35px;
+  width: 34px;
+  height: 34px;
 }
 .workshops .seminars-item .cont-desc .time p {
   margin: 0;
@@ -598,8 +597,8 @@ header .overlay {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    width: 35px;
-    height: 35px;
+    width: 24px;
+    height: 24px;
   }
   .seminars-item .owner-cont .cont-desc .group p, .seminars-item .owner-cont .cont-desc .time p {
     margin: 0;
@@ -687,8 +686,8 @@ header .overlay {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
-    width: 35px;
-    height: 35px;
+    width: 24px;
+    height: 24px;
   }
   .workshops .seminars-item .owner-cont .cont-desc .group p, .workshops .seminars-item .owner-cont .cont-desc .time p {
     margin: 0;
@@ -699,6 +698,11 @@ header .overlay {
     line-height: 22px;
     margin-left: 54.96px;
     color: rgba(44, 44, 44, 0.75);
+  }
+  .workshops .seminars-item button {
+    height: 42px;
+    font-size: 18px;
+    line-height: 25px;
   }
 
   .about .about-items-1 {
@@ -846,6 +850,13 @@ header .overlay {
     font-size: 22px;
     line-height: 24px;
   }
+
+  .workshops .wrapper:nth-child(2) {
+    width: 100%;
+  }
+  .workshops .seminars-item {
+    height: 520px !important;
+  }
 }
 @media screen and (max-width: 420px) {
   .wrapper {
@@ -868,6 +879,11 @@ header .overlay {
 
   .about .about-items-2 .photo-items-2 {
     height: 346px;
+  }
+
+  .workshops .seminars-item .title h4 {
+    font-size: 22px;
+    line-height: 25px;
   }
 }
 
