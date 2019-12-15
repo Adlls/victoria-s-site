@@ -265,6 +265,7 @@ header {
 }
 
 .individualProgram {
+  position: relative;
   margin-top: 100px;
   h2 {
     font-size: 48px;
@@ -846,10 +847,15 @@ header {
       line-height: 25px;
       height: 42px;
     }
+
+    .wrapper:nth-child(3) {
+      width: 100%;
+    }
+
   }
 
   .individualProgram {
-
+    //height: 700px;
     h2 {
       font-size: 22px;
       line-height: 24px;
@@ -857,16 +863,33 @@ header {
 
     .optionsIndividualProgram {
       display: block;
+      position: absolute;
+      width: 100%;
+      left: 0;
       .options-items {
          width: 100% !important;
         button {
           height: 39.53px !important;
         }
       }
-
+      .options-items:nth-child(1) {
+        //position: absolute;
+        left: 0;
+        width: 100%;
+        p {
+          margin-left: 5%;
+        }
+ 
+    }
       .options-items:nth-child(2) {
+        //position: absolute;
+        left: 0;
+        width: 100%;
         margin-left: 0px;
         margin-top: 33px;
+        p {
+          margin-left: 5%;
+        }
         .options ul li  {
           width: 50%;
       }
@@ -874,7 +897,9 @@ header {
     }
 
     .orderIndividualProgram {
-      height: 152px;
+      position: static;
+      margin-top: 350px;
+      height: 170px;
       h3 {
         font-size: 32px;
         line-height: 44px;
@@ -887,6 +912,8 @@ header {
         top: auto;
         right: auto;
         bottom: 0;
+        left: 0;
+        //left: -100px !important;
         width: 100%;
         height: 42px;
         button {
@@ -940,7 +967,7 @@ header {
 
 @media screen and (max-width: 420px) {
   .wrapper {
-    width: 80%;
+    width: 90%;
   }
   header {
     height: 607px;
@@ -952,9 +979,10 @@ header {
         font-size: 26px;
       }
       nav {
-        font-size: 13px;
+        font-size: 16px;
         ul li {
           line-height: 18px;
+          margin-right: 8px;
         }
       }
     }
