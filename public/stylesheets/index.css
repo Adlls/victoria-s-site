@@ -22,9 +22,18 @@ body {
   padding: 0;
 }
 
+.social-icons {
+  background-color: rgba(98, 32, 0, 0.1);
+}
+.social-icons a {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
 header {
   position: relative;
-  height: 992px;
+  min-height: 702px;
+  height: 100vh;
   background-image: url("/images/MJ1C4952 1.png");
   background-position: top right;
   background-size: 49.3%;
@@ -35,6 +44,7 @@ header .subheader {
   justify-content: space-between;
   flex-direction: row;
   height: 100%;
+  position: relative;
 }
 header .title {
   width: 400px;
@@ -88,24 +98,21 @@ header .bottom-col-1 {
   position: relative;
   margin-bottom: 128px;
 }
-header .social-icons a {
-  margin-left: 16px;
-  text-decoration: none;
-}
-header .social-icons a:nth-child(1) {
-  margin-left: 0;
-}
 header .social-icons {
   position: absolute;
-  bottom: -82px;
+  bottom: 0px;
+  width: 100%;
+  left: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 header .overlay {
-  background: linear-gradient(360deg, #010101 20.69%, rgba(1, 1, 1, 0) 50%);
+  background: linear-gradient(360deg, #010101 46.69%, rgba(1, 1, 1, 0) 100%);
   position: absolute;
   bottom: 0;
   right: 0;
   width: 49.3%;
-  height: 100%;
+  height: 404px;
 }
 
 .consultation {
@@ -507,14 +514,82 @@ header .overlay {
   font-style: normal;
 }
 
+.contacts {
+  margin-top: 78px;
+  position: relative;
+}
+.contacts .body {
+  width: 54.4%;
+}
+.contacts .left-col h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 44px;
+  line-height: 53px;
+  font-family: "Open Sans";
+  margin-bottom: 15px;
+}
+.contacts .left-col .social-icons {
+  padding: 16px;
+  width: 329px;
+}
+.contacts .left-col .social-icons a {
+  margin: 0;
+  margin-left: 52px;
+}
+.contacts .left-col .social-icons a img {
+  width: 36px;
+  height: 36px;
+}
+.contacts .left-col .social-icons a:nth-child(1) {
+  margin: 0;
+}
+.contacts .left-col .social-icons .wrapper {
+  width: 100%;
+}
+.contacts .left-col .description {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  line-height: 26px;
+  font-style: normal;
+  font-weight: normal;
+}
+.contacts .left-col .desc-1 {
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+.contacts .left-col .phone, .contacts .left-col .email {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 44px;
+}
+.contacts .left-col .phone {
+  margin-bottom: 16px;
+}
+.contacts .left-col .email {
+  margin-top: 4px;
+}
+.contacts .photo {
+  background-image: url("../images/2019-12-05.png");
+  background-position: center center;
+  background-size: cover;
+  width: 36.1%;
+  height: 590px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+}
+
 @media screen and (max-width: 1280px) {
   .wrapper {
     width: 77.1%;
   }
 
-  header {
-    height: 802px;
-  }
   header .title {
     width: 328px;
   }
@@ -542,26 +617,32 @@ header .overlay {
   .consultation button {
     width: 415px;
   }
+
+  .contacts .body .left-col h2 {
+    font-size: 44px;
+    line-height: 48px;
+  }
+  .contacts .photo {
+    height: 547px;
+    width: 42.2%;
+  }
 }
 @media screen and (max-width: 1024px) {
   .wrapper {
     width: 83%;
   }
 
-  header {
-    height: 768px;
-  }
   header .title h2 {
     margin-top: 197px;
   }
   header .title .bottom-col-1 {
     margin-bottom: 78px;
   }
-  header .title .bottom-col-1 .social-icons {
-    display: none;
-  }
   header .subtitle {
     margin-bottom: 78px;
+  }
+  header .social-icons {
+    display: none;
   }
 
   .consultation .header h2 {
@@ -570,10 +651,6 @@ header .overlay {
   }
 }
 @media screen and (max-width: 1000px) {
-  header .overlay {
-    background: linear-gradient(360deg, #010101 31.07%, rgba(1, 1, 1, 0) 100%);
-  }
-
   .consultation .header nav {
     font-size: 16px;
     line-height: 19px;
@@ -613,9 +690,6 @@ header .overlay {
   }
 }
 @media screen and (max-width: 920px) {
-  header .overlay {
-    background: linear-gradient(360deg, #010101 45.07%, rgba(1, 1, 1, 0) 95%);
-  }
   header .title {
     width: 230px;
   }
@@ -732,6 +806,35 @@ header .overlay {
     width: 100%;
     margin-top: 30px;
   }
+
+  .contacts .photo {
+    display: none;
+  }
+  .contacts .body .social-icons {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+  .contacts .body .social-icons .wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .contacts .body {
+    width: 100%;
+  }
+  .contacts .body .left-col .description {
+    font-size: 16px;
+  }
+  .contacts .body .left-col .phone, .contacts .body .left-col .email {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .contacts .desc-1 {
+    margin-top: 100px !important;
+  }
 }
 @media screen and (max-width: 670px) {
   .wrapper {
@@ -748,7 +851,6 @@ header .overlay {
   header .overlay {
     bottom: 0;
     width: 100%;
-    background: linear-gradient(0deg, #000000 31.46%, rgba(0, 0, 0, 0) 87.31%);
   }
   header .title {
     color: #ffffff;
@@ -879,14 +981,22 @@ header .overlay {
   .workshops .seminars-item {
     height: 520px !important;
   }
+
+  .contacts .body .left-col h2 {
+    font-size: 22px;
+    line-height: 24px;
+  }
+  .contacts .body .social-icons a {
+    margin-left: 38px;
+  }
+  .contacts .body .social-icons img {
+    width: 32px !important;
+    height: 32px !important;
+  }
 }
 @media screen and (max-width: 420px) {
   .wrapper {
     width: 90%;
-  }
-
-  header {
-    height: 607px;
   }
 
   .consultation .header h2 {

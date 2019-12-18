@@ -26,9 +26,18 @@ body {
   padding: 0;
 }
 
+.social-icons {
+  background-color: rgba(98, 32, 0, 0.1);
+  a {
+    margin-left: 20px;
+    text-decoration: none;
+  }
+}
+
 header {
   position: relative;
-  height: 992px;
+  min-height: 702px;
+  height: 100vh;
   background-image: url('/images/MJ1C4952 1.png');
   background-position: top right;
   background-size: 49.3%;
@@ -39,6 +48,7 @@ header {
     justify-content: space-between;
     flex-direction: row;
     height: 100%;
+    position: relative;
   }
   
   .title {
@@ -96,26 +106,24 @@ header {
     position: relative;
     margin-bottom: 128px;
   }
-  .social-icons a {
-    margin-left: 16px;
-    text-decoration: none;
-  }
-  .social-icons a:nth-child(1) {
-    margin-left: 0;
-  }
+ 
   .social-icons {
     position: absolute;
-    bottom: -82px;
+    bottom: 0px;
+    width: 100%;
+    left: 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
   .overlay {
-    background: linear-gradient(360deg, #010101 20.69%, rgba(1, 1, 1, 0) 50%);
+    background: linear-gradient(360deg, #010101 46.69%, rgba(1, 1, 1, 0) 100%);
     //background: -moz-linear-gradient(360deg, #010101 20.69%, rgba(1, 1, 1, 0) 50%);
     //background: -webkit-linear-gradient(360deg, #010101 20.69%, rgba(1, 1, 1, 0) 50%);
     position: absolute;
     bottom: 0;
     right: 0;
     width: 49.3%;
-    height: 100%;
+    height: 404px;
   }
 }
 
@@ -526,6 +534,85 @@ header {
   }
 }
 
+.contacts {
+  margin-top: 78px;
+  position: relative;
+
+  .body {
+    width: 54.4%;
+  }
+
+ .left-col { 
+      h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 44px;
+        line-height: 53px;
+        font-family: 'Open Sans';
+        margin-bottom: 15px;
+      }
+
+      .social-icons {
+        padding: 16px;
+        width: 329px;
+        a {
+          margin: 0;
+          margin-left: 52px;
+          img {
+            width: 36px;
+            height: 36px;
+          }
+        }
+        a:nth-child(1) {
+          margin: 0;
+        }
+
+        .wrapper {
+          width: 100%;
+        }
+      }
+
+      .description {
+          margin: 0;
+          padding: 0;
+          font-size: 20px;
+          line-height: 26px;
+          font-style: normal;
+          font-weight: normal;
+      }
+      .desc-1 {
+        margin-top: 12px;
+        margin-bottom: 10px;
+      }
+      .phone, .email {
+        margin: 0;
+        padding: 0;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 44px;
+      }
+      .phone {
+        margin-bottom: 16px;
+      }
+      .email {
+        margin-top: 4px;
+      }
+ }
+
+ .photo {
+    background-image: url('../images/2019-12-05.png');
+    background-position: center center;
+    background-size: cover;
+    width: 36.1%;
+    height: 590px;
+    position: absolute;
+    right: 0;
+    top: 50px;
+ }
+}
+
 //Laptop
 @media screen and (max-width: 1280px) {
 
@@ -533,7 +620,7 @@ header {
     width: 77.1%;
   }
   header {
-    height: 802px;
+    //height: 802px;
 
     .title {
       width: 328px;
@@ -565,6 +652,17 @@ header {
       width: 415px;
     }
   }
+  
+  .contacts {
+    .body .left-col h2 {
+        font-size: 44px;
+        line-height: 48px;
+      }
+      .photo {
+        height: 547px;
+        width: 42.2%;
+      }
+  }
 }
 
 //Tablet
@@ -575,7 +673,7 @@ header {
   }
 
   header {
-    height: 768px;
+    //height: 768px;
 
     .title {
       
@@ -585,13 +683,13 @@ header {
 
       .bottom-col-1 {
         margin-bottom: 78px;
-        .social-icons {
-          display: none;
-        }
       }
     }
     .subtitle {
       margin-bottom: 78px;
+    }
+    .social-icons {
+      display: none;
     }
   }
 
@@ -608,7 +706,7 @@ header {
 @media screen and (max-width: 1000px) {
   header { 
     .overlay {
-        background: linear-gradient(360deg, #010101 31.07%, rgba(1, 1, 1, 0) 100%);
+        //background: linear-gradient(360deg, #010101 31.07%, rgba(1, 1, 1, 0) 100%);
       }
   }
 
@@ -651,7 +749,7 @@ header {
 
    header { 
     .overlay {
-        background: linear-gradient(360deg, #010101 45.07%, rgba(1, 1, 1, 0) 95%);
+        //background: linear-gradient(360deg, #010101 45.07%, rgba(1, 1, 1, 0) 95%);
     }
     .title {
       width: 230px;
@@ -717,29 +815,28 @@ header {
     }
 
     .workshops {
-    
-    .seminars {
-      display: block !important;
-      &-item {
-    
-        margin-bottom: 15px;
-        height: 401px !important;
+      .seminars {
+        display: block !important;
+        &-item {
+      
+          margin-bottom: 15px;
+          height: 401px !important;
 
-        .owner-cont { 
-          .cont-desc {
-            .group, .time {
-              @include setIconWorkshops(16px, 22px, 24px, 24px);
+          .owner-cont { 
+            .cont-desc {
+              .group, .time {
+                @include setIconWorkshops(16px, 22px, 24px, 24px);
+              }
             }
           }
-        }
 
-        button {
-          height: 42px;
-          font-size: 18px;
-          line-height: 25px;
+          button {
+            height: 42px;
+            font-size: 18px;
+            line-height: 25px;
+          }
         }
       }
-    }
   }
   
   .about {
@@ -775,7 +872,39 @@ header {
       }
     }
   }
+  .contacts {
+    .photo {
+      display: none;
+    }
+   .body .social-icons {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding: 0;
+      padding-top: 18px;
+      padding-bottom: 18px;
+        .wrapper {
+          display: flex;
+          justify-content: center;
+        }
+    }
+    .body {
+      width: 100%;
+      .left-col {
+        .description {
+          font-size: 16px;
+        }
+        .phone, .email {
+          font-size: 22px;
+          line-height: 30px;
+        }
+      }
+    }
+    .desc-1 {
+      margin-top: 100px !important;
+    }
 
+  }
 }
 
 @media screen and (max-width: 670px) {
@@ -792,7 +921,7 @@ header {
     .overlay {
       bottom: 0;
       width: 100%;
-      background: linear-gradient(0deg, #000000 31.46%, rgba(0, 0, 0, 0) 87.31%);
+      //background: linear-gradient(0deg, #000000 31.46%, rgba(0, 0, 0, 0) 87.31%);
     }
     .title {
       color: #ffffff;
@@ -801,7 +930,7 @@ header {
       width: 287px;
      
     .bottom-col-1 {
-        margin-bottom: 30px;
+          margin-bottom: 30px;
         p {
           line-height: 21px;
         }
@@ -961,6 +1090,26 @@ header {
 
   }
 
+  .contacts {
+    .body {
+      .left-col {
+        h2 {
+          font-size: 22px;
+          line-height: 24px;
+        }
+      }
+      .social-icons {
+        a {
+          margin-left: 38px;
+        }
+        img {
+          width: 32px !important;
+          height: 32px !important;
+        }
+      }
+    }
+  }
+
 }
 
 
@@ -970,7 +1119,7 @@ header {
     width: 90%;
   }
   header {
-    height: 607px;
+    //height: 607px;
   }
 
   .consultation {
