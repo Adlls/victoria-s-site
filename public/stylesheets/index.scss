@@ -249,6 +249,7 @@ header {
 
   .about-items-2 {
     position: relative;
+
     .wrapper {
       display: flex;
       justify-content: flex-end;
@@ -537,6 +538,7 @@ header {
 
 .contacts {
   margin-top: 78px;
+  margin-bottom: 250px;
   position: relative;
 
   .body {
@@ -870,7 +872,7 @@ header {
       }
       .photo-items-2 {
         position: static;
-        width: 100%;
+        width: 52%;
         margin-top: 30px;
       }
     }
@@ -1072,6 +1074,7 @@ header {
     .about-items-2 {
       .photo-items-2 {
         height: 500px;
+        width: 82%;
       }
     }
   }

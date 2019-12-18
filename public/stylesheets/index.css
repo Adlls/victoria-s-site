@@ -516,6 +516,7 @@ header .overlay {
 
 .contacts {
   margin-top: 78px;
+  margin-bottom: 250px;
   position: relative;
 }
 .contacts .body {
@@ -805,7 +806,7 @@ header .overlay {
   }
   .about .about-items-2 .photo-items-2 {
     position: static;
-    width: 100%;
+    width: 52%;
     margin-top: 30px;
   }
 
@@ -973,6 +974,7 @@ header .overlay {
   }
   .about .about-items-2 .photo-items-2 {
     height: 500px;
+    width: 82%;
   }
 
   .workshops h2 {
