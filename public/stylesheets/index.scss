@@ -670,6 +670,27 @@ header {
   }
 }
 
+//special for master class
+@media screen and (max-width: 1070px) {
+  .workshops {
+    .seminars {
+      
+      &-item {
+ 
+        
+        .owner-cont { 
+          .cont-desc {
+            .group, .time {
+              @include setIconWorkshops(19px, 21px, 32px, 32px);
+            }
+          }
+        }
+      }
+    }
+}
+}
+
+
 //Tablet
 @media screen and (max-width: 1024px) {
 

@@ -630,6 +630,29 @@ header .overlay {
     width: 42.2%;
   }
 }
+@media screen and (max-width: 1070px) {
+  .workshops .seminars-item .owner-cont .cont-desc .group::before, .workshops .seminars-item .owner-cont .cont-desc .time::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+  }
+  .workshops .seminars-item .owner-cont .cont-desc .group p, .workshops .seminars-item .owner-cont .cont-desc .time p {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 21px;
+    margin-left: 54.96px;
+    color: rgba(44, 44, 44, 0.75);
+  }
+}
 @media screen and (max-width: 1024px) {
   .wrapper {
     width: 83%;
