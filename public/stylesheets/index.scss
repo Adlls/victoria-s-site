@@ -32,6 +32,10 @@ body {
     margin-left: 20px;
     text-decoration: none;
   }
+  .wrapper {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 header {
@@ -883,10 +887,12 @@ header {
       padding: 0;
       padding-top: 18px;
       padding-bottom: 18px;
+      /*
         .wrapper {
           display: flex;
           justify-content: center;
         }
+        */
     }
     .body {
       width: 100%;

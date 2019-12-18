@@ -29,6 +29,10 @@ body {
   margin-left: 20px;
   text-decoration: none;
 }
+.social-icons .wrapper {
+  display: flex;
+  justify-content: center;
+}
 
 header {
   position: relative;
@@ -817,10 +821,12 @@ header .overlay {
     padding: 0;
     padding-top: 18px;
     padding-bottom: 18px;
-  }
-  .contacts .body .social-icons .wrapper {
-    display: flex;
-    justify-content: center;
+    /*
+      .wrapper {
+        display: flex;
+        justify-content: center;
+      }
+      */
   }
   .contacts .body {
     width: 100%;
