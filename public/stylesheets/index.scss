@@ -32,10 +32,7 @@ body {
     margin-left: 20px;
     text-decoration: none;
   }
-  .wrapper {
-    display: flex;
-    justify-content: center;
-  }
+
 }
 
 header {
@@ -573,6 +570,8 @@ header {
 
         .wrapper {
           width: 100%;
+          display: flex;
+          justify-content: center;          
         }
       }
 

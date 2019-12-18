@@ -29,10 +29,6 @@ body {
   margin-left: 20px;
   text-decoration: none;
 }
-.social-icons .wrapper {
-  display: flex;
-  justify-content: center;
-}
 
 header {
   position: relative;
@@ -550,6 +546,8 @@ header .overlay {
 }
 .contacts .left-col .social-icons .wrapper {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .contacts .left-col .description {
   margin: 0;
