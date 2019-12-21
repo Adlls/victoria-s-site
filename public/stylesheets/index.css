@@ -1,7 +1,7 @@
 body {
-  background-color: white;
+  background-color: #F4F5F8;
   font-size: 16px;
-  color: 16px;
+  color: #090709;
   font-family: "Didact Gothic";
   min-width: 320px;
 }
@@ -17,26 +17,74 @@ body {
   clear: both;
 }
 
-.noindentation, .workshops .seminars-item .title h4, .workshops .seminars-item .type, .workshops h2, .individualProgram .orderIndividualProgram p, .individualProgram .orderIndividualProgram h3, .individualProgram .optionsIndividualProgram .options-items .options ul li, .individualProgram .optionsIndividualProgram .options-items .options ul, .individualProgram .optionsIndividualProgram .options-items p, .consultation .body h6 {
+.noindentation, .workshops .seminars-item .title h4, .workshops .seminars-item .type, .workshops h2, .individualProgram .orderIndividualProgram p, .individualProgram .orderIndividualProgram h3, .individualProgram .optionsIndividualProgram .options-items .options ul li, .individualProgram .optionsIndividualProgram .options-items .options ul, .individualProgram .optionsIndividualProgram .options-items p, .consultation .body h6, header .bottom-col-1 p, header .title .top-col-1 p, .menu .nav-bar li, .menu .nav-bar {
   margin: 0;
   padding: 0;
 }
 
 .social-icons {
-  background-color: rgba(98, 32, 0, 0.1);
+  display: flex;
+  align-items: center;
 }
 .social-icons a {
-  margin-left: 20px;
   text-decoration: none;
+  margin-left: 20px;
+}
+.social-icons a img {
+  width: 24px;
+  height: 24px;
+}
+.social-icons a:nth-child(1) {
+  margin-left: 0;
 }
 
+.menu {
+  z-index: 1000;
+  background-color: #F4F5F8;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  height: 56px;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+.menu .wrapper {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu .nav-bar {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+.menu .nav-bar li {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 600;
+  font-style: normal;
+  font-family: "Open Sans";
+  margin-left: 30px;
+}
+.menu .nav-bar li a {
+  text-decoration: none;
+  color: inherit;
+}
+.menu .nav-bar li:nth-child(1) {
+  margin-left: 0;
+}
 header {
   position: relative;
-  min-height: 670px;
+  max-height: 960px;
+  min-height: 850px;
   height: 100vh;
   background-image: url("/images/MJ1C4952 1.png");
-  background-position: top right;
-  background-size: 49.3%;
+  background-position: bottom right 0%;
+  background-attachment: fixed;
+  background-size: 50%;
   background-repeat: no-repeat;
 }
 header .subheader {
@@ -46,30 +94,40 @@ header .subheader {
   height: 100%;
   position: relative;
 }
+header .photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background-image: url("/images/MJ1C4952.png");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 header .title {
   width: 400px;
   align-self: flex-start;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  color: #2C2C2C;
+  justify-content: center;
   text-align: left;
 }
-header .title h2 {
+header .title .top-col-1 h2 {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans";
-  font-size: 52px;
-  line-height: 57px;
-  margin-top: 106px;
-  margin-bottom: 26px;
+  font-family: "Playfair Display SC";
+  font-size: 68px;
+  line-height: 70px;
+  margin-top: 10px;
+  margin-bottom: 13px;
 }
-header .title p {
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-  line-height: 26px;
+header .title .top-col-1 p {
+  font-size: 18px;
+  line-height: 25px;
+  color: rgba(9, 7, 9, 0.75);
+  margin-bottom: 116px;
 }
 header .subtitle {
   width: 365px;
@@ -96,23 +154,18 @@ header .bottom-col-1 {
   line-height: 26px;
   font-size: 20px;
   position: relative;
-  margin-bottom: 128px;
 }
-header .social-icons {
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  left: 0;
-  padding-top: 16px;
-  padding-bottom: 16px;
+header .bottom-col-1 p {
+  font-style: italic;
+  font-family: "Open Sans";
+  font-size: 20px;
+  line-height: 27px;
+  position: relative;
 }
-header .overlay {
-  background: linear-gradient(360deg, #010101 46.69%, rgba(1, 1, 1, 0) 100%);
+header .bottom-col-1 p span {
   position: absolute;
   bottom: 0;
-  right: 0;
-  width: 49.3%;
-  height: 404px;
+  right: -80px;
 }
 
 .consultation {
@@ -571,6 +624,10 @@ header .overlay {
   font-size: 32px;
   line-height: 44px;
 }
+.contacts .left-col .phone a, .contacts .left-col .email a {
+  text-decoration: none;
+  color: inherit;
+}
 .contacts .left-col .phone {
   margin-bottom: 16px;
 }
@@ -579,7 +636,7 @@ header .overlay {
 }
 .contacts .photo {
   background-image: url("../images/2019-12-05.png");
-  background-position: center center;
+  background-position: top center;
   background-size: cover;
   width: 36.1%;
   height: 590px;
@@ -588,6 +645,29 @@ header .overlay {
   top: 50px;
 }
 
+@media screen and (max-width: 1470px) {
+  header {
+    background-image: url("/images/MJ1C4952 2.png");
+  }
+}
+/*
+@media screen and (max-width: 1430px) {
+  header {
+    background-size: 714px;
+  }
+}
+
+@media screen and (max-width: 1380px) {
+  header {
+    background-size: 674px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  header {
+    background-size: 654px;
+  }
+}
+*/
 @media screen and (max-width: 1280px) {
   .wrapper {
     width: 77.1%;
