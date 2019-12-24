@@ -57,7 +57,7 @@ const menuItems = [
 class Social extends React.Component {
   render() {
     return (
-      <div className="social-icons" style={{display: this.props.navBarStyle, opacity: "1"}}> 
+      <div className="social-icons" style={{height: this.props.heightSocials, opacity: "1"}}> 
       {                    
                    this.props.socials.map(function(item) {
                       return <a href={item.href}><img src={item.img}/></a>
@@ -74,7 +74,12 @@ class Menu extends React.Component {
     super(props);
     this.showMenu = this.showMenu.bind(this);
     //this.state = {navBarBlock: false };
-    this.state = {navBarStyle: "none", height: "35px"};
+    this.state = {
+      navBarStyle: "none", 
+    height: "35px", 
+    heightSocials: "0px",
+    heightNavBar: "0px"
+  };
   }
 
   showMenu() {
@@ -85,12 +90,16 @@ class Menu extends React.Component {
       });
       if (this.state.navBarStyle === "block") {
         this.setState({
-          height: "35px"
+          height: "35px",
+          heightSocials: "0px",
+          heightNavBar: "0"
         });
       }
       else {
         this.setState({
-          height: "500px"
+          height: "500px",
+          heightSocials: "50px",
+          heightNavBar: "380px"
         });
       }
   }
@@ -100,14 +109,14 @@ class Menu extends React.Component {
     <section className="menu" style={{ height: this.state.height}}>
     <div className="wrapper">
     <div className="menu_btn" onClick={this.showMenu}></div>
-         <ul className="nav-bar" style = { {display: this.state.navBarStyle, opacity: "1"}}>
+         <ul className="nav-bar" style = { {height: this.state.heightNavBar, opacity: "1"}}>
            {
              this.props.itemsMenu.map(function(items) {
                  return  <li><a href={items.link}>{items.item}</a></li>
              })
            }
          </ul>  
-          <Social socials={propsSocials} navBarStyle={this.state.navBarStyle}/>
+          <Social socials={propsSocials} navBarStyle={this.state.heightSocials}/>
      </div>
    </section>
     );

@@ -60,7 +60,7 @@ var Social = function (_React$Component) {
     value: function render() {
       return React.createElement(
         "div",
-        { className: "social-icons", style: { display: this.props.navBarStyle, opacity: "1" } },
+        { className: "social-icons", style: { height: this.props.heightSocials, opacity: "1" } },
         this.props.socials.map(function (item) {
           return React.createElement(
             "a",
@@ -85,7 +85,12 @@ var Menu = function (_React$Component2) {
 
     _this2.showMenu = _this2.showMenu.bind(_this2);
     //this.state = {navBarBlock: false };
-    _this2.state = { navBarStyle: "none", height: "35px" };
+    _this2.state = {
+      navBarStyle: "none",
+      height: "35px",
+      heightSocials: "0px",
+      heightNavBar: "0px"
+    };
     return _this2;
   }
 
@@ -99,11 +104,15 @@ var Menu = function (_React$Component2) {
       });
       if (this.state.navBarStyle === "block") {
         this.setState({
-          height: "35px"
+          height: "35px",
+          heightSocials: "0px",
+          heightNavBar: "0"
         });
       } else {
         this.setState({
-          height: "500px"
+          height: "500px",
+          heightSocials: "50px",
+          heightNavBar: "380px"
         });
       }
     }
@@ -119,7 +128,7 @@ var Menu = function (_React$Component2) {
           React.createElement("div", { className: "menu_btn", onClick: this.showMenu }),
           React.createElement(
             "ul",
-            { className: "nav-bar", style: { display: this.state.navBarStyle, opacity: "1" } },
+            { className: "nav-bar", style: { height: this.state.heightNavBar, opacity: "1" } },
             this.props.itemsMenu.map(function (items) {
               return React.createElement(
                 "li",
@@ -132,7 +141,7 @@ var Menu = function (_React$Component2) {
               );
             })
           ),
-          React.createElement(Social, { socials: propsSocials, navBarStyle: this.state.navBarStyle })
+          React.createElement(Social, { socials: propsSocials, navBarStyle: this.state.heightSocials })
         )
       );
     }

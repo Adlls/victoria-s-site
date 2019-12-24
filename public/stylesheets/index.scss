@@ -65,6 +65,7 @@ body {
   .menu_btn {
     position: absolute;
     right: 0;
+    top: 0;
     background-image: url('../images/menu.svg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -949,19 +950,18 @@ header {
       flex-direction: column-reverse;
 
       .social-icons {
-        display: none;
-        //display: block;
+        display: block;
         margin-top: 38px;
+        overflow: hidden;
       }
     }
 
     .nav-bar {
-      display: none;
-      //display: block;
+      display: block;
+      overflow: hidden;
       margin-top: 70px;
       li {
         display: block !important;
-        //border: 1px solid black;
         margin-top: 36px;
         font-size: 18px;
         line-height: 20px;
