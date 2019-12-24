@@ -25,6 +25,7 @@ body {
 .social-icons {
   display: flex;
   align-items: center;
+  transition: 0.5s;
 }
 .social-icons a {
   text-decoration: none;
@@ -47,18 +48,33 @@ body {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
+  transition: 0.5s;
 }
 .menu .wrapper {
   height: inherit;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+.menu .menu_btn {
+  position: absolute;
+  right: 0;
+  background-image: url("../images/menu.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 34px;
+  height: 14px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 .menu .nav-bar {
   text-align: center;
   display: flex;
   align-items: center;
   height: inherit;
+  transition: 0.5s;
 }
 .menu .nav-bar li {
   display: inline-block;
@@ -68,23 +84,23 @@ body {
   font-style: normal;
   font-family: "Open Sans";
   margin-left: 30px;
+  list-style: none;
 }
 .menu .nav-bar li a {
   text-decoration: none;
   color: inherit;
 }
 .menu .nav-bar li:nth-child(1) {
-  margin-left: 0;
+  margin-left: 10px;
 }
 header {
   position: relative;
   max-height: 960px;
   min-height: 850px;
   height: 100vh;
-  background-image: url("/images/MJ1C4952 1.png");
-  background-position: bottom right 0%;
-  background-attachment: fixed;
-  background-size: 50%;
+  background-image: url("/images/MJ1C4952 2.png");
+  background-position: bottom right -5%;
+  background-size: 750px;
   background-repeat: no-repeat;
 }
 header .subheader {
@@ -120,7 +136,7 @@ header .title .top-col-1 h2 {
   font-family: "Playfair Display SC";
   font-size: 68px;
   line-height: 70px;
-  margin-top: 10px;
+  margin-top: 200px;
   margin-bottom: 13px;
 }
 header .title .top-col-1 p {
@@ -192,8 +208,9 @@ header .bottom-col-1 p span {
   padding: 0;
 }
 .consultation .header nav ul .active {
+  transition: 0.1s;
   color: #1D1D1D;
-  border-bottom: 1px solid #1D1D1D;
+  border-bottom: 0.5px solid #1D1D1D;
 }
 .consultation .header nav ul li {
   display: inline-block;
@@ -645,11 +662,13 @@ header .bottom-col-1 p span {
   top: 50px;
 }
 
+/*
 @media screen and (max-width: 1470px) {
   header {
-    background-image: url("/images/MJ1C4952 2.png");
+    background-image: url('/images/MJ1C4952 2.png');
   }
 }
+*/
 /*
 @media screen and (max-width: 1430px) {
   header {
@@ -668,22 +687,38 @@ header .bottom-col-1 p span {
   }
 }
 */
+@media screen and (max-width: 1410px) {
+  .menu .nav-bar li {
+    font-size: 15.5px;
+    line-height: 16px;
+    margin-left: 18px;
+  }
+}
+@media screen and (max-width: 1380px) {
+  header {
+    background-position: bottom right -18%;
+  }
+}
 @media screen and (max-width: 1280px) {
   .wrapper {
     width: 77.1%;
   }
 
+  header {
+    min-height: 802px;
+    background-size: 730px;
+  }
   header .title {
     width: 328px;
   }
-  header .title h2 {
-    font-size: 44px;
-    line-height: 48px;
-    margin-top: 215px;
+  header .title .top-col-1 h2 {
+    font-size: 58px;
+    line-height: 64px;
+    margin-top: 275px;
   }
-  header .title p {
+  header .title .top-col-1 p {
     font-size: 16px;
-    line-height: 21px;
+    line-height: 22px;
   }
   header .title .bottom-col-1 {
     margin-bottom: 108px;
@@ -710,7 +745,23 @@ header .bottom-col-1 p span {
     width: 42.2%;
   }
 }
+@media screen and (max-width: 1140px) {
+  header {
+    background-position: bottom right -21%;
+    background-size: 650px;
+  }
+}
 @media screen and (max-width: 1070px) {
+  header {
+    background-position: bottom right -29%;
+  }
+
+  .menu .nav-bar li {
+    font-size: 15px;
+    line-height: 16px;
+    margin-left: 16px;
+  }
+
   .workshops .seminars-item .owner-cont .cont-desc .group::before, .workshops .seminars-item .owner-cont .cont-desc .time::before {
     content: "";
     position: absolute;
@@ -738,8 +789,16 @@ header .bottom-col-1 p span {
     width: 83%;
   }
 
-  header .title h2 {
-    margin-top: 197px;
+  header {
+    min-height: 768px;
+  }
+  header .title .top-col-1 h2 {
+    font-size: 44px;
+    line-height: 48px;
+  }
+  header .title .top-col-1 p {
+    font-size: 16px;
+    line-height: 22px;
   }
   header .title .bottom-col-1 {
     margin-bottom: 78px;
@@ -757,6 +816,12 @@ header .bottom-col-1 p span {
   }
 }
 @media screen and (max-width: 1000px) {
+  .menu .nav-bar li {
+    font-size: 14.7px;
+    line-height: 16px;
+    margin-left: 13px;
+  }
+
   .consultation .header nav {
     font-size: 16px;
     line-height: 19px;
@@ -796,16 +861,52 @@ header .bottom-col-1 p span {
   }
 }
 @media screen and (max-width: 920px) {
+  .menu {
+    position: fixed;
+    top: 0;
+    height: 35px;
+  }
+  .menu .wrapper {
+    flex-direction: column-reverse;
+  }
+  .menu .wrapper .social-icons {
+    display: none;
+    margin-top: 38px;
+  }
+  .menu .nav-bar {
+    display: none;
+    margin-top: 70px;
+  }
+  .menu .nav-bar li {
+    display: block !important;
+    margin-top: 36px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .menu .nav-bar li:nth-child(1) {
+    margin-top: 0;
+  }
+
+  header {
+    background-position: center bottom -120px;
+  }
   header .title {
-    width: 230px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 89px;
+    justify-content: flex-start;
   }
-  header .title h2 {
-    font-size: 32px;
-    line-height: 38px;
+  header .title .top-col-1 h2 {
+    width: 249px;
+    margin: 0;
   }
-  header .title p {
+  header .title .top-col-1 p {
     font-size: 16px;
     line-height: 18px;
+    width: 270px;
+  }
+  header .title .bottom-col-1 {
+    display: none;
   }
   header .subtitle {
     width: 230px;
@@ -950,41 +1051,12 @@ header .bottom-col-1 p span {
   }
 
   header {
-    min-height: 500px;
-    background-size: cover;
-    background-image: url("/images/MJ1C4952 2.png");
+    min-height: 800px;
+    background-size: 650px;
   }
   header .subtitle {
     display: none;
   }
-  header .overlay {
-    bottom: 0;
-    width: 100%;
-  }
-  header .title {
-    color: #ffffff;
-    z-index: 1000;
-    justify-content: flex-end;
-    width: 287px;
-  }
-  header .title .bottom-col-1 {
-    margin-bottom: 30px;
-  }
-  header .title .bottom-col-1 p {
-    line-height: 21px;
-  }
-  header .title .top-col-1 h2 {
-    text-shadow: 0px 0px 64px #000000;
-    margin-bottom: 6px;
-    font-size: 22px;
-    line-height: 24px;
-  }
-  header .title .top-col-1 p {
-    text-shadow: 0px 0px 64px #000000;
-    margin-bottom: 26px;
-    line-height: 21px;
-  }
-
   .consultation .header h2 {
     font-size: 26px;
     line-height: 28px;
@@ -1104,7 +1176,29 @@ header .bottom-col-1 p span {
     height: 32px !important;
   }
 }
+@media screen and (max-width: 550px) {
+  header {
+    background-size: 550px;
+  }
+}
 @media screen and (max-width: 420px) {
+  header {
+    background-size: 450px;
+    min-height: 625px;
+    max-height: 700px;
+  }
+  header .title {
+    padding-top: 100px;
+  }
+  header .title .top-col-1 h2 {
+    font-size: 32px;
+    line-height: 35px;
+  }
+  header .title .top-col-1 p {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
   .wrapper {
     width: 90%;
   }
