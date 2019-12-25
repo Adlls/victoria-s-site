@@ -25,7 +25,6 @@ body {
 .social-icons {
   display: flex;
   align-items: center;
-  transition: 0.5s;
 }
 .social-icons a {
   text-decoration: none;
@@ -61,7 +60,6 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-  background-image: url("../images/menu.svg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
@@ -69,6 +67,7 @@ body {
   height: 14px;
   cursor: pointer;
   margin-top: 10px;
+  display: none;
 }
 .menu .nav-bar {
   text-align: center;
@@ -663,6 +662,12 @@ header .bottom-col-1 p span {
   top: 50px;
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 /*
 @media screen and (max-width: 1470px) {
   header {
@@ -874,6 +879,9 @@ header .bottom-col-1 p span {
     display: block;
     margin-top: 38px;
     overflow: hidden;
+  }
+  .menu .menu_btn {
+    display: block;
   }
   .menu .nav-bar {
     display: block;

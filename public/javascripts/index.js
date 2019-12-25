@@ -85,11 +85,13 @@ var Menu = function (_React$Component2) {
 
     _this2.showMenu = _this2.showMenu.bind(_this2);
     //this.state = {navBarBlock: false };
+    //console.log(this.props.isMobile());
     _this2.state = {
       navBarStyle: "none",
       height: "35px",
       heightSocials: "0px",
-      heightNavBar: "0px"
+      heightNavBar: "0px",
+      bgIcon: "../images/menu.svg"
     };
     return _this2;
   }
@@ -106,13 +108,15 @@ var Menu = function (_React$Component2) {
         this.setState({
           height: "35px",
           heightSocials: "0px",
-          heightNavBar: "0"
+          heightNavBar: "0",
+          bgIcon: "../images/menu.svg"
         });
       } else {
         this.setState({
           height: "500px",
           heightSocials: "50px",
-          heightNavBar: "380px"
+          heightNavBar: "380px",
+          bgIcon: "../images/arrow.svg"
         });
       }
     }
@@ -125,7 +129,7 @@ var Menu = function (_React$Component2) {
         React.createElement(
           "div",
           { className: "wrapper" },
-          React.createElement("div", { className: "menu_btn", onClick: this.showMenu }),
+          React.createElement("div", { className: "menu_btn", onClick: this.showMenu, style: { backgroundImage: "url(" + this.state.bgIcon + ")" } }),
           React.createElement(
             "ul",
             { className: "nav-bar", style: { height: this.state.heightNavBar, opacity: "1" } },
@@ -150,15 +154,104 @@ var Menu = function (_React$Component2) {
   return Menu;
 }(React.Component);
 
-var Consultation = function (_React$Component3) {
-  _inherits(Consultation, _React$Component3);
+var MenuDesktop = function (_React$Component3) {
+  _inherits(MenuDesktop, _React$Component3);
+
+  function MenuDesktop() {
+    _classCallCheck(this, MenuDesktop);
+
+    return _possibleConstructorReturn(this, (MenuDesktop.__proto__ || Object.getPrototypeOf(MenuDesktop)).apply(this, arguments));
+  }
+
+  _createClass(MenuDesktop, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "section",
+          { "class": "menu", id: "menu" },
+          React.createElement(
+            "div",
+            { "class": "wrapper" },
+            React.createElement(
+              "ul",
+              { "class": "nav-bar" },
+              React.createElement(
+                "li",
+                { "class": "active" },
+                React.createElement(
+                  "a",
+                  { href: "#header" },
+                  "\u0413\u043B\u0430\u0432\u043D\u0430\u044F"
+                )
+              ),
+              React.createElement(
+                "li",
+                null,
+                React.createElement(
+                  "a",
+                  { href: "#consultation" },
+                  "\u041A\u043E\u043D\u0441\u0443\u043B\u044C\u0442\u0430\u0446\u0438\u0438"
+                )
+              ),
+              React.createElement(
+                "li",
+                null,
+                React.createElement(
+                  "a",
+                  { href: "#about" },
+                  "\u041E\u0431\u043E \u043C\u043D\u0435"
+                )
+              ),
+              React.createElement(
+                "li",
+                null,
+                React.createElement(
+                  "a",
+                  { href: "#workshops" },
+                  "\u041C\u0430\u0441\u0442\u0435\u0440-\u043A\u043B\u0430\u0441\u0441\u044B"
+                )
+              ),
+              React.createElement(
+                "li",
+                null,
+                React.createElement(
+                  "a",
+                  { href: "#feedbacks" },
+                  "\u041E\u0442\u0437\u044B\u0432\u044B"
+                )
+              ),
+              React.createElement(
+                "li",
+                null,
+                React.createElement(
+                  "a",
+                  { href: "#contacts" },
+                  "\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B"
+                )
+              )
+            ),
+            React.createElement(Social, { socials: propsSocials, navBarStyle: "40px" })
+          )
+        )
+      );
+    }
+  }]);
+
+  return MenuDesktop;
+}(React.Component);
+
+var Consultation = function (_React$Component4) {
+  _inherits(Consultation, _React$Component4);
 
   function Consultation(props) {
     _classCallCheck(this, Consultation);
 
-    var _this3 = _possibleConstructorReturn(this, (Consultation.__proto__ || Object.getPrototypeOf(Consultation)).call(this, props));
+    var _this4 = _possibleConstructorReturn(this, (Consultation.__proto__ || Object.getPrototypeOf(Consultation)).call(this, props));
 
-    _this3.state = { classActive1: "active", classActive2: "", classActive3: "" };
+    _this4.state = { classActive1: "active", classActive2: "", classActive3: "" };
 
     /*
     this.state = {
@@ -167,16 +260,16 @@ var Consultation = function (_React$Component3) {
       content3: "«Я совершенно запутался/лась в своей жизни. Очередной одинаковый день. Не знаю, что мне делать» \n «Я давно хочу попробовать себя в самостоятельном бизнесе, но боюсь уходить с работы» \n «Кажется мне грозит увольнение, я постоянно живу на грани стресса» \n «Я не могу найти свое призвание, то дело, которое будет приносить и удовольствие и деньги» \n «Я себе не нравлюсь. У меня все не как у людей» \n и другие многочисленные вопросы по теме личностной и профессиональной самореализации"
     };
     */
-    _this3.state = {
+    _this4.state = {
       content1: "1",
       content2: "2",
       content3: "3"
     };
 
-    _this3.state = { fieldContent: "«Я не знаю, как нормально общаться с родителями, они меня достали.» <br/> «Я себе не нравлюсь, все просто ужасно!» <br/> «Меня никто не понимает в классе, у меня никогда не было нормальных друзей.» <br/> «Я не знаю, чем хочу заниматься в будущем, кем стать.» <br/> и другие многочисленные вопросы." };
-    _this3.press = _this3.press.bind(_this3);
+    _this4.state = { fieldContent: "«Я не знаю, как нормально общаться с родителями, они меня достали.» <br/> «Я себе не нравлюсь, все просто ужасно!» <br/> «Меня никто не понимает в классе, у меня никогда не было нормальных друзей.» <br/> «Я не знаю, чем хочу заниматься в будущем, кем стать.» <br/> и другие многочисленные вопросы." };
+    _this4.press = _this4.press.bind(_this4);
 
-    return _this3;
+    return _this4;
   }
 
   _createClass(Consultation, [{
@@ -285,8 +378,8 @@ var Consultation = function (_React$Component3) {
   return Consultation;
 }(React.Component);
 
-var ContentConsultations = function (_React$Component4) {
-  _inherits(ContentConsultations, _React$Component4);
+var ContentConsultations = function (_React$Component5) {
+  _inherits(ContentConsultations, _React$Component5);
 
   function ContentConsultations() {
     _classCallCheck(this, ContentConsultations);
@@ -308,10 +401,22 @@ var ContentConsultations = function (_React$Component4) {
   return ContentConsultations;
 }(React.Component);
 
+if (window.innerWidth <= 920) {
+  if (window.innerWidth <= 920) {
+    ReactDOM.render(React.createElement(Menu, { itemsMenu: menuItems }), document.getElementById("menu"));
+  } else {
+    ReactDOM.render(React.createElement(MenuDesktop, null), document.getElementById("menu"));
+  }
+}
+
 //menu
-
-
-ReactDOM.render(React.createElement(Menu, { itemsMenu: menuItems }), document.getElementById("menu"));
+window.addEventListener('resize', function () {
+  if (window.innerWidth <= 920) {
+    ReactDOM.render(React.createElement(Menu, { itemsMenu: menuItems }), document.getElementById("menu"));
+  } else {
+    ReactDOM.render(React.createElement(MenuDesktop, null), document.getElementById("menu"));
+  }
+});
 ReactDOM.render(React.createElement(Consultation, null), document.getElementById("consultationnav"));
 
 /*

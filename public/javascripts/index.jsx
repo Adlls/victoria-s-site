@@ -74,12 +74,14 @@ class Menu extends React.Component {
     super(props);
     this.showMenu = this.showMenu.bind(this);
     //this.state = {navBarBlock: false };
+    //console.log(this.props.isMobile());
     this.state = {
       navBarStyle: "none", 
-    height: "35px", 
-    heightSocials: "0px",
-    heightNavBar: "0px"
-  };
+      height: "35px", 
+      heightSocials: "0px",
+      heightNavBar: "0px",
+      bgIcon: "../images/menu.svg"
+    };
   }
 
   showMenu() {
@@ -92,23 +94,25 @@ class Menu extends React.Component {
         this.setState({
           height: "35px",
           heightSocials: "0px",
-          heightNavBar: "0"
+          heightNavBar: "0",
+          bgIcon: "../images/menu.svg"
         });
       }
       else {
         this.setState({
           height: "500px",
           heightSocials: "50px",
-          heightNavBar: "380px"
+          heightNavBar: "380px",
+          bgIcon: "../images/arrow.svg"
         });
-      }
+      }  
   }
 
   render() {
     return (
     <section className="menu" style={{ height: this.state.height}}>
     <div className="wrapper">
-    <div className="menu_btn" onClick={this.showMenu}></div>
+    <div className="menu_btn" onClick={this.showMenu} style={{backgroundImage: `url(${this.state.bgIcon})`}}></div>
          <ul className="nav-bar" style = { {height: this.state.heightNavBar, opacity: "1"}}>
            {
              this.props.itemsMenu.map(function(items) {
@@ -120,6 +124,29 @@ class Menu extends React.Component {
      </div>
    </section>
     );
+  }
+}
+
+class MenuDesktop extends React.Component {
+  render() {
+    return (
+      <div>
+        <section class="menu" id="menu">
+ <div class="wrapper">
+      <ul class="nav-bar">
+        <li class="active"><a href="#header">Главная</a></li>
+        <li><a href="#consultation">Консультации</a></li>
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#workshops">Мастер-классы</a></li>
+        <li><a href="#feedbacks">Отзывы</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>  
+      <Social socials={propsSocials} navBarStyle={"40px"}/>
+
+  </div>
+</section>
+      </div>
+    )
   }
 }
 
@@ -233,8 +260,25 @@ class ContentConsultations extends React.Component {
 }
 
 
+if (window.innerWidth <= 920) {
+  if (window.innerWidth <= 920) {    
+    ReactDOM.render(<Menu itemsMenu={menuItems}/>, document.getElementById("menu"));
+  }
+  else {
+    ReactDOM.render(<MenuDesktop />, document.getElementById("menu"));
+  }
+}
+
+
 //menu
-ReactDOM.render(<Menu itemsMenu={menuItems}/>, document.getElementById("menu"));
+window.addEventListener('resize', function(){
+  if (window.innerWidth <= 920) {    
+    ReactDOM.render(<Menu itemsMenu={menuItems}/>, document.getElementById("menu"));
+  }
+  else {
+    ReactDOM.render(<MenuDesktop />, document.getElementById("menu"));
+  }
+});
 ReactDOM.render(<Consultation/>, document.getElementById("consultationnav"))
 
 /*
