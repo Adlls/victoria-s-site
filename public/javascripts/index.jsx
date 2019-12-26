@@ -1,5 +1,4 @@
-//var React = require('react');
-//var ReactDOM = require('react-dom');
+
 const propsSocials = [
   {   img: "../../images/zen.svg",
       href: "#"
@@ -22,7 +21,7 @@ const propsSocials = [
     img: "../../images/yt.svg",
     href:"#"
   }
-  ]
+  ];
 
 const menuItems = [
   {
@@ -50,7 +49,7 @@ const menuItems = [
     link: "#contacts",
     item: "Контакты"
   }
-]
+];
 
 
 
@@ -172,7 +171,7 @@ class Consultation extends React.Component {
   
     this.state = {fieldContent: "«Я не знаю, как нормально общаться с родителями, они меня достали.» <br/> «Я себе не нравлюсь, все просто ужасно!» <br/> «Меня никто не понимает в классе, у меня никогда не было нормальных друзей.» <br/> «Я не знаю, чем хочу заниматься в будущем, кем стать.» <br/> и другие многочисленные вопросы." };
     this.press = this.press.bind(this);
-
+    this.openPopup = this.openPopup.bind(this);
   }
 
   componentWillMount() {
@@ -182,7 +181,6 @@ class Consultation extends React.Component {
   }
 
   press(e) {
-
     if (e.target.id == "consul-1") {
       this.setState({
         classActive1: "active",
@@ -212,6 +210,11 @@ class Consultation extends React.Component {
     }
 
   }  
+
+  openPopup(e) {
+    ReactDOM.render(<Popup  display="flex" bottom="0"/>, document.getElementById("popup"));
+
+  }
 
   render() {
     return (
@@ -244,6 +247,9 @@ class Consultation extends React.Component {
           </p>
       </div>
     </div>
+    <div class="wrapper">
+        <button onClick={this.openPopup}>Записаться на прием</button>
+    </div>
   </div>    
 
       );
@@ -252,22 +258,92 @@ class Consultation extends React.Component {
 
 }
 
-class ContentConsultations extends React.Component {
+class Popup extends React.Component {
 
-  render() {
-    return <div>kek</div>
+  constructor(props) {
+    super(props);
+    this.ClosePopup = this.ClosePopup.bind(this);
+    this.state = {display: "none", bottom: "0"};
+    console.log("dfg");
+
+    /*
+    this.setState(function(prevState, props) {
+      return {
+      display: props.display,
+      bottom: props.bottom
+      };
+    });
+    */
+    
+  }
+
+  componentWillMount() {
+    this.setState({
+      display: this.props.display,
+      bottom: this.props.bottom
+    });
+  }
+
+  ClosePopup(e) {
+    this.setState({
+      display: "none",
+      bottom: "-700px"
+    });
+
+    ReactDOM.unmountComponentAtNode(document.getElementById("popup"));
+
+  }  
+
+  render() { 
+    return (
+        <div>
+                <div className="overlay-popup" style={{display: this.state.display}}>
+              <section className="popup" style={{bottom: this.state.bottom}}> 
+                  <div className="btn_close" onClick={this.ClosePopup.bind(this)}></div>
+                  <div className="top-bar">
+                    <div className="wrapper">
+                      <ul className="">
+                        <li className="active">Обратный звонок</li>
+                        <li>Написать на почту</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="form-contain">
+                    <div className="wrapper">
+                      <p>
+                        Оставьте контакты и я перезвоню Вам как можно скорее. 
+                        Или Вы можете <a href="tel:+79670978656">позвонить мне</a> самостоятельно.
+                      </p>
+                      <form method="POST" action="">
+                        <div className="callback">
+                          <input type="text" placeholder="Имя"/>
+                          <input type="tel" placeholder="Номер телефона"/>
+                        </div>
+                        <div class="emailsend">
+                          <input type="text" placeholder="Имя"/>
+                          <input type="tel" placeholder="Номер телефона"/>
+                        </div>
+                        <input type="submit" value="Отправить заявку"/> 
+                      </form>            
+                    </div>
+                  </div>      
+              </section>
+            </div>
+        </div>
+    );
   }
 }
 
 
+
 if (window.innerWidth <= 920) {
-  if (window.innerWidth <= 920) {    
+  
     ReactDOM.render(<Menu itemsMenu={menuItems}/>, document.getElementById("menu"));
   }
   else {
     ReactDOM.render(<MenuDesktop />, document.getElementById("menu"));
   }
-}
+
 
 
 //menu
@@ -279,7 +355,9 @@ window.addEventListener('resize', function(){
     ReactDOM.render(<MenuDesktop />, document.getElementById("menu"));
   }
 });
-ReactDOM.render(<Consultation/>, document.getElementById("consultationnav"))
+ReactDOM.render(<Consultation/>, document.getElementById("consultationnav"));
+//ReactDOM.render(<Popup  display="none" bottom="-700px"/>, document.getElementById("popup"));
+
 
 /*
   ReactDOM.render(<Hello data={propsValues}/>,

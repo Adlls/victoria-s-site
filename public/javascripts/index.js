@@ -8,8 +8,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-//var React = require('react');
-//var ReactDOM = require('react-dom');
 var propsSocials = [{ img: "../../images/zen.svg",
   href: "#"
 }, {
@@ -268,7 +266,7 @@ var Consultation = function (_React$Component4) {
 
     _this4.state = { fieldContent: "«Я не знаю, как нормально общаться с родителями, они меня достали.» <br/> «Я себе не нравлюсь, все просто ужасно!» <br/> «Меня никто не понимает в классе, у меня никогда не было нормальных друзей.» <br/> «Я не знаю, чем хочу заниматься в будущем, кем стать.» <br/> и другие многочисленные вопросы." };
     _this4.press = _this4.press.bind(_this4);
-
+    _this4.openPopup = _this4.openPopup.bind(_this4);
     return _this4;
   }
 
@@ -282,7 +280,6 @@ var Consultation = function (_React$Component4) {
   }, {
     key: "press",
     value: function press(e) {
-
       if (e.target.id == "consul-1") {
         this.setState({
           classActive1: "active",
@@ -306,6 +303,11 @@ var Consultation = function (_React$Component4) {
           fieldContent: "«Я совершенно запутался/лась в своей жизни. Очередной одинаковый день. Не знаю, что мне делать» <br/> «Я давно хочу попробовать себя в самостоятельном бизнесе, но боюсь уходить с работы» <br/> «Кажется мне грозит увольнение, я постоянно живу на грани стресса» <br/> «Я не могу найти свое призвание, то дело, которое будет приносить и удовольствие и деньги» <br/> «Я себе не нравлюсь. У меня все не как у людей» <br/> и другие многочисленные вопросы по теме личностной и профессиональной самореализации"
         });
       }
+    }
+  }, {
+    key: "openPopup",
+    value: function openPopup(e) {
+      ReactDOM.render(React.createElement(Popup, { display: "flex", bottom: "0" }), document.getElementById("popup"));
     }
   }, {
     key: "render",
@@ -370,6 +372,15 @@ var Consultation = function (_React$Component4) {
               window.HTMLReactParser(this.state.fieldContent)
             )
           )
+        ),
+        React.createElement(
+          "div",
+          { "class": "wrapper" },
+          React.createElement(
+            "button",
+            { onClick: this.openPopup },
+            "\u0417\u0430\u043F\u0438\u0441\u0430\u0442\u044C\u0441\u044F \u043D\u0430 \u043F\u0440\u0438\u0435\u043C"
+          )
         )
       );
     }
@@ -378,35 +389,133 @@ var Consultation = function (_React$Component4) {
   return Consultation;
 }(React.Component);
 
-var ContentConsultations = function (_React$Component5) {
-  _inherits(ContentConsultations, _React$Component5);
+var Popup = function (_React$Component5) {
+  _inherits(Popup, _React$Component5);
 
-  function ContentConsultations() {
-    _classCallCheck(this, ContentConsultations);
+  function Popup(props) {
+    _classCallCheck(this, Popup);
 
-    return _possibleConstructorReturn(this, (ContentConsultations.__proto__ || Object.getPrototypeOf(ContentConsultations)).apply(this, arguments));
+    var _this5 = _possibleConstructorReturn(this, (Popup.__proto__ || Object.getPrototypeOf(Popup)).call(this, props));
+
+    _this5.ClosePopup = _this5.ClosePopup.bind(_this5);
+    _this5.state = { display: "none", bottom: "0" };
+    console.log("dfg");
+
+    /*
+    this.setState(function(prevState, props) {
+      return {
+      display: props.display,
+      bottom: props.bottom
+      };
+    });
+    */
+
+    return _this5;
   }
 
-  _createClass(ContentConsultations, [{
+  _createClass(Popup, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.setState({
+        display: this.props.display,
+        bottom: this.props.bottom
+      });
+    }
+  }, {
+    key: "ClosePopup",
+    value: function ClosePopup(e) {
+      this.setState({
+        display: "none",
+        bottom: "-700px"
+      });
+
+      ReactDOM.unmountComponentAtNode(document.getElementById("popup"));
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement(
         "div",
         null,
-        "kek"
+        React.createElement(
+          "div",
+          { className: "overlay-popup", style: { display: this.state.display } },
+          React.createElement(
+            "section",
+            { className: "popup", style: { bottom: this.state.bottom } },
+            React.createElement("div", { className: "btn_close", onClick: this.ClosePopup.bind(this) }),
+            React.createElement(
+              "div",
+              { className: "top-bar" },
+              React.createElement(
+                "div",
+                { className: "wrapper" },
+                React.createElement(
+                  "ul",
+                  { className: "" },
+                  React.createElement(
+                    "li",
+                    { className: "active" },
+                    "\u041E\u0431\u0440\u0430\u0442\u043D\u044B\u0439 \u0437\u0432\u043E\u043D\u043E\u043A"
+                  ),
+                  React.createElement(
+                    "li",
+                    null,
+                    "\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u043D\u0430 \u043F\u043E\u0447\u0442\u0443"
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              "div",
+              { className: "form-contain" },
+              React.createElement(
+                "div",
+                { className: "wrapper" },
+                React.createElement(
+                  "p",
+                  null,
+                  "\u041E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u044B \u0438 \u044F \u043F\u0435\u0440\u0435\u0437\u0432\u043E\u043D\u044E \u0412\u0430\u043C \u043A\u0430\u043A \u043C\u043E\u0436\u043D\u043E \u0441\u043A\u043E\u0440\u0435\u0435. \u0418\u043B\u0438 \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 ",
+                  React.createElement(
+                    "a",
+                    { href: "tel:+79670978656" },
+                    "\u043F\u043E\u0437\u0432\u043E\u043D\u0438\u0442\u044C \u043C\u043D\u0435"
+                  ),
+                  " \u0441\u0430\u043C\u043E\u0441\u0442\u043E\u044F\u0442\u0435\u043B\u044C\u043D\u043E."
+                ),
+                React.createElement(
+                  "form",
+                  { method: "POST", action: "" },
+                  React.createElement(
+                    "div",
+                    { className: "callback" },
+                    React.createElement("input", { type: "text", placeholder: "\u0418\u043C\u044F" }),
+                    React.createElement("input", { type: "tel", placeholder: "\u041D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430" })
+                  ),
+                  React.createElement(
+                    "div",
+                    { "class": "emailsend" },
+                    React.createElement("input", { type: "text", placeholder: "\u0418\u043C\u044F" }),
+                    React.createElement("input", { type: "tel", placeholder: "\u041D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430" })
+                  ),
+                  React.createElement("input", { type: "submit", value: "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u044F\u0432\u043A\u0443" })
+                )
+              )
+            )
+          )
+        )
       );
     }
   }]);
 
-  return ContentConsultations;
+  return Popup;
 }(React.Component);
 
 if (window.innerWidth <= 920) {
-  if (window.innerWidth <= 920) {
-    ReactDOM.render(React.createElement(Menu, { itemsMenu: menuItems }), document.getElementById("menu"));
-  } else {
-    ReactDOM.render(React.createElement(MenuDesktop, null), document.getElementById("menu"));
-  }
+
+  ReactDOM.render(React.createElement(Menu, { itemsMenu: menuItems }), document.getElementById("menu"));
+} else {
+  ReactDOM.render(React.createElement(MenuDesktop, null), document.getElementById("menu"));
 }
 
 //menu
@@ -418,6 +527,8 @@ window.addEventListener('resize', function () {
   }
 });
 ReactDOM.render(React.createElement(Consultation, null), document.getElementById("consultationnav"));
+//ReactDOM.render(<Popup  display="none" bottom="-700px"/>, document.getElementById("popup"));
+
 
 /*
   ReactDOM.render(<Hello data={propsValues}/>,

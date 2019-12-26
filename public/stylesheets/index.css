@@ -17,7 +17,7 @@ body {
   clear: both;
 }
 
-.noindentation, .workshops .seminars-item .title h4, .workshops .seminars-item .type, .workshops h2, .individualProgram .orderIndividualProgram p, .individualProgram .orderIndividualProgram h3, .individualProgram .optionsIndividualProgram .options-items .options ul li, .individualProgram .optionsIndividualProgram .options-items .options ul, .individualProgram .optionsIndividualProgram .options-items p, .consultation .body h6, header .bottom-col-1 p, header .title .top-col-1 p, .menu .nav-bar li, .menu .nav-bar {
+.noindentation, .popup .form-contain p, .popup .top-bar ul li, .popup .top-bar ul, .workshops .seminars-item .title h4, .workshops .seminars-item .type, .workshops h2, .individualProgram .orderIndividualProgram p, .individualProgram .orderIndividualProgram h3, .individualProgram .optionsIndividualProgram .options-items .options ul li, .individualProgram .optionsIndividualProgram .options-items .options ul, .individualProgram .optionsIndividualProgram .options-items p, .consultation .body h6, header .bottom-col-1 p, header .title .top-col-1 p, .menu .nav-bar li, .menu .nav-bar {
   margin: 0;
   padding: 0;
 }
@@ -253,7 +253,7 @@ header .bottom-col-1 p span {
   font-weight: 600;
   font-style: normal;
   letter-spacing: 0.02em;
-  color: #ffffff;
+  color: #F4F5F8;
   background-color: #000000;
   border: 0;
 }
@@ -662,10 +662,122 @@ header .bottom-col-1 p span {
   top: 50px;
 }
 
-.popup {
+.overlay-popup {
+  transition: 1.5s !important;
+  background-color: rgba(9, 7, 9, 0.75);
+  height: 100%;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  display: none;
+}
+
+.popup {
+  z-index: 1500;
+  width: 850px;
+  height: 423px;
+  display: flex;
+  flex-direction: column;
+  background: #F4F5F8;
+  position: relative;
+  overflow: hidden;
+  bottom: -700px;
+}
+.popup .top-bar {
+  border-bottom: 0.5px solid rgba(29, 29, 29, 0.25);
+  font-family: "Open Sans";
+  font-size: 18px;
+  line-height: 20px;
+  color: rgba(29, 29, 29, 0.4);
+}
+.popup .top-bar .active {
+  border-bottom: 1px solid #1D1D1D;
+  color: #1D1D1D;
+}
+.popup .top-bar ul {
+  margin-top: 36px;
+}
+.popup .top-bar ul li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 11px;
+  padding-bottom: 8px;
+}
+.popup .top-bar ul li:nth-child(1) {
+  margin-left: 0;
+}
+.popup .form-contain {
+  margin-top: 18px;
+}
+.popup .form-contain p {
+  font-size: 18px;
+  line-height: 23px;
+  width: 79.5%;
+  margin-bottom: 20px;
+}
+.popup .form-contain p a {
+  color: inherit;
+}
+.popup .form-contain input {
+  background-color: none;
+  color: rgba(29, 29, 29, 0.4);
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+  border: none;
+  background-color: #F4F5F8;
+  border-bottom: 0.5px solid rgba(29, 29, 29, 0.25);
+  width: 100%;
+  margin-top: 32px;
+  padding-left: 5px;
+  padding-bottom: 3px;
+}
+.popup .form-contain input:nth-child(1) {
+  margin-top: 0;
+}
+.popup .form-contain input[type=submit] {
+  color: #F4F5F8;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  background-color: #2C2C2C;
+  width: 310px;
+  height: 58px;
+  margin-top: 105px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+}
+.popup .form-contain form {
+  position: relative;
+  height: 211px;
+}
+.popup .form-contain form .callback, .popup .form-contain form .emailsend {
+  position: absolute;
+  transition: 0.5s;
+}
+.popup .form-contain form .emailsend {
+  left: 150%;
+}
+.popup .btn_close {
+  width: 24.01px;
+  height: 24.01px;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  background-image: url("../images/cross.svg");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /*
@@ -873,11 +985,11 @@ header .bottom-col-1 p span {
     height: 35px;
   }
   .menu .wrapper {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
   .menu .wrapper .social-icons {
     display: block;
-    margin-top: 38px;
+    margin-bottom: 38px;
     overflow: hidden;
   }
   .menu .menu_btn {
