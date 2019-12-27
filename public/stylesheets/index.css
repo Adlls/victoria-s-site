@@ -672,7 +672,6 @@ header .bottom-col-1 p span {
   font-weight: bold;
   font-size: 44px;
   line-height: 48px;
-  /* or 48px */
 }
 .feedback .slider {
   position: relative;
@@ -698,7 +697,6 @@ header .bottom-col-1 p span {
   opacity: 0.5;
   height: 50px;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
 }
 .feedback .slider__control_show {
   display: flex;
@@ -725,10 +723,10 @@ header .bottom-col-1 p span {
   background-size: 100% 100%;
 }
 .feedback .slider__control_left::before {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+  background-image: url("../images/left.svg");
 }
 .feedback .slider__control_right::before {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+  background-image: url("../images/right.svg");
 }
 .feedback .slider__item > div {
   line-height: 250px;
