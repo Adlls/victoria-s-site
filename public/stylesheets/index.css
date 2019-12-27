@@ -671,16 +671,14 @@ header .bottom-col-1 p span {
   top: 0;
   left: 0;
   z-index: 1300;
-  display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   display: none;
 }
 
 .popup {
   z-index: 1500;
-  width: 850px;
+  width: 73.5%;
   height: 423px;
   display: flex;
   flex-direction: column;
@@ -708,6 +706,7 @@ header .bottom-col-1 p span {
   list-style: none;
   margin-left: 11px;
   padding-bottom: 8px;
+  cursor: pointer;
 }
 .popup .top-bar ul li:nth-child(1) {
   margin-left: 0;
@@ -778,6 +777,7 @@ header .bottom-col-1 p span {
   background-image: url("../images/cross.svg");
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 /*

@@ -719,10 +719,9 @@ header {
   //z-index: -1300;
   //opacity: 0;
   //transition: 0.5s;
-  display: flex;
+  //display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   display: none;
   
 
@@ -730,13 +729,14 @@ header {
 
 .popup {
   z-index: 1500;
-  width: 850px;
+  width: 73.5%;
   height: 423px;
   display: flex;
   flex-direction: column;
   background: #F4F5F8;
   position: relative;
   overflow: hidden;
+  //bottom: 0;
   bottom: -700px;
   
 
@@ -762,6 +762,7 @@ header {
           list-style: none;
           margin-left: 11px;
           padding-bottom: 8px;
+          cursor: pointer;
         }
 
         li:nth-child(1) {
@@ -836,6 +837,10 @@ header {
        left: 150%;
        //left: 0;
      }
+
+     .callback {
+
+     }
     }
 
 
@@ -850,6 +855,7 @@ header {
     background-image: url("../images/cross.svg");
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
   }
 }
 

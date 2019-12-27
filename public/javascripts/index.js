@@ -249,24 +249,27 @@ var Consultation = function (_React$Component4) {
 
     var _this4 = _possibleConstructorReturn(this, (Consultation.__proto__ || Object.getPrototypeOf(Consultation)).call(this, props));
 
-    _this4.state = { classActive1: "active", classActive2: "", classActive3: "" };
-
-    /*
-    this.state = {
-      content1: "«Я не знаю, как нормально общаться с родителями, они меня достали.» \n «Я себе не нравлюсь, все просто ужасно!» \n «Меня никто не понимает в классе, у меня никогда не было нормальных друзей.» \n «Я не знаю, чем хочу заниматься в будущем, кем стать.» \n и другие многочисленные вопросы.",
-      content2: "«Я уже не знаю, как справляться с этим характером, одна грубость в ответ» \n «Что делать с этой учебой? Очередные тройки и полная безответственность» \n «Я не понимаю, как могу помочь сыну/дочери выбрать профессию.  У него/нее нет особенно выраженных интересов» \n и другие многочисленные вопросы",
-      content3: "«Я совершенно запутался/лась в своей жизни. Очередной одинаковый день. Не знаю, что мне делать» \n «Я давно хочу попробовать себя в самостоятельном бизнесе, но боюсь уходить с работы» \n «Кажется мне грозит увольнение, я постоянно живу на грани стресса» \n «Я не могу найти свое призвание, то дело, которое будет приносить и удовольствие и деньги» \n «Я себе не нравлюсь. У меня все не как у людей» \n и другие многочисленные вопросы по теме личностной и профессиональной самореализации"
+    _this4.state = { classActive1: "active",
+      classActive2: "",
+      classActive3: ""
     };
-    */
+
     _this4.state = {
-      content1: "1",
-      content2: "2",
-      content3: "3"
-    };
+      displayPopup: "none",
+      bottomPopup: "-700px"
 
-    _this4.state = { fieldContent: "«Я не знаю, как нормально общаться с родителями, они меня достали.» <br/> «Я себе не нравлюсь, все просто ужасно!» <br/> «Меня никто не понимает в классе, у меня никогда не было нормальных друзей.» <br/> «Я не знаю, чем хочу заниматься в будущем, кем стать.» <br/> и другие многочисленные вопросы." };
+      /*
+      this.state = {
+        content1: "«Я не знаю, как нормально общаться с родителями, они меня достали.» \n «Я себе не нравлюсь, все просто ужасно!» \n «Меня никто не понимает в классе, у меня никогда не было нормальных друзей.» \n «Я не знаю, чем хочу заниматься в будущем, кем стать.» \n и другие многочисленные вопросы.",
+        content2: "«Я уже не знаю, как справляться с этим характером, одна грубость в ответ» \n «Что делать с этой учебой? Очередные тройки и полная безответственность» \n «Я не понимаю, как могу помочь сыну/дочери выбрать профессию.  У него/нее нет особенно выраженных интересов» \n и другие многочисленные вопросы",
+        content3: "«Я совершенно запутался/лась в своей жизни. Очередной одинаковый день. Не знаю, что мне делать» \n «Я давно хочу попробовать себя в самостоятельном бизнесе, но боюсь уходить с работы» \n «Кажется мне грозит увольнение, я постоянно живу на грани стресса» \n «Я не могу найти свое призвание, то дело, которое будет приносить и удовольствие и деньги» \n «Я себе не нравлюсь. У меня все не как у людей» \n и другие многочисленные вопросы по теме личностной и профессиональной самореализации"
+      };
+      */
+
+    };_this4.state = { fieldContent: "«Я не знаю, как нормально общаться с родителями, они меня достали.» <br/> «Я себе не нравлюсь, все просто ужасно!» <br/> «Меня никто не понимает в классе, у меня никогда не было нормальных друзей.» <br/> «Я не знаю, чем хочу заниматься в будущем, кем стать.» <br/> и другие многочисленные вопросы." };
     _this4.press = _this4.press.bind(_this4);
     _this4.openPopup = _this4.openPopup.bind(_this4);
+    _this4.myRef = React.createRef().current;
     return _this4;
   }
 
@@ -307,6 +310,14 @@ var Consultation = function (_React$Component4) {
   }, {
     key: "openPopup",
     value: function openPopup(e) {
+      //ReactDOM.render(<Popup  display="flex" bottom="0"/>, document.getElementById("popup"));
+
+      this.setState({
+        displayPopup: "flex",
+        bottomPopup: "0"
+      });
+
+      console.log(this.state.bottomPopup);
       ReactDOM.render(React.createElement(Popup, { display: "flex", bottom: "0" }), document.getElementById("popup"));
     }
   }, {
@@ -399,6 +410,14 @@ var Popup = function (_React$Component5) {
 
     _this5.ClosePopup = _this5.ClosePopup.bind(_this5);
     _this5.state = { display: "none", bottom: "0" };
+    _this5.state = {
+      classActive1: "active",
+      classActive2: "",
+      positionForm1: "150%",
+      positionForm2: "0"
+    };
+
+    _this5.press = _this5.press.bind(_this5);
     console.log("dfg");
 
     /*
@@ -428,8 +447,26 @@ var Popup = function (_React$Component5) {
         display: "none",
         bottom: "-700px"
       });
-
       ReactDOM.unmountComponentAtNode(document.getElementById("popup"));
+    }
+  }, {
+    key: "press",
+    value: function press(e) {
+      if (e.target.id === "backcall") {
+        this.setState({
+          classActive1: "active",
+          classActive2: "",
+          positionForm1: "150%",
+          positionForm2: "0"
+        });
+      } else if (e.target.id === "emailsend") {
+        this.setState({
+          classActive1: "",
+          classActive2: "active",
+          positionForm1: "0",
+          positionForm2: "-150%"
+        });
+      }
     }
   }, {
     key: "render",
@@ -452,15 +489,15 @@ var Popup = function (_React$Component5) {
                 { className: "wrapper" },
                 React.createElement(
                   "ul",
-                  { className: "" },
+                  null,
                   React.createElement(
                     "li",
-                    { className: "active" },
+                    { className: this.state.classActive1, onClick: this.press.bind(this), id: "backcall" },
                     "\u041E\u0431\u0440\u0430\u0442\u043D\u044B\u0439 \u0437\u0432\u043E\u043D\u043E\u043A"
                   ),
                   React.createElement(
                     "li",
-                    null,
+                    { className: this.state.classActive2, onClick: this.press.bind(this), id: "emailsend" },
                     "\u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u043D\u0430 \u043F\u043E\u0447\u0442\u0443"
                   )
                 )
@@ -488,15 +525,15 @@ var Popup = function (_React$Component5) {
                   { method: "POST", action: "" },
                   React.createElement(
                     "div",
-                    { className: "callback" },
+                    { className: "callback", style: { left: this.state.positionForm2 } },
                     React.createElement("input", { type: "text", placeholder: "\u0418\u043C\u044F" }),
                     React.createElement("input", { type: "tel", placeholder: "\u041D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430" })
                   ),
                   React.createElement(
                     "div",
-                    { "class": "emailsend" },
+                    { "class": "emailsend", style: { left: this.state.positionForm1 } },
                     React.createElement("input", { type: "text", placeholder: "\u0418\u043C\u044F" }),
-                    React.createElement("input", { type: "tel", placeholder: "\u041D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430" })
+                    React.createElement("input", { type: "email", placeholder: "Email" })
                   ),
                   React.createElement("input", { type: "submit", value: "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u044F\u0432\u043A\u0443" })
                 )

@@ -154,7 +154,15 @@ class Consultation extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {classActive1: "active", classActive2: "", classActive3:""};
+    this.state = {classActive1: "active", 
+                  classActive2: "", 
+                  classActive3:""
+  };
+
+  this.state = {
+    displayPopup: "none",
+    bottomPopup: "-700px"
+  }
     
     /*
     this.state = {
@@ -163,15 +171,12 @@ class Consultation extends React.Component {
       content3: "«Я совершенно запутался/лась в своей жизни. Очередной одинаковый день. Не знаю, что мне делать» \n «Я давно хочу попробовать себя в самостоятельном бизнесе, но боюсь уходить с работы» \n «Кажется мне грозит увольнение, я постоянно живу на грани стресса» \n «Я не могу найти свое призвание, то дело, которое будет приносить и удовольствие и деньги» \n «Я себе не нравлюсь. У меня все не как у людей» \n и другие многочисленные вопросы по теме личностной и профессиональной самореализации"
   };
   */
- this.state = {
-   content1: "1",
-   content2: "2",
-   content3: "3"
- };
+ 
   
     this.state = {fieldContent: "«Я не знаю, как нормально общаться с родителями, они меня достали.» <br/> «Я себе не нравлюсь, все просто ужасно!» <br/> «Меня никто не понимает в классе, у меня никогда не было нормальных друзей.» <br/> «Я не знаю, чем хочу заниматься в будущем, кем стать.» <br/> и другие многочисленные вопросы." };
     this.press = this.press.bind(this);
     this.openPopup = this.openPopup.bind(this);
+    this.myRef = React.createRef().current;
   }
 
   componentWillMount() {
@@ -212,8 +217,15 @@ class Consultation extends React.Component {
   }  
 
   openPopup(e) {
+    //ReactDOM.render(<Popup  display="flex" bottom="0"/>, document.getElementById("popup"));
+  
+      this.setState({
+        displayPopup: "flex",
+        bottomPopup: "0"
+      });
+    
+    console.log(this.state.bottomPopup);
     ReactDOM.render(<Popup  display="flex" bottom="0"/>, document.getElementById("popup"));
-
   }
 
   render() {
@@ -264,6 +276,14 @@ class Popup extends React.Component {
     super(props);
     this.ClosePopup = this.ClosePopup.bind(this);
     this.state = {display: "none", bottom: "0"};
+    this.state = {
+      classActive1: "active",
+      classActive2: "",
+      positionForm1: "150%",
+      positionForm2: "0"
+    };
+ 
+    this.press = this.press.bind(this);
     console.log("dfg");
 
     /*
@@ -289,10 +309,28 @@ class Popup extends React.Component {
       display: "none",
       bottom: "-700px"
     });
-
     ReactDOM.unmountComponentAtNode(document.getElementById("popup"));
-
   }  
+
+  press(e) {
+    if(e.target.id === "backcall") {
+      this.setState({
+        classActive1: "active",
+        classActive2: "",
+        positionForm1: "150%",
+        positionForm2: "0"
+      });
+      
+    }
+    else if (e.target.id === "emailsend") {
+      this.setState({
+        classActive1: "",
+        classActive2: "active",
+        positionForm1: "0",
+        positionForm2: "-150%"
+      });
+    }
+  }
 
   render() { 
     return (
@@ -302,9 +340,9 @@ class Popup extends React.Component {
                   <div className="btn_close" onClick={this.ClosePopup.bind(this)}></div>
                   <div className="top-bar">
                     <div className="wrapper">
-                      <ul className="">
-                        <li className="active">Обратный звонок</li>
-                        <li>Написать на почту</li>
+                      <ul>
+                        <li className={this.state.classActive1} onClick={this.press.bind(this)} id="backcall">Обратный звонок</li>
+                        <li className={this.state.classActive2} onClick={this.press.bind(this)} id="emailsend">Написать на почту</li>
                       </ul>
                     </div>
                   </div>
@@ -315,13 +353,13 @@ class Popup extends React.Component {
                         Или Вы можете <a href="tel:+79670978656">позвонить мне</a> самостоятельно.
                       </p>
                       <form method="POST" action="">
-                        <div className="callback">
+                        <div className="callback" style={{left:  this.state.positionForm2}}>
                           <input type="text" placeholder="Имя"/>
                           <input type="tel" placeholder="Номер телефона"/>
                         </div>
-                        <div class="emailsend">
+                        <div class="emailsend" style={{left: this.state.positionForm1}}>
                           <input type="text" placeholder="Имя"/>
-                          <input type="tel" placeholder="Номер телефона"/>
+                          <input type="email" placeholder="Email"/>
                         </div>
                         <input type="submit" value="Отправить заявку"/> 
                       </form>            
