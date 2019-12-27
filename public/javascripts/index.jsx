@@ -223,9 +223,11 @@ class Consultation extends React.Component {
         displayPopup: "flex",
         bottomPopup: "0"
       });
-    
-    console.log(this.state.bottomPopup);
+        
     ReactDOM.render(<Popup  display="flex" bottom="0"/>, document.getElementById("popup"));
+    document.querySelector('body').style.overflow = "hidden";
+
+
   }
 
   render() {
@@ -310,6 +312,8 @@ class Popup extends React.Component {
       bottom: "-700px"
     });
     ReactDOM.unmountComponentAtNode(document.getElementById("popup"));
+    document.querySelector('body').style.overflow = "scroll";
+
   }  
 
   press(e) {
@@ -317,7 +321,7 @@ class Popup extends React.Component {
       this.setState({
         classActive1: "active",
         classActive2: "",
-        positionForm1: "150%",
+        positionForm1: "180%",
         positionForm2: "0"
       });
       
@@ -327,7 +331,7 @@ class Popup extends React.Component {
         classActive1: "",
         classActive2: "active",
         positionForm1: "0",
-        positionForm2: "-150%"
+        positionForm2: "-180%"
       });
     }
   }
@@ -335,7 +339,8 @@ class Popup extends React.Component {
   render() { 
     return (
         <div>
-                <div className="overlay-popup" style={{display: this.state.display}}>
+            <div className="overlay-popup" style={{display: this.state.display}}>
+                  <div class="btnBackClose" onClick={this.ClosePopup}></div>
               <section className="popup" style={{bottom: this.state.bottom}}> 
                   <div className="btn_close" onClick={this.ClosePopup.bind(this)}></div>
                   <div className="top-bar">

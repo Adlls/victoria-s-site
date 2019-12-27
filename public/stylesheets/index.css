@@ -4,6 +4,7 @@ body {
   color: #090709;
   font-family: "Didact Gothic";
   min-width: 320px;
+  overflow: scroll;
 }
 
 .wrapper {
@@ -676,9 +677,19 @@ header .bottom-col-1 p span {
   display: none;
 }
 
+.btnBackClose {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  z-index: 1500;
+  position: fixed;
+  cursor: pointer;
+}
+
 .popup {
   z-index: 1500;
   width: 73.5%;
+  min-width: 310px;
   height: 423px;
   display: flex;
   flex-direction: column;
@@ -1169,6 +1180,37 @@ header .bottom-col-1 p span {
   }
 }
 @media screen and (max-width: 670px) {
+  .popup {
+    width: 95.5%;
+  }
+  .popup .btn_close {
+    top: 21px;
+    right: 15px;
+    width: 23.97px;
+    height: 13.41px;
+    background-image: url("../images/arrow.svg");
+  }
+  .popup .top-bar ul li {
+    font-size: 16px;
+  }
+  .popup .form-contain p {
+    font-size: 16px;
+    line-height: 21px;
+    width: 85.5%;
+  }
+  .popup .form-contain form {
+    display: flex;
+    bottom: 0;
+    justify-content: center;
+  }
+  .popup .form-contain form input[type=submit] {
+    bottom: 10px;
+    width: 320px;
+    height: 52px;
+    font-size: 18px;
+    line-height: 25px;
+  }
+
   .wrapper {
     width: 90%;
   }
@@ -1305,6 +1347,11 @@ header .bottom-col-1 p span {
   }
 }
 @media screen and (max-width: 420px) {
+  .popup .top-bar ul li {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
   header {
     background-size: 450px;
     min-height: 625px;

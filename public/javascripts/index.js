@@ -317,8 +317,8 @@ var Consultation = function (_React$Component4) {
         bottomPopup: "0"
       });
 
-      console.log(this.state.bottomPopup);
       ReactDOM.render(React.createElement(Popup, { display: "flex", bottom: "0" }), document.getElementById("popup"));
+      document.querySelector('body').style.overflow = "hidden";
     }
   }, {
     key: "render",
@@ -448,6 +448,7 @@ var Popup = function (_React$Component5) {
         bottom: "-700px"
       });
       ReactDOM.unmountComponentAtNode(document.getElementById("popup"));
+      document.querySelector('body').style.overflow = "scroll";
     }
   }, {
     key: "press",
@@ -456,7 +457,7 @@ var Popup = function (_React$Component5) {
         this.setState({
           classActive1: "active",
           classActive2: "",
-          positionForm1: "150%",
+          positionForm1: "180%",
           positionForm2: "0"
         });
       } else if (e.target.id === "emailsend") {
@@ -464,7 +465,7 @@ var Popup = function (_React$Component5) {
           classActive1: "",
           classActive2: "active",
           positionForm1: "0",
-          positionForm2: "-150%"
+          positionForm2: "-180%"
         });
       }
     }
@@ -477,6 +478,7 @@ var Popup = function (_React$Component5) {
         React.createElement(
           "div",
           { className: "overlay-popup", style: { display: this.state.display } },
+          React.createElement("div", { "class": "btnBackClose", onClick: this.ClosePopup }),
           React.createElement(
             "section",
             { className: "popup", style: { bottom: this.state.bottom } },
