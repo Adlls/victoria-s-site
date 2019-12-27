@@ -1,22 +1,32 @@
-var path = require('path');
- 
+const path = require("path");
+const webpack = require('webpack');
+
 module.exports = {
-    entry: "./public/app/app.jsx", // входная точка - исходный файл
-    output:{
-        path: path.resolve(__dirname, './public'),     // путь к каталогу выходных файлов - папка public
-        publicPath: '/public/',
-        filename: "./javascripts/index.js"       // название создаваемого файла
-    },
-    module:{
-        rules:[   //загрузчик для jsx
-            {
-                test: /\.jsx?$/, // определяем тип файлов
-                exclude: /(node_modules)/,  // исключаем из обработки папку node_modules
-                loader: "babel-loader",   // определяем загрузчик
-                options:{
-                    presets:["@babel/preset-env", "@babel/preset-react"]    // используемые плагины
-                }
+    entry: path.join(__dirname, "public/javascripts/", "index.jsx"),
+    module: {
+        rules: [
+          {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: {
+              loader: "babel-loader"
             }
+          }
         ]
+    },
+    resolve: {
+        extensions: ['*', '.js', '.jsx']
+    },
+    output: {
+        path: path.join(__dirname, "public"),
+        filename: "javascripts/index.js",
+        publicPath: "/"
+    }, 
+    plugins: [
+        new webpack.HotModuleReplacementPlugin()
+    ],
+    devServer: {
+        hot: true,
+        historyApiFallback: true
     }
-}
+};

@@ -1,20 +1,24 @@
 
-const propsSocials = [
+//import React from '../../node_modules/umd/react.development.js';
+//import ReactDOM from '../../node_modules/umd/react-dom.development.js';
+
+//const { window } = window;
+const propsSocials = [ 
   {   img: "../../images/zen.svg",
       href: "#"
   },
 
-  {
-      img: "../../images/inst.svg",
+  { 
+      img: "../../images/inst.svg", 
       href: "#"
-  },
+  },  
 
   {
       img: "../../images/fb.svg",
       href: "#"
   },
   {
-    img: "../../images/whatsup.svg",
+    img: "../../images/whatsup.svg",     
     href: "#"
   },
   {
@@ -54,6 +58,7 @@ const menuItems = [
 
 
 class Social extends React.Component {
+  
   render() {
     return (
       <div className="social-icons" style={{height: this.props.heightSocials, opacity: "1"}}> 
@@ -272,6 +277,43 @@ class Consultation extends React.Component {
 
 }
 
+class Feedback extends React.Component {
+  render() {
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+    return (
+      <div>
+      <h2>Отзывы клиентов</h2>
+      <Slider {...settings}>
+        <div>
+          <h3>1</h3>
+        </div>
+        <div>
+          <h3>2</h3>
+        </div>
+        <div>
+          <h3>3</h3>
+        </div>
+        <div>
+          <h3>4</h3>
+        </div>
+        <div>
+          <h3>5</h3>
+        </div>
+        <div>
+          <h3>6</h3>
+        </div>
+      </Slider>
+      </div>
+    );
+  }
+}
+
 class Popup extends React.Component {
 
   constructor(props) {
@@ -400,7 +442,7 @@ window.addEventListener('resize', function(){
 });
 ReactDOM.render(<Consultation/>, document.getElementById("consultationnav"));
 //ReactDOM.render(<Popup  display="none" bottom="-700px"/>, document.getElementById("popup"));
-
+//ReactDOM.render(<Feedback/>, document.getElementById("feedback"));
 
 /*
   ReactDOM.render(<Hello data={propsValues}/>,

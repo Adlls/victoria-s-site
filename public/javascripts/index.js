@@ -8,6 +8,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+//import React from '../../node_modules/umd/react.development.js';
+//import ReactDOM from '../../node_modules/umd/react-dom.development.js';
+
+//const { window } = window;
 var propsSocials = [{ img: "../../images/zen.svg",
   href: "#"
 }, {
@@ -400,24 +404,116 @@ var Consultation = function (_React$Component4) {
   return Consultation;
 }(React.Component);
 
-var Popup = function (_React$Component5) {
-  _inherits(Popup, _React$Component5);
+var Feedback = function (_React$Component5) {
+  _inherits(Feedback, _React$Component5);
+
+  function Feedback() {
+    _classCallCheck(this, Feedback);
+
+    return _possibleConstructorReturn(this, (Feedback.__proto__ || Object.getPrototypeOf(Feedback)).apply(this, arguments));
+  }
+
+  _createClass(Feedback, [{
+    key: "render",
+    value: function render() {
+      var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(
+          "h2",
+          null,
+          "\u041E\u0442\u0437\u044B\u0432\u044B \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432"
+        ),
+        React.createElement(
+          Slider,
+          settings,
+          React.createElement(
+            "div",
+            null,
+            React.createElement(
+              "h3",
+              null,
+              "1"
+            )
+          ),
+          React.createElement(
+            "div",
+            null,
+            React.createElement(
+              "h3",
+              null,
+              "2"
+            )
+          ),
+          React.createElement(
+            "div",
+            null,
+            React.createElement(
+              "h3",
+              null,
+              "3"
+            )
+          ),
+          React.createElement(
+            "div",
+            null,
+            React.createElement(
+              "h3",
+              null,
+              "4"
+            )
+          ),
+          React.createElement(
+            "div",
+            null,
+            React.createElement(
+              "h3",
+              null,
+              "5"
+            )
+          ),
+          React.createElement(
+            "div",
+            null,
+            React.createElement(
+              "h3",
+              null,
+              "6"
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Feedback;
+}(React.Component);
+
+var Popup = function (_React$Component6) {
+  _inherits(Popup, _React$Component6);
 
   function Popup(props) {
     _classCallCheck(this, Popup);
 
-    var _this5 = _possibleConstructorReturn(this, (Popup.__proto__ || Object.getPrototypeOf(Popup)).call(this, props));
+    var _this6 = _possibleConstructorReturn(this, (Popup.__proto__ || Object.getPrototypeOf(Popup)).call(this, props));
 
-    _this5.ClosePopup = _this5.ClosePopup.bind(_this5);
-    _this5.state = { display: "none", bottom: "0" };
-    _this5.state = {
+    _this6.ClosePopup = _this6.ClosePopup.bind(_this6);
+    _this6.state = { display: "none", bottom: "0" };
+    _this6.state = {
       classActive1: "active",
       classActive2: "",
       positionForm1: "150%",
       positionForm2: "0"
     };
 
-    _this5.press = _this5.press.bind(_this5);
+    _this6.press = _this6.press.bind(_this6);
     console.log("dfg");
 
     /*
@@ -429,7 +525,7 @@ var Popup = function (_React$Component5) {
     });
     */
 
-    return _this5;
+    return _this6;
   }
 
   _createClass(Popup, [{
@@ -567,7 +663,7 @@ window.addEventListener('resize', function () {
 });
 ReactDOM.render(React.createElement(Consultation, null), document.getElementById("consultationnav"));
 //ReactDOM.render(<Popup  display="none" bottom="-700px"/>, document.getElementById("popup"));
-
+//ReactDOM.render(<Feedback/>, document.getElementById("feedback"));
 
 /*
   ReactDOM.render(<Hello data={propsValues}/>,
