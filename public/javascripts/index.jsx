@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
 const propsSocials = [ 
   {   img: "../../images/zen.svg",
@@ -278,66 +278,40 @@ class Consultation extends React.Component {
 }
 
 class Feedback extends React.Component {
+
   render() {
-    var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
     return (
-      
-
-
-          <Carousel centerMode centerSlidePercentage={50} emulateTouch>
+    <div>   
+      <div className="wrapper">  
+        <h2>Отзывы клиентов</h2>
+          <AwesomeSlider>
                 <div>
-                <img src="/assets/1.jpeg" />
-                <p className="legend">
-                Legend 
-                function String() {
-
-                }
-                </p>
+                  <div class="body-comment">
+                      Я себя знаю! И вас всех знаю
+                  </div>
+                  <div class="about-comment">Марина, 31 год</div>
                 </div>
                 <div>
-                <img src="/assets/2.jpeg" />
-                <p className="legend">
-                Legend 
-                function String() {
-
-                }
-                </p>
+                  <div class="body-comment">
+                      Я себя знаю! И вас всех знаю
+                  </div>
+                  <div class="about-comment">Марина, 31 год</div>
                 </div>
                 <div>
-                <img src="/assets/3.jpeg" />
-                <p className="legend">
-                Legend 
-                function String() {
-                  
-                }
-                </p>
+                  <div class="body-comment">
+                        Я себя знаю! И вас всех знаю
+                  </div>
+                  <div class="about-comment">Марина, 31 год</div>
                 </div>
                 <div>
-                <img src="/assets/4.jpeg" />
-                <p className="legend">
-                Legend 
-                function String() {
-                  
-                }
-                </p>
+                  <div class="body-comment">
+                        Я себя знаю! И вас всех знаю
+                    </div>
+                    <div class="about-comment">Марина, 31 год</div>
                 </div>
-                <div>
-                <img src="/assets/5.jpeg" />
-                <p className="legend">
-                Legend 
-                function String() {
-                    
-                }
-                </p>
-                </div>
-    </Carousel>
-
+          </AwesomeSlider>
+       </div>
+    </div> 
     );
   }
 }

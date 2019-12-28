@@ -15,6 +15,7 @@
     "dotenv": "^8.2.0",
     "express": "~4.16.1",
     "express-handlebars": "^3.1.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "handlebars-helpers": "^0.10.0",
     "hbs": "^4.0.6",
     "html-react-parser": "^0.10.0",
@@ -25,14 +26,17 @@
     "mongoose": "^5.7.12",
     "mongose": "0.0.2-security",
     "morgan": "~1.9.1",
+    "node-sass": "^4.13.0",
     "nodemon": "^2.0.1",
     "owl.carousel": "^2.3.4",
     "popper.js": "^1.16.0",
     "pure-react-carousel": "^1.24.1",
     "react": "^16.12.0",
     "react-animations": "^1.0.0",
+    "react-awesome-slider": "^2.4.0",
     "react-dom": "^16.12.0",
-    "react-responsive-carousel": "^3.1.51"
+    "react-responsive-carousel": "^3.1.51",
+    "sass-loader": "^8.0.0"
   },
   "babel": {
     "presets": [
