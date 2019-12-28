@@ -717,6 +717,7 @@ header {
     font-weight: bold;
     font-size: 44px;
     line-height: 48px;
+    margin-bottom: 30px;
   }
   .slider {
     position: relative;
@@ -786,9 +787,51 @@ header {
   }
 
   .slider__item>div {
-    line-height: 250px;
-    font-size: 100px;
+    //line-height: 250px;
+    //font-size: 100px;
     text-align: center;
+    .body-comment {
+      font-size: 26px;
+      line-height: 28px;
+      color: #2C2C2C;
+      font-family: 'Open Sans';
+      font-style: normal; 
+      margin-bottom: 72px;
+      margin-top: 50px;
+    }
+    .about-comment {
+      font-family: 'Didact Gothic';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 22px;
+      color: rgba(44, 44, 44, 0.75);
+    }
+  }
+  .carousel {
+    border: 1px solid black;
+    width: 100%;
+    overflow: hidden;
+    font-size: 0;
+    //position: relative;
+    
+    .wrapper-carousel {
+      display: flex;
+      width: 150%;
+    }
+
+    div {
+      border: 1px solid black;
+      width: 326.37px;
+      height: 200px;
+      margin-left: 20px;
+    }
+
+    div:nth-child(1) {
+      margin-left: 0;
+    }
+
+    
   }
 }
 
@@ -862,6 +905,8 @@ header {
           margin-left: 0;
         }
       }
+
+
 
   }
 
@@ -1397,6 +1442,14 @@ header {
 }
 
 @media screen and (max-width: 670px) {
+
+
+  .feedback {
+    h2 {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
 
   .popup {
     width: 95.5%;

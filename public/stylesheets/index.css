@@ -672,6 +672,7 @@ header .bottom-col-1 p span {
   font-weight: bold;
   font-size: 44px;
   line-height: 48px;
+  margin-bottom: 30px;
 }
 .feedback .slider {
   position: relative;
@@ -729,9 +730,43 @@ header .bottom-col-1 p span {
   background-image: url("../images/right.svg");
 }
 .feedback .slider__item > div {
-  line-height: 250px;
-  font-size: 100px;
   text-align: center;
+}
+.feedback .slider__item > div .body-comment {
+  font-size: 26px;
+  line-height: 28px;
+  color: #2C2C2C;
+  font-family: "Open Sans";
+  font-style: normal;
+  margin-bottom: 72px;
+  margin-top: 50px;
+}
+.feedback .slider__item > div .about-comment {
+  font-family: "Didact Gothic";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 22px;
+  color: rgba(44, 44, 44, 0.75);
+}
+.feedback .carousel {
+  border: 1px solid black;
+  width: 100%;
+  overflow: hidden;
+  font-size: 0;
+}
+.feedback .carousel .wrapper-carousel {
+  display: flex;
+  width: 150%;
+}
+.feedback .carousel div {
+  border: 1px solid black;
+  width: 326.37px;
+  height: 200px;
+  margin-left: 20px;
+}
+.feedback .carousel div:nth-child(1) {
+  margin-left: 0;
 }
 
 .overlay-popup {
@@ -1252,6 +1287,11 @@ header .bottom-col-1 p span {
   }
 }
 @media screen and (max-width: 670px) {
+  .feedback h2 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
   .popup {
     width: 95.5%;
   }

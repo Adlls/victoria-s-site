@@ -1,8 +1,8 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
-//import React from '../../node_modules/umd/react.development.js';
-//import ReactDOM from '../../node_modules/umd/react-dom.development.js';
-
-//const { window } = window;
 const propsSocials = [ 
   {   img: "../../images/zen.svg",
       href: "#"
@@ -135,10 +135,10 @@ class MenuDesktop extends React.Component {
   render() {
     return (
       <div>
-        <section class="menu" id="menu">
- <div class="wrapper">
-      <ul class="nav-bar">
-        <li class="active"><a href="#header">Главная</a></li>
+        <section className="menu" id="menu">
+ <div className="wrapper">
+      <ul className="nav-bar">
+        <li className="active"><a href="#header">Главная</a></li>
         <li><a href="#consultation">Консультации</a></li>
         <li><a href="#about">Обо мне</a></li>
         <li><a href="#workshops">Мастер-классы</a></li>
@@ -256,8 +256,8 @@ class Consultation extends React.Component {
         </nav>
       </div>
 
-      <div class="wrapper">
-       <div class="body">
+      <div className="wrapper">
+       <div className="body">
         <h6>Ко мне обращаются, если думают:</h6>
           <p>        
       
@@ -266,7 +266,7 @@ class Consultation extends React.Component {
           </p>
       </div>
     </div>
-    <div class="wrapper">
+    <div className="wrapper">
         <button onClick={this.openPopup}>Записаться на прием</button>
     </div>
   </div>    
@@ -287,29 +287,57 @@ class Feedback extends React.Component {
       slidesToScroll: 1
     };
     return (
-      <div>
-      <h2>Отзывы клиентов</h2>
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
-      </div>
+      
+
+
+          <Carousel centerMode centerSlidePercentage={50} emulateTouch>
+                <div>
+                <img src="/assets/1.jpeg" />
+                <p className="legend">
+                Legend 
+                function String() {
+
+                }
+                </p>
+                </div>
+                <div>
+                <img src="/assets/2.jpeg" />
+                <p className="legend">
+                Legend 
+                function String() {
+
+                }
+                </p>
+                </div>
+                <div>
+                <img src="/assets/3.jpeg" />
+                <p className="legend">
+                Legend 
+                function String() {
+                  
+                }
+                </p>
+                </div>
+                <div>
+                <img src="/assets/4.jpeg" />
+                <p className="legend">
+                Legend 
+                function String() {
+                  
+                }
+                </p>
+                </div>
+                <div>
+                <img src="/assets/5.jpeg" />
+                <p className="legend">
+                Legend 
+                function String() {
+                    
+                }
+                </p>
+                </div>
+    </Carousel>
+
     );
   }
 }
@@ -382,7 +410,7 @@ class Popup extends React.Component {
     return (
         <div>
             <div className="overlay-popup" style={{display: this.state.display}}>
-                  <div class="btnBackClose" onClick={this.ClosePopup}></div>
+                  <div className="btnBackClose" onClick={this.ClosePopup}></div>
               <section className="popup" style={{bottom: this.state.bottom}}> 
                   <div className="btn_close" onClick={this.ClosePopup.bind(this)}></div>
                   <div className="top-bar">
@@ -404,7 +432,7 @@ class Popup extends React.Component {
                           <input type="text" placeholder="Имя"/>
                           <input type="tel" placeholder="Номер телефона"/>
                         </div>
-                        <div class="emailsend" style={{left: this.state.positionForm1}}>
+                        <div className="emailsend" style={{left: this.state.positionForm1}}>
                           <input type="text" placeholder="Имя"/>
                           <input type="email" placeholder="Email"/>
                         </div>
@@ -442,7 +470,7 @@ window.addEventListener('resize', function(){
 });
 ReactDOM.render(<Consultation/>, document.getElementById("consultationnav"));
 //ReactDOM.render(<Popup  display="none" bottom="-700px"/>, document.getElementById("popup"));
-//ReactDOM.render(<Feedback/>, document.getElementById("feedback"));
+ReactDOM.render(<Feedback/>, document.getElementById("feedback"));
 
 /*
   ReactDOM.render(<Hello data={propsValues}/>,
