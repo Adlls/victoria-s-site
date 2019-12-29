@@ -18,7 +18,7 @@ body {
   clear: both;
 }
 
-.noindentation, .popup .form-contain p, .popup .top-bar ul li, .popup .top-bar ul, .workshops .seminars-item .title h4, .workshops .seminars-item .type, .workshops h2, .individualProgram .orderIndividualProgram p, .individualProgram .orderIndividualProgram h3, .individualProgram .optionsIndividualProgram .options-items .options ul li, .individualProgram .optionsIndividualProgram .options-items .options ul, .individualProgram .optionsIndividualProgram .options-items p, .consultation .body h6, header .bottom-col-1 p, header .title .top-col-1 p, .menu .nav-bar li, .menu .nav-bar {
+.noindentation, .popup .form-contain p, .popup .top-bar ul li, .popup .top-bar ul, .workshops .seminars-item .title h4, .workshops .seminars-item .type, .workshops .alice-carousel .item h2, .workshops h2, .individualProgram .orderIndividualProgram p, .individualProgram .orderIndividualProgram h3, .individualProgram .optionsIndividualProgram .options-items .options ul li, .individualProgram .optionsIndividualProgram .options-items .options ul, .individualProgram .optionsIndividualProgram .options-items p, .consultation .body h6, header .bottom-col-1 p, header .title .top-col-1 p, .menu .nav-bar li, .menu .nav-bar {
   margin: 0;
   padding: 0;
 }
@@ -464,6 +464,64 @@ header .bottom-col-1 p span {
   font-weight: bold;
   font-style: normal;
   width: 80%;
+}
+.workshops .alice-carousel {
+  margin-top: 64px;
+}
+.workshops .alice-carousel .alice-carousel__dots {
+  display: none;
+}
+.workshops .alice-carousel .alice-carousel__slide-info {
+  background-color: transparent;
+  color: #000000;
+}
+.workshops .alice-carousel .alice-carousel__prev-btn {
+  width: auto;
+}
+.workshops .alice-carousel span[data-area=prev]:after, .workshops .alice-carousel span[data-area=next]:after {
+  color: transparent;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("../images/left.svg");
+}
+.workshops .alice-carousel span[data-area=prev]:after {
+  background-image: url("../images/left.svg");
+}
+.workshops .alice-carousel span[data-area=next]:after {
+  background-image: url("../images/right.svg");
+}
+.workshops .alice-carousel .item {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 363px;
+  margin-left: 20px !important;
+}
+.workshops .alice-carousel .item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50.14%, #000000 100%);
+}
+.workshops .alice-carousel .item h2 {
+  color: #ffffff;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 35px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 16px;
+}
+.workshops .alice-carousel .first-item {
+  margin-left: 0 !important;
 }
 .workshops .seminars {
   margin-top: 36px;

@@ -297,25 +297,63 @@ var images =
     }
   ]
  
+class Workshops extends React.Component {
+
+  render() {
+    return (
+      <div>
+        <div className="wrapper">
+            <h2>
+              Мастер-классы, тренинги, семинары
+            </h2>
+            <AliceCarousel className="aliceCarousel-custome"
+            showSlideInfo={true}
+            preventEventOnTouchMove={true}
+            mouseTrackingEnabled={true}
+            onSlideChanged={console.debug}
+            responsive={ {
+              0: { items: 1 },
+              1150: { items: 2 }
+            }}
+            infinite={false}
+            stagePadding={{ 
+              paddingLeft: 0,
+              paddingRight: 0,
+            }}
+        >
+          <div className="item first-item" style={{backgroundImage: "url(../images/workshops/mama.jpeg)"}}>   
+            <h2>Профессия — <br/> современная мама</h2>     
+          </div>
+
+          <div className="item" style={{backgroundImage: "url(../images/workshops/grow.jpeg)"}}>
+            <h2>Развитие нестандартного мышления</h2>        
+          </div>
+
+          <div className="item" style={{backgroundImage: "url(../images/workshops/doit.jpeg)"}}>
+          </div>
+
+          <div className="item" style={{backgroundImage: "url(../images/workshops/rooms.jpeg)"}}>
+          </div>
+        </AliceCarousel>
+          </div>
+      </div>
+    );
+  }
+}
+
 
 class Feedback extends React.Component {
 
   constructor(props) {
     super(props);
-    /*
-    state = { mouseTrackingEnabled: true, preventEventOnTouchMove: true };
-    responsive = {
-      0: { items: 1 },
-      600: { items: 2 },
-      960: { items: 3 },
-    };
-     this.state.stagePadding = { 
-    paddingLeft: 30,
-    paddingRight: 30,
-  };
+    
+    this.openPhoto = this.openPhoto.bind(this);
 
-    */
+  }
 
+
+  openPhoto(photo, e) {
+    //alert(param);
   }
 
   render() {
@@ -368,7 +406,7 @@ class Feedback extends React.Component {
               paddingRight: 30,
             }}
         >
-          <div className="item" style={{backgroundImage: "url(../images/feedback/78320317_2687143148018400_7610244365574733824_n.jpg)"}}>        
+          <div onClick={this.openPhoto.bind(this,"")} className="item" style={{backgroundImage: "url(../images/feedback/78320317_2687143148018400_7610244365574733824_n.jpg)"}}>        
           </div>
 
           <div className="item" style={{backgroundImage: "url(../images/feedback/69174188_2501528919913158_5178687620657446912_o.jpg)"}}>   
@@ -516,7 +554,7 @@ window.addEventListener('resize', function(){
 ReactDOM.render(<Consultation/>, document.getElementById("consultationnav"));
 //ReactDOM.render(<Popup  display="none" bottom="-700px"/>, document.getElementById("popup"));
 ReactDOM.render(<Feedback/>, document.getElementById("feedback"));
-
+ReactDOM.render(<Workshops />, document.getElementById("workshops"));
 /*
   ReactDOM.render(<Hello data={propsValues}/>,
     document.getElementById("app")
