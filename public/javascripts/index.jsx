@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
-
+import "react-alice-carousel/lib/alice-carousel.css";
+import AliceCarousel from 'react-alice-carousel';
 const propsSocials = [ 
   {   img: "../../images/zen.svg",
       href: "#"
@@ -277,40 +278,110 @@ class Consultation extends React.Component {
 
 }
 
+var images = 
+  [
+    {
+      src: '../images/feedback/78320317_2687143148018400_7610244365574733824_n.jpg',
+      title: 'image title',
+      description: 'image description'
+    },
+    {
+      src: '../images/feedback/69174188_2501528919913158_5178687620657446912_o.jpg',
+      title: 'image title',
+      description: 'image description'
+    },
+    {
+      src: '../images/feedback/73245051_111877630240012_7098482635546034176_o.jpg',
+      title: 'image title',
+      description: 'image description'
+    }
+  ]
+ 
+
 class Feedback extends React.Component {
 
+  constructor(props) {
+    super(props);
+    /*
+    state = { mouseTrackingEnabled: true, preventEventOnTouchMove: true };
+    responsive = {
+      0: { items: 1 },
+      600: { items: 2 },
+      960: { items: 3 },
+    };
+     this.state.stagePadding = { 
+    paddingLeft: 30,
+    paddingRight: 30,
+  };
+
+    */
+
+  }
+
   render() {
+   // const { mouseTrackingEnabled, preventEventOnTouchMove } = this.state;
+
     return (
     <div>   
       <div className="wrapper">  
         <h2>Отзывы клиентов</h2>
           <AwesomeSlider>
                 <div>
-                  <div class="body-comment">
+                  <div className="body-comment">
                       Я себя знаю! И вас всех знаю
                   </div>
-                  <div class="about-comment">Марина, 31 год</div>
+                  <div className="about-comment">Марина, 31 год</div>
                 </div>
                 <div>
-                  <div class="body-comment">
+                  <div className="body-comment">
                       Я себя знаю! И вас всех знаю
                   </div>
-                  <div class="about-comment">Марина, 31 год</div>
+                  <div className="about-comment">Марина, 31 год</div>
                 </div>
                 <div>
-                  <div class="body-comment">
+                  <div className="body-comment">
                         Я себя знаю! И вас всех знаю
                   </div>
-                  <div class="about-comment">Марина, 31 год</div>
+                  <div className="about-comment">Марина, 31 год</div>
                 </div>
                 <div>
-                  <div class="body-comment">
+                  <div className="body-comment">
                         Я себя знаю! И вас всех знаю
                     </div>
-                    <div class="about-comment">Марина, 31 год</div>
+                    <div className="about-comment">Марина, 31 год</div>
                 </div>
           </AwesomeSlider>
-       </div>
+        </div>
+          <AliceCarousel className="aliceCarousel-custome"
+            showSlideInfo={true}
+            preventEventOnTouchMove={true}
+            mouseTrackingEnabled={true}
+            onSlideChanged={console.debug}
+            responsive={ {
+              0: { items: 1 },
+              600: { items: 2 },
+              960: { items: 3 },
+            }}
+            infinite={false}
+            stagePadding={{ 
+              paddingLeft: 30,
+              paddingRight: 30,
+            }}
+        >
+          <div className="item" style={{backgroundImage: "url(../images/feedback/78320317_2687143148018400_7610244365574733824_n.jpg)"}}>        
+          </div>
+
+          <div className="item" style={{backgroundImage: "url(../images/feedback/69174188_2501528919913158_5178687620657446912_o.jpg)"}}>   
+          </div>
+
+          <div className="item" style={{backgroundImage: "url(../images/feedback/73245051_111877630240012_7098482635546034176_o.jpg)"}}>
+          </div>
+
+          <div className="item" style={{backgroundImage: "url(../images/feedback/65300497_2394441267288591_7513395477274951680_n.jpg)"}}>
+          </div>
+          <div className="item" style={{backgroundImage: "url(../images/feedback/65391085_2405317969534254_7259659679989497856_n.jpg)"}}>
+          </div>
+        </AliceCarousel>
     </div> 
     );
   }

@@ -674,6 +674,43 @@ header .bottom-col-1 p span {
   line-height: 48px;
   margin-bottom: 30px;
 }
+.feedback .alice-carousel__slide-info {
+  display: none;
+}
+.feedback .alice-carousel__prev-btn-wrapper, .feedback .alice-carousel__next-btn {
+  display: none;
+}
+.feedback .alice-carousel__dots li,
+.feedback .alice-carousel__dots-item:hover li,
+.feedback .alice-carousel__dots-item.__active li {
+  display: none;
+}
+.feedback .alice-carousel {
+  margin-top: 78px;
+}
+.feedback .alice-carousel:hover {
+  cursor: grab;
+}
+.feedback .alice-carousel:active {
+  cursor: grabbing;
+}
+.feedback .alice-carousel .item {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  margin-left: 20px !important;
+}
+.feedback .alice-carousel .item:nth-child(1) {
+  margin-left: 0;
+}
+.feedback .awssld__bullets {
+  bottom: 0;
+}
+.feedback .awssld__bullets button {
+  width: 6px;
+  height: 6px;
+}
 .feedback .awssld__content {
   background-color: transparent;
   text-align: center;
