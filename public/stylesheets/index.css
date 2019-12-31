@@ -698,7 +698,7 @@ header .bottom-col-1 p span {
   background-size: cover;
 }
 .workshopsPop .top .groupP {
-  margin-right: 60px;
+  margin-right: 100px;
 }
 .workshopsPop .top .groupP::before {
   background-image: url("../images/audience.svg");
@@ -743,7 +743,11 @@ header .bottom-col-1 p span {
 .workshopsPop .bottom {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 60px;
+}
+.workshopsPop .bottom .bottom-title {
+  width: 64%;
+  margin-right: 15px;
 }
 .workshopsPop .bottom .bottom-title p {
   font-family: "Didact Gothic";
@@ -764,7 +768,7 @@ header .bottom-col-1 p span {
 }
 .workshopsPop .bottom button {
   border: none;
-  width: 310px;
+  width: 36%;
   height: 58px;
   background-color: #000000;
   color: #E5E5E5;
@@ -1560,11 +1564,23 @@ header .bottom-col-1 p span {
   }
 }
 @media screen and (max-width: 670px) {
+  .workshopsPop .popup {
+    height: 550px;
+  }
+  .workshopsPop .top {
+    margin-top: 20px;
+  }
   .workshopsPop .top .groupP p, .workshopsPop .top .time p {
     font-size: 16px;
   }
-  .workshopsPop .top .groupP {
-    margin-right: 0;
+  .workshopsPop .frame {
+    height: 200px;
+  }
+  .workshopsPop .bottom {
+    margin-top: 10px;
+  }
+  .workshopsPop .bottom .bottom-title {
+    width: auto;
   }
   .workshopsPop .bottom .bottom-title p {
     font-size: 16px;
@@ -1768,6 +1784,10 @@ header .bottom-col-1 p span {
     height: 263px;
     margin-left: 0 !important;
   }
+  .workshopsPop .top .groupP {
+    margin-right: 20px !important;
+  }
+
   .popup .top-bar ul li {
     font-size: 14px;
     line-height: 19px;

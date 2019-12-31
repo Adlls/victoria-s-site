@@ -757,7 +757,7 @@ header {
     }
 
     .groupP {
-      margin-right: 60px;
+      margin-right: 100px;
       &::before {
         background-image: url('../images/audience.svg');
       }
@@ -806,8 +806,10 @@ header {
   .bottom {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 60px;
       .bottom-title {
+        width: 64%;
+        margin-right: 15px;
           p {
             @extend .noindentation;
             font-family: 'Didact Gothic';
@@ -825,12 +827,12 @@ header {
             font-weight: 600;
             font-size: 26px;
             line-height: 28px;
-            color: #2C2C2C;
+            color: #2C2C2C;            
           }
     }
     button {
       border: none;
-      width: 310px;
+      width: 36%;
       height: 58px;
       background-color: #000000;
       color: #E5E5E5;
@@ -1773,18 +1775,27 @@ header {
 
 
   .workshopsPop {
+    .popup {
+      height: 550px;
+    }
     .top {
+      margin-top: 20px;
      .groupP, .time {
        p {
         font-size: 16px;
        }
       }
       .groupP {
-        margin-right: 0;
+        //margin-right: 0;
       }
     }
+    .frame {
+      height: 200px;
+    }
     .bottom {
+      margin-top: 10px;
       .bottom-title {
+        width: auto;
         p {
           font-size: 16px;
         }
@@ -2080,6 +2091,13 @@ header {
     }
   }
 
+  .workshopsPop {
+    .top {
+      .groupP {
+        margin-right: 20px !important;        
+      }
+    }
+  }
 
   .popup {
     .top-bar ul li {
