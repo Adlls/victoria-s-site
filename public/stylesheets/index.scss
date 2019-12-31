@@ -16,6 +16,8 @@ body {
   width: 67.7%;
 }
 
+
+
 .clearfix::after {
   content: "";
   display: table;
@@ -241,6 +243,9 @@ header {
         border-bottom: 0.5px solid #1D1D1D;        
       }
       li {
+        &:hover {
+          @extend .active;
+        }
         display: inline-block;
         margin: 0;
         padding: 0;
@@ -249,6 +254,7 @@ header {
         color: rgba(29, 29, 29, 0.4);
         padding-bottom: 8px;
         cursor: pointer;
+        transition: 0.5s;
       }
       li:last-child {
           margin-right: 0;
@@ -545,6 +551,10 @@ header {
     
     .alice-carousel__prev-btn {
       width: auto;
+      padding-left: 0 !important;
+    }
+    .alice-carousel__next-btn {
+      padding-left: 50px ;
     }
 
     span[data-area="prev"]:after, span[data-area="next"]:after  {
@@ -561,14 +571,28 @@ header {
       background-image: url('../images/right.svg');
     }
  
+    .alice-carousel__slide-info {
+      position: absolute;
+      left: 34px;
+      bottom: 27px;
+      top: auto;
+      right: auto;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 26px;
+      color: #000000;
+    }
+
     .item {
       position: relative;
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
-      //width: 484px;
-      height: 363px;
+      height: 323px;
       margin-left: 20px !important;
+      cursor: pointer;
       &::before {
         content: "";
         position: absolute;
@@ -586,7 +610,7 @@ header {
         font-weight: bold;
         font-size: 27px;
         line-height: 35px;  
-        width: 100%;      
+        width: 80%;      
         position: absolute;
         bottom: 0;
         padding: 16px;
@@ -687,9 +711,136 @@ header {
         font-size: 22px;
         line-height: 30px;
         letter-spacing: 0.02em;
-        font-family: Open Sans;
+        font-family: 'Open Sans';
         font-style: normal;
       }
+    }
+  }
+}
+
+.workshopsPop {
+  position: relative;
+  .popup {
+    height: 681px;
+  }
+  .wrapper {
+    width: 95.7%;
+  }
+  .top {
+    margin-top: 69px;
+    display: flex;
+
+
+    .groupP, .time {
+      position: relative;
+      width: 50%;
+      p {
+        @extend .noindentation;
+        margin-left: 45px;
+        font-family: 'Open Sans';
+        font-size: 20px;
+        line-height: 27px;
+        color: rgba(44, 44, 44, 0.75);
+      }
+    }
+
+    .groupP::before, .time::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 32px;
+      height: 32px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .groupP {
+      margin-right: 60px;
+      &::before {
+        background-image: url('../images/audience.svg');
+      }
+    }
+    .time {
+      &::before {
+        background-image: url('../images/time.svg');
+      }
+
+    }
+  }
+  .frame {
+    overflow: scroll; 
+    height: 300px; 
+    margin-top: 43px;
+    position: relative;
+    &::-webkit-scrollbar { width: 0; }
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none; 
+    scrollbar-width: none;
+    &::before {
+      content: "";
+      //background: linear-gradient(1.43deg, #E5E5E5 40.33%, rgba(229, 229, 229, 0) 86.74%);
+      width: 100%;
+      height: 5px;
+      position: absolute;
+      bottom: 0px;
+    }
+    p {
+      @extend .noindentation;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 27px;
+      color: #000000;
+      width: 100% !important;
+    }
+  }
+  .dosh {
+    width: 100%;
+    border-bottom: 0.5px solid rgba(29, 29, 29, 0.25);
+    position: absolute;
+    left: 0;
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+      .bottom-title {
+          p {
+            @extend .noindentation;
+            font-family: 'Didact Gothic';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 22px;
+            color: rgba(44, 44, 44, 0.75);
+          }
+          h2 {
+            @extend .noindentation;
+            margin-top: 8px;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 26px;
+            line-height: 28px;
+            color: #2C2C2C;
+          }
+    }
+    button {
+      border: none;
+      width: 310px;
+      height: 58px;
+      background-color: #000000;
+      color: #E5E5E5;
+      letter-spacing: 0.02em;
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 30px;
+      cursor: pointer;
     }
   }
 }
@@ -1066,12 +1217,16 @@ header {
         margin-top: 36px;
 
         li {
+          &:hover {
+            @extend .active;
+          }
           @extend .noindentation;
           display: inline-block;
           list-style: none;
           margin-left: 11px;
           padding-bottom: 8px;
           cursor: pointer;
+          transition: 0.5s;
         }
 
         li:nth-child(1) {
@@ -1617,6 +1772,33 @@ header {
 @media screen and (max-width: 670px) {
 
 
+  .workshopsPop {
+    .top {
+     .groupP, .time {
+       p {
+        font-size: 16px;
+       }
+      }
+      .groupP {
+        margin-right: 0;
+      }
+    }
+    .bottom {
+      .bottom-title {
+        p {
+          font-size: 16px;
+        }
+        h2 {
+          font-size: 22px;
+        }
+      }
+      button {
+        font-size: 19px;
+        width: 280px;
+      }
+    }
+  }
+
   .feedback {
     h2 {
       font-size: 22px;
@@ -1648,6 +1830,7 @@ header {
         width: 85.5%;
         
       }
+
       //border: 10px solid black;
       //height: 100%;
 
@@ -1862,9 +2045,41 @@ header {
   header {
     background-size: 550px;
   }
+
+  .workshopsPop {
+    .bottom {
+      flex-direction: column;
+      align-items: center;
+      
+      .bottom-title {
+        align-self: center;
+        p {
+          width: auto !important;
+        }
+      }
+      button {
+        margin-top: 30px;
+        align-self: center;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 420px) {
+
+
+  .workshops {
+    .alice-carousel {
+      .item {
+        height: 263px;
+        margin-left: 0 !important;
+      }
+      span[data-area="prev"]:after, span[data-area="next"]:after {
+        //display: none;
+      }
+    }
+  }
+
 
   .popup {
     .top-bar ul li {
@@ -1936,4 +2151,15 @@ header {
     }
   }
 }
+}
+
+@media screen and (max-width: 320px) {
+  .workshops {
+    .alice-carousel {
+      .item {
+        height: 243px;
+      }
+
+    }
+  }
 }

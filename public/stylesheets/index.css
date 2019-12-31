@@ -18,7 +18,7 @@ body {
   clear: both;
 }
 
-.noindentation, .popup .form-contain p, .popup .top-bar ul li, .popup .top-bar ul, .workshops .seminars-item .title h4, .workshops .seminars-item .type, .workshops .alice-carousel .item h2, .workshops h2, .individualProgram .orderIndividualProgram p, .individualProgram .orderIndividualProgram h3, .individualProgram .optionsIndividualProgram .options-items .options ul li, .individualProgram .optionsIndividualProgram .options-items .options ul, .individualProgram .optionsIndividualProgram .options-items p, .consultation .body h6, header .bottom-col-1 p, header .title .top-col-1 p, .menu .nav-bar li, .menu .nav-bar {
+.noindentation, .popup .form-contain p, .popup .top-bar ul li, .popup .top-bar ul, .workshopsPop .bottom .bottom-title h2, .workshopsPop .bottom .bottom-title p, .workshopsPop .frame p, .workshopsPop .top .groupP p, .workshopsPop .top .time p, .workshops .seminars-item .title h4, .workshops .seminars-item .type, .workshops .alice-carousel .item h2, .workshops h2, .individualProgram .orderIndividualProgram p, .individualProgram .orderIndividualProgram h3, .individualProgram .optionsIndividualProgram .options-items .options ul li, .individualProgram .optionsIndividualProgram .options-items .options ul, .individualProgram .optionsIndividualProgram .options-items p, .consultation .body h6, header .bottom-col-1 p, header .title .top-col-1 p, .menu .nav-bar li, .menu .nav-bar {
   margin: 0;
   padding: 0;
 }
@@ -208,7 +208,7 @@ header .bottom-col-1 p span {
   margin: 0;
   padding: 0;
 }
-.consultation .header nav ul .active {
+.consultation .header nav ul .active, .consultation .header nav ul li:hover {
   transition: 0.1s;
   color: #1D1D1D;
   border-bottom: 0.5px solid #1D1D1D;
@@ -222,6 +222,7 @@ header .bottom-col-1 p span {
   color: rgba(29, 29, 29, 0.4);
   padding-bottom: 8px;
   cursor: pointer;
+  transition: 0.5s;
 }
 .consultation .header nav ul li:last-child {
   margin-right: 0;
@@ -382,7 +383,7 @@ header .bottom-col-1 p span {
   display: table;
   width: 100%;
 }
-.individualProgram .optionsIndividualProgram .options-items .options ul .active {
+.individualProgram .optionsIndividualProgram .options-items .options ul .active, .individualProgram .optionsIndividualProgram .options-items .options .popup .top-bar ul li:hover, .popup .top-bar .individualProgram .optionsIndividualProgram .options-items .options ul li:hover, .individualProgram .optionsIndividualProgram .options-items .options .consultation .header nav ul li:hover, .consultation .header nav .individualProgram .optionsIndividualProgram .options-items .options ul li:hover {
   background-color: #2C2C2C;
   color: #ffffff;
 }
@@ -477,6 +478,10 @@ header .bottom-col-1 p span {
 }
 .workshops .alice-carousel .alice-carousel__prev-btn {
   width: auto;
+  padding-left: 0 !important;
+}
+.workshops .alice-carousel .alice-carousel__next-btn {
+  padding-left: 50px;
 }
 .workshops .alice-carousel span[data-area=prev]:after, .workshops .alice-carousel span[data-area=next]:after {
   color: transparent;
@@ -491,13 +496,27 @@ header .bottom-col-1 p span {
 .workshops .alice-carousel span[data-area=next]:after {
   background-image: url("../images/right.svg");
 }
+.workshops .alice-carousel .alice-carousel__slide-info {
+  position: absolute;
+  left: 34px;
+  bottom: 27px;
+  top: auto;
+  right: auto;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 26px;
+  color: #000000;
+}
 .workshops .alice-carousel .item {
   position: relative;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 363px;
+  height: 323px;
   margin-left: 20px !important;
+  cursor: pointer;
 }
 .workshops .alice-carousel .item::before {
   content: "";
@@ -515,7 +534,7 @@ header .bottom-col-1 p span {
   font-weight: bold;
   font-size: 27px;
   line-height: 35px;
-  width: 100%;
+  width: 80%;
   position: absolute;
   bottom: 0;
   padding: 16px;
@@ -639,8 +658,123 @@ header .bottom-col-1 p span {
   font-size: 22px;
   line-height: 30px;
   letter-spacing: 0.02em;
-  font-family: Open Sans;
+  font-family: "Open Sans";
   font-style: normal;
+}
+
+.workshopsPop {
+  position: relative;
+}
+.workshopsPop .popup {
+  height: 681px;
+}
+.workshopsPop .wrapper {
+  width: 95.7%;
+}
+.workshopsPop .top {
+  margin-top: 69px;
+  display: flex;
+}
+.workshopsPop .top .groupP, .workshopsPop .top .time {
+  position: relative;
+  width: 50%;
+}
+.workshopsPop .top .groupP p, .workshopsPop .top .time p {
+  margin-left: 45px;
+  font-family: "Open Sans";
+  font-size: 20px;
+  line-height: 27px;
+  color: rgba(44, 44, 44, 0.75);
+}
+.workshopsPop .top .groupP::before, .workshopsPop .top .time::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.workshopsPop .top .groupP {
+  margin-right: 60px;
+}
+.workshopsPop .top .groupP::before {
+  background-image: url("../images/audience.svg");
+}
+.workshopsPop .top .time::before {
+  background-image: url("../images/time.svg");
+}
+.workshopsPop .frame {
+  overflow: scroll;
+  height: 300px;
+  margin-top: 43px;
+  position: relative;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+}
+.workshopsPop .frame::-webkit-scrollbar {
+  width: 0;
+}
+.workshopsPop .frame::before {
+  content: "";
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  bottom: 0px;
+}
+.workshopsPop .frame p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+  color: #000000;
+  width: 100% !important;
+}
+.workshopsPop .dosh {
+  width: 100%;
+  border-bottom: 0.5px solid rgba(29, 29, 29, 0.25);
+  position: absolute;
+  left: 0;
+}
+.workshopsPop .bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.workshopsPop .bottom .bottom-title p {
+  font-family: "Didact Gothic";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 22px;
+  color: rgba(44, 44, 44, 0.75);
+}
+.workshopsPop .bottom .bottom-title h2 {
+  margin-top: 8px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 28px;
+  color: #2C2C2C;
+}
+.workshopsPop .bottom button {
+  border: none;
+  width: 310px;
+  height: 58px;
+  background-color: #000000;
+  color: #E5E5E5;
+  letter-spacing: 0.02em;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  cursor: pointer;
 }
 
 .contacts {
@@ -949,7 +1083,7 @@ header .bottom-col-1 p span {
   line-height: 20px;
   color: rgba(29, 29, 29, 0.4);
 }
-.popup .top-bar .active {
+.popup .top-bar .active, .popup .top-bar ul li:hover, .popup .top-bar .consultation .header nav ul li:hover, .consultation .header nav ul .popup .top-bar li:hover {
   border-bottom: 1px solid #1D1D1D;
   color: #1D1D1D;
 }
@@ -962,6 +1096,7 @@ header .bottom-col-1 p span {
   margin-left: 11px;
   padding-bottom: 8px;
   cursor: pointer;
+  transition: 0.5s;
 }
 .popup .top-bar ul li:nth-child(1) {
   margin-left: 0;
@@ -1425,6 +1560,23 @@ header .bottom-col-1 p span {
   }
 }
 @media screen and (max-width: 670px) {
+  .workshopsPop .top .groupP p, .workshopsPop .top .time p {
+    font-size: 16px;
+  }
+  .workshopsPop .top .groupP {
+    margin-right: 0;
+  }
+  .workshopsPop .bottom .bottom-title p {
+    font-size: 16px;
+  }
+  .workshopsPop .bottom .bottom-title h2 {
+    font-size: 22px;
+  }
+  .workshopsPop .bottom button {
+    font-size: 19px;
+    width: 280px;
+  }
+
   .feedback h2 {
     font-size: 22px;
     line-height: 28px;
@@ -1595,8 +1747,27 @@ header .bottom-col-1 p span {
   header {
     background-size: 550px;
   }
+
+  .workshopsPop .bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+  .workshopsPop .bottom .bottom-title {
+    align-self: center;
+  }
+  .workshopsPop .bottom .bottom-title p {
+    width: auto !important;
+  }
+  .workshopsPop .bottom button {
+    margin-top: 30px;
+    align-self: center;
+  }
 }
 @media screen and (max-width: 420px) {
+  .workshops .alice-carousel .item {
+    height: 263px;
+    margin-left: 0 !important;
+  }
   .popup .top-bar ul li {
     font-size: 14px;
     line-height: 19px;
@@ -1641,6 +1812,11 @@ header .bottom-col-1 p span {
   .workshops .seminars-item .title h4 {
     font-size: 22px;
     line-height: 25px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .workshops .alice-carousel .item {
+    height: 243px;
   }
 }
 

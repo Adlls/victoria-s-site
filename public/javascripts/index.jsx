@@ -230,7 +230,7 @@ class Consultation extends React.Component {
         bottomPopup: "0"
       });
         
-    ReactDOM.render(<Popup  display="flex" bottom="0"/>, document.getElementById("popup"));
+    ReactDOM.render(<Popup  display="flex" bottom="0" typePop="consultation" second_popup={false}/>, document.getElementById("popup"));
     document.querySelector('body').style.overflow = "hidden";
 
 
@@ -299,6 +299,20 @@ var images =
  
 class Workshops extends React.Component {
 
+
+  constructor(props) {
+    super(props);
+    this.openPopup = this.openPopup.bind(this);
+  }
+
+
+  openPopup() {
+    ReactDOM.render(<Popup  display="flex" bottom="0" typePop="workshops" second_popup={false}/>, document.getElementById("popup"));
+    document.querySelector('body').style.overflow = "hidden";
+
+
+  }
+
   render() {
     return (
       <div>
@@ -321,8 +335,8 @@ class Workshops extends React.Component {
               paddingRight: 0,
             }}
         >
-          <div className="item first-item" style={{backgroundImage: "url(../images/workshops/mama.jpeg)"}}>   
-            <h2>Профессия — <br/> современная мама</h2>     
+          <div className="item first-item" onClick={this.openPopup} style={{backgroundImage: "url(../images/workshops/mama.jpeg)"}}>   
+            <h2>Профессия — современная мама</h2>     
           </div>
 
           <div className="item" style={{backgroundImage: "url(../images/workshops/grow.jpeg)"}}>
@@ -437,19 +451,8 @@ class Popup extends React.Component {
       positionForm1: "150%",
       positionForm2: "0"
     };
- 
     this.press = this.press.bind(this);
-    console.log("dfg");
-
-    /*
-    this.setState(function(prevState, props) {
-      return {
-      display: props.display,
-      bottom: props.bottom
-      };
-    });
-    */
-    
+    this.openOrder = this.openOrder.bind(this);   
   }
 
   componentWillMount() {
@@ -464,10 +467,20 @@ class Popup extends React.Component {
       display: "none",
       bottom: "-700px"
     });
-    ReactDOM.unmountComponentAtNode(document.getElementById("popup"));
-    document.querySelector('body').style.overflow = "scroll";
+
+    if (this.props.second_popup) {
+      ReactDOM.unmountComponentAtNode(document.getElementById("second_popup"));
+    }
+    else {
+      ReactDOM.unmountComponentAtNode(document.getElementById("popup"));
+      document.querySelector('body').style.overflow = "scroll";
+    }
 
   }  
+
+  openOrder() {
+    ReactDOM.render(<Popup display="flex" bottom="0" typePop="consultation" second_popup={true}/>, document.getElementById("second_popup"));
+  }
 
   press(e) {
     if(e.target.id === "backcall") {
@@ -490,43 +503,85 @@ class Popup extends React.Component {
   }
 
   render() { 
-    return (
-        <div>
-            <div className="overlay-popup" style={{display: this.state.display}}>
-                  <div className="btnBackClose" onClick={this.ClosePopup}></div>
-              <section className="popup" style={{bottom: this.state.bottom}}> 
-                  <div className="btn_close" onClick={this.ClosePopup.bind(this)}></div>
-                  <div className="top-bar">
-                    <div className="wrapper">
-                      <ul>
-                        <li className={this.state.classActive1} onClick={this.press.bind(this)} id="backcall">Обратный звонок</li>
-                        <li className={this.state.classActive2} onClick={this.press.bind(this)} id="emailsend">Написать на почту</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="form-contain">
-                    <div className="wrapper">
-                      <p>
-                        Оставьте контакты и я перезвоню Вам как можно скорее. 
-                        Или Вы можете <a href="tel:+79670978656">позвонить мне</a> самостоятельно.
-                      </p>
-                      <form method="POST" action="">
-                        <div className="callback" style={{left:  this.state.positionForm2}}>
-                          <input type="text" placeholder="Имя"/>
-                          <input type="tel" placeholder="Номер телефона"/>
+    if (this.props.typePop == "consultation") {
+        return (
+            <div>
+                <div className="overlay-popup" style={{display: this.state.display}}>
+                      <div className="btnBackClose" onClick={this.ClosePopup}></div>
+                  <section className="popup" style={{bottom: this.state.bottom}}> 
+                      <div className="btn_close" onClick={this.ClosePopup.bind(this)}></div>
+                      <div className="top-bar">
+                        <div className="wrapper">
+                          <ul>
+                            <li className={this.state.classActive1} onClick={this.press.bind(this)} id="backcall">Обратный звонок</li>
+                            <li className={this.state.classActive2} onClick={this.press.bind(this)} id="emailsend">Написать на почту</li>
+                          </ul>
                         </div>
-                        <div className="emailsend" style={{left: this.state.positionForm1}}>
-                          <input type="text" placeholder="Имя"/>
-                          <input type="email" placeholder="Email"/>
+                      </div>
+                      <div className="form-contain">
+                        <div className="wrapper">
+                          <p>
+                            Оставьте контакты и я перезвоню Вам как можно скорее. 
+                            Или Вы можете <a href="tel:+79670978656">позвонить мне</a> самостоятельно.
+                          </p>
+                          <form method="POST" action="">
+                            <div className="callback" style={{left:  this.state.positionForm2}}>
+                              <input type="text" placeholder="Имя"/>
+                              <input type="tel" placeholder="Номер телефона"/>
+                            </div>
+                            <div className="emailsend" style={{left: this.state.positionForm1}}>
+                              <input type="text" placeholder="Имя"/>
+                              <input type="email" placeholder="Email"/>
+                            </div>
+                            <input type="submit" value="Отправить заявку"/> 
+                          </form>            
                         </div>
-                        <input type="submit" value="Отправить заявку"/> 
-                      </form>            
-                    </div>
-                  </div>      
-              </section>
+                      </div>      
+                  </section>
+                </div>
             </div>
-        </div>
-    );
+        );
+    } else {
+     return ( 
+      <div className="workshopsPop">
+      <div className="overlay-popup" style={{display: this.state.display}}>
+            <div className="btnBackClose" onClick={this.ClosePopup}></div>
+        <section className="popup" style={{bottom: this.state.bottom}}> 
+            <div className="btn_close" onClick={this.ClosePopup.bind(this)}></div>
+            <div className="form-contain">
+              <div className="wrapper">
+               <div className="top"> 
+                  <div className="groupP">
+                    <p>
+                      Взрослая аудитория
+                    </p>
+                  </div>
+                  <div className="time">
+                      <p>
+                          16 часов
+                      </p>
+                  </div>
+               </div> 
+               <div className="frame">
+                  <p>
+                    И подросток, стоящий на распутье – кем стать, какое направление выбрать для своего будущего, и взрослый, находящийся в ситуации поиска себя на этапе профессионального выгорания или просто поиска другого места работы, - вне зависимости от возраста, человеку свойственно перекладывать серьезные выборы на кого-то другого или затягивать сам процесс. Перед тем, как делать какие-то серьезные шаги, определяющие дальнейшее течение событий жизни, просто необходимо осознанное знание и понимание себя, своих особенностей, своего потенциала в целом. Как можно отправляться в путь, не понимая, какой у вас есть багаж знаний, умений, навыков? Какие именно ваши желания? Какие ваши ложные представления и зависимости целей, а где именно ваше направление, ваш путь развития, ваша уникальность? «По мысли Аристотеля, для того, чтобы жить полной жизнью, необходимо реализовать свое предназначение. Иными словами, чтобы достичь счастья, нужно следовать своей природе»
+                    И подросток, стоящий на распутье – кем стать, какое направление выбрать для своего будущего, и взрослый, находящийся в ситуации поиска себя на этапе профессионального выгорания или просто поиска другого места работы, - вне зависимости от возраста, человеку свойственно перекладывать серьезные выборы на кого-то другого или затягивать сам процесс. Перед тем, как делать какие-то серьезные шаги, определяющие дальнейшее течение событий жизни, просто необходимо осознанное знание и понимание себя, своих особенностей, своего потенциала в целом. Как можно отправляться в путь, не понимая, какой у вас есть багаж знаний, умений, навыков? Какие именно ваши желания? Какие ваши ложные представления и зависимости целей, а где именно ваше направление, ваш путь развития, ваша уникальность? «По мысли Аристотеля, для того, чтобы жить полной жизнью, необходимо реализовать свое предназначение. Иными словами, чтобы достичь счастья, нужно следовать своей природе»
+                  </p>
+               </div>
+               <div className="dosh"></div>
+               <div className="bottom">
+                  <div className="bottom-title">
+                      <p>Интерактивный мастер-класс</p>
+                      <h2>Профессия современная мама</h2>
+                  </div>
+                  <button onClick={this.openOrder}>Заказать</button>
+               </div>
+              </div>
+            </div>      
+        </section>
+      </div>
+  </div> );
+    }
   }
 }
 
