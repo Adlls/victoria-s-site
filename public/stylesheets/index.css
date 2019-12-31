@@ -481,7 +481,7 @@ header .bottom-col-1 p span {
   padding-left: 0 !important;
 }
 .workshops .alice-carousel .alice-carousel__next-btn {
-  padding-left: 63px;
+  padding-left: 50px;
 }
 .workshops .alice-carousel span[data-area=prev]:after, .workshops .alice-carousel span[data-area=next]:after {
   color: transparent;
@@ -511,7 +511,7 @@ header .bottom-col-1 p span {
 }
 .workshops .alice-carousel .item {
   position: relative;
-  background-position: center center;
+  background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 323px;
@@ -1330,6 +1330,11 @@ header .bottom-col-1 p span {
   }
 }
 @media screen and (max-width: 1000px) {
+  .workshops .item h2 {
+    font-size: 23px !important;
+    line-height: 29px !important;
+  }
+
   .workshopsPop .popup {
     height: 600px;
   }
@@ -1601,6 +1606,11 @@ header .bottom-col-1 p span {
   }
 }
 @media screen and (max-width: 670px) {
+  .workshops .item h2 {
+    font-size: 21px !important;
+    line-height: 24px !important;
+  }
+
   /*
     .workshopsPop {
       .popup {
