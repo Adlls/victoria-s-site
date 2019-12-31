@@ -481,7 +481,7 @@ header .bottom-col-1 p span {
   padding-left: 0 !important;
 }
 .workshops .alice-carousel .alice-carousel__next-btn {
-  padding-left: 50px;
+  padding-left: 63px;
 }
 .workshops .alice-carousel span[data-area=prev]:after, .workshops .alice-carousel span[data-area=next]:after {
   color: transparent;
@@ -666,7 +666,7 @@ header .bottom-col-1 p span {
   position: relative;
 }
 .workshopsPop .popup {
-  height: 681px;
+  height: auto !important;
 }
 .workshopsPop .wrapper {
   width: 95.7%;
@@ -744,6 +744,7 @@ header .bottom-col-1 p span {
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
+  margin-bottom: 12px;
 }
 .workshopsPop .bottom .bottom-title {
   width: 64%;
@@ -1329,6 +1330,42 @@ header .bottom-col-1 p span {
   }
 }
 @media screen and (max-width: 1000px) {
+  .workshopsPop .popup {
+    height: 600px;
+  }
+  .workshopsPop .top {
+    margin-top: 20px;
+  }
+  .workshopsPop .top .groupP p, .workshopsPop .top .time p {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .workshopsPop .top .groupP {
+    margin-right: 10px;
+  }
+  .workshopsPop .frame {
+    height: 200px;
+    margin-top: 13px;
+  }
+  .workshopsPop .bottom {
+    margin-top: 10px;
+  }
+  .workshopsPop .bottom .bottom-title {
+    width: auto;
+  }
+  .workshopsPop .bottom .bottom-title p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .workshopsPop .bottom .bottom-title h2 {
+    font-size: 20px;
+    line-height: 22px;
+  }
+  .workshopsPop .bottom button {
+    font-size: 19px;
+    width: 280px;
+  }
+
   .menu .nav-bar li {
     font-size: 14.7px;
     line-height: 16px;
@@ -1564,35 +1601,43 @@ header .bottom-col-1 p span {
   }
 }
 @media screen and (max-width: 670px) {
-  .workshopsPop .popup {
-    height: 550px;
-  }
-  .workshopsPop .top {
-    margin-top: 20px;
-  }
-  .workshopsPop .top .groupP p, .workshopsPop .top .time p {
-    font-size: 16px;
-  }
-  .workshopsPop .frame {
-    height: 200px;
-  }
-  .workshopsPop .bottom {
-    margin-top: 10px;
-  }
-  .workshopsPop .bottom .bottom-title {
-    width: auto;
-  }
-  .workshopsPop .bottom .bottom-title p {
-    font-size: 16px;
-  }
-  .workshopsPop .bottom .bottom-title h2 {
-    font-size: 22px;
-  }
-  .workshopsPop .bottom button {
-    font-size: 19px;
-    width: 280px;
-  }
-
+  /*
+    .workshopsPop {
+      .popup {
+        height: 550px;
+      }
+      .top {
+        margin-top: 20px;
+       .groupP, .time {
+         p {
+          font-size: 16px;
+         }
+        }
+        .groupP {
+          //margin-right: 0;
+        }
+      }
+      .frame {
+        height: 200px;
+      }
+      .bottom {
+        margin-top: 10px;
+        .bottom-title {
+          width: auto;
+          p {
+            font-size: 16px;
+          }
+          h2 {
+            font-size: 22px;
+          }
+        }
+        button {
+          font-size: 19px;
+          width: 280px;
+        }
+      }
+    }
+  */
   .feedback h2 {
     font-size: 22px;
     line-height: 28px;

@@ -554,7 +554,7 @@ header {
       padding-left: 0 !important;
     }
     .alice-carousel__next-btn {
-      padding-left: 50px ;
+      padding-left: 63px ;
     }
 
     span[data-area="prev"]:after, span[data-area="next"]:after  {
@@ -721,7 +721,7 @@ header {
 .workshopsPop {
   position: relative;
   .popup {
-    height: 681px;
+    height: auto !important;
   }
   .wrapper {
     width: 95.7%;
@@ -807,6 +807,7 @@ header {
     display: flex;
     justify-content: space-between;
     margin-top: 60px;
+    margin-bottom: 12px;
       .bottom-title {
         width: 64%;
         margin-right: 15px;
@@ -1513,6 +1514,48 @@ header {
 
 @media screen and (max-width: 1000px) {
 
+
+    .workshopsPop {
+    .popup {
+      height: 600px;
+    }
+    .top {
+      margin-top: 20px;
+     .groupP, .time {
+       p {
+        font-size: 15px;
+        line-height: 22px;
+       }
+      }
+      .groupP {
+        margin-right: 10px;
+      }
+    }
+    .frame {
+      height: 200px;
+      margin-top: 13px;
+    }
+    .bottom {
+      margin-top: 10px;
+      .bottom-title {
+        width: auto;
+        p {
+          font-size: 16px;
+          line-height: 20px;
+
+        }
+        h2 {
+          font-size: 20px;
+          line-height: 22px;
+        }
+      }
+      button {
+        font-size: 19px;
+        width: 280px;
+      }
+    }
+  }
+
   .menu .nav-bar li {
     font-size: 14.7px;
     line-height: 16px;
@@ -1773,7 +1816,7 @@ header {
 
 @media screen and (max-width: 670px) {
 
-
+/*
   .workshopsPop {
     .popup {
       height: 550px;
@@ -1809,7 +1852,7 @@ header {
       }
     }
   }
-
+*/
   .feedback {
     h2 {
       font-size: 22px;
