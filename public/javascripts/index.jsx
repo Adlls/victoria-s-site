@@ -4,33 +4,36 @@ import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import "react-alice-carousel/lib/alice-carousel.css";
 import AliceCarousel from 'react-alice-carousel';
+import * as Scroll from 'react-scroll';
+import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 const propsSocials = [ 
   {   img: "../../images/zen.svg",
-      href: "#"
+      href: "https://zen.yandex.ru/media/id/5da83370bd639684a11c0aa2/kak-sozdat-resursnuiu-sredu-s-detstva-instrukciia-1-5da83d822fda8600b31b8091"
   },
 
   { 
       img: "../../images/inst.svg", 
-      href: "#"
+      href: "https://www.instagram.com/victoria.vladimirova_/"
   },  
 
-  {
+  { 
       img: "../../images/fb.svg",
-      href: "#"
+      href: "https://www.facebook.com/VisionStudioKM"
   },
   {
     img: "../../images/whatsup.svg",     
-    href: "#"
+    href: "https://wa.me/79778866788"
   },
   {
     img: "../../images/yt.svg",
-    href:"#"
+    href:"https://www.youtube.com/channel/UCxRcAE7DsjJapTuUGUvmLug"
   }
   ];
 
 const menuItems = [
   {
-    link: "#header",
+    link: "header",
     item: "Главная"
   },
   {
@@ -38,20 +41,20 @@ const menuItems = [
     item: "Консультации"
   },
   {
-    link: "#about",
+    link: "about",
     item: "Обо мне"
   },
   {
-    link: "#workshops",
+    link: "workshops",
     item: "Мастер-классы"
   },
   {
-    link: "#feedbacks",
+    link: "feedbacks",
     item: "Отзывы"
   },
 
   {
-    link: "#contacts",
+    link: "contacts",
     item: "Контакты"
   }
 ];
@@ -65,7 +68,7 @@ class Social extends React.Component {
       <div className="social-icons" style={{height: this.props.heightSocials, opacity: "1"}}> 
       {                    
                    this.props.socials.map(function(item) {
-                      return <a href={item.href}><img src={item.img}/></a>
+                      return <a target="_blank" href={item.href}><img src={item.img}/></a>
                 })                  
       }
       </div>
@@ -88,6 +91,58 @@ class Menu extends React.Component {
       bgIcon: "../images/menu.svg"
     };
   }
+
+  componentDidMount() {
+
+    Events.scrollEvent.register('begin', function () {
+      console.log("begin", arguments);
+    });
+
+    Events.scrollEvent.register('end', function () {
+      console.log("end", arguments);
+    });
+
+  }
+  scrollToTop() {
+    scroll.scrollToTop();
+  }
+  scrollTo() {
+    scroller.scrollTo('scroll-to-element', {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart'
+    })
+  }
+  scrollToWithContainer() {
+
+    let goToContainer = new Promise((resolve, reject) => {
+
+      Events.scrollEvent.register('end', () => {
+        resolve();
+        Events.scrollEvent.remove('end');
+      });
+
+      scroller.scrollTo('scroll-container', {
+        duration: 800,
+        delay: 0,
+        smooth: 'easeInOutQuart'
+      });
+
+    });
+
+    goToContainer.then(() =>
+      scroller.scrollTo('scroll-container-second-element', {
+        duration: 800,
+        delay: 0,
+        smooth: 'easeInOutQuart',
+        containerId: 'scroll-container'
+      }));
+  }
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
+  }
+
 
   showMenu() {
 
@@ -121,7 +176,7 @@ class Menu extends React.Component {
          <ul className="nav-bar" style = { {height: this.state.heightNavBar, opacity: "1"}}>
            {
              this.props.itemsMenu.map(function(items) {
-                 return  <li><a href={items.link}>{items.item}</a></li>
+                 return  <li><a href={`#${items.link}`}>{items.item}</a></li>
              })
            }
          </ul>  
@@ -612,25 +667,25 @@ class Feedback extends React.Component {
           <AwesomeSlider>
                 <div>
                   <div className="body-comment">
-                      Я себя знаю! И вас всех знаю
+                      Текст
                   </div>
                   <div className="about-comment">Марина, 31 год</div>
                 </div>
                 <div>
                   <div className="body-comment">
-                      Я себя знаю! И вас всех знаю
+                      Текст
                   </div>
                   <div className="about-comment">Марина, 31 год</div>
                 </div>
                 <div>
                   <div className="body-comment">
-                        Я себя знаю! И вас всех знаю
+                        Текст
                   </div>
                   <div className="about-comment">Марина, 31 год</div>
                 </div>
                 <div>
                   <div className="body-comment">
-                        Я себя знаю! И вас всех знаю
+                       Текст
                     </div>
                     <div className="about-comment">Марина, 31 год</div>
                 </div>
@@ -652,18 +707,28 @@ class Feedback extends React.Component {
               paddingRight: 30,
             }}
         >
-          <div onClick={this.openPhoto.bind(this,"")} className="item" style={{backgroundImage: "url(../images/feedback/78320317_2687143148018400_7610244365574733824_n.jpg)"}}>        
+          <div onClick={this.openPhoto.bind(this,"")} className="item" style={{backgroundImage: "url(../images/feedback/1.jpg)"}}>        
           </div>
 
-          <div className="item" style={{backgroundImage: "url(../images/feedback/69174188_2501528919913158_5178687620657446912_o.jpg)"}}>   
+          <div className="item" style={{backgroundImage: "url(../images/feedback/10.jpg)"}}>   
           </div>
 
-          <div className="item" style={{backgroundImage: "url(../images/feedback/73245051_111877630240012_7098482635546034176_o.jpg)"}}>
+          <div className="item" style={{backgroundImage: "url(../images/feedback/18.jpg)"}}>
           </div>
 
-          <div className="item" style={{backgroundImage: "url(../images/feedback/65300497_2394441267288591_7513395477274951680_n.jpg)"}}>
+          <div className="item" style={{backgroundImage: "url(../images/feedback/19.jpg)"}}>
           </div>
-          <div className="item" style={{backgroundImage: "url(../images/feedback/65391085_2405317969534254_7259659679989497856_n.jpg)"}}>
+          <div className="item" style={{backgroundImage: "url(../images/feedback/7.jpg)"}}>
+          </div>
+          <div className="item" style={{backgroundImage: "url(../images/feedback/11.jpg)"}}>
+          </div>
+          <div className="item" style={{backgroundImage: "url(../images/feedback/12.jpg)"}}>
+          </div>
+          <div className="item" style={{backgroundImage: "url(../images/feedback/13.jpg)"}}>
+          </div>
+          <div className="item" style={{backgroundImage: "url(../images/feedback/15.jpg)"}}>
+          </div>
+          <div className="item" style={{backgroundImage: "url(../images/feedback/16.jpg)"}}>
           </div>
         </AliceCarousel>
     </div> 
@@ -839,7 +904,7 @@ window.addEventListener('resize', function(){
 });
 ReactDOM.render(<Consultation/>, document.getElementById("consultationnav"));
 //ReactDOM.render(<Popup  display="none" bottom="-700px"/>, document.getElementById("popup"));
-ReactDOM.render(<Feedback/>, document.getElementById("feedback"));
+ReactDOM.render(<Feedback/>, document.getElementById("feedbacks"));
 ReactDOM.render(<Workshops works={workshops}/>, document.getElementById("workshops"));
 /*
   ReactDOM.render(<Hello data={propsValues}/>,

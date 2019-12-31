@@ -892,7 +892,7 @@ header .bottom-col-1 p span {
   cursor: grabbing;
 }
 .feedback .alice-carousel .item {
-  background-position: top center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 200px;
