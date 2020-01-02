@@ -86,6 +86,7 @@ body {
   font-family: "Open Sans";
   margin-left: 30px;
   list-style: none;
+  cursor: pointer !important;
 }
 .menu .nav-bar li a {
   text-decoration: none;

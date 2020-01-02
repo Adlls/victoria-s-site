@@ -4,12 +4,12 @@ import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import "react-alice-carousel/lib/alice-carousel.css";
 import AliceCarousel from 'react-alice-carousel';
-import * as Scroll from 'react-scroll';
-import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { Link, animateScroll as scroll } from "react-scroll";
+import {Circle} from 'react-preloaders';
 
 const propsSocials = [ 
   {   img: "../../images/zen.svg",
-      href: "https://zen.yandex.ru/media/id/5da83370bd639684a11c0aa2/kak-sozdat-resursnuiu-sredu-s-detstva-instrukciia-1-5da83d822fda8600b31b8091"
+      href: "https://zen.yandex.ru/id/5da83370bd639684a11c0aa2"
   },
 
   { 
@@ -37,7 +37,7 @@ const menuItems = [
     item: "Главная"
   },
   {
-    link: "#consultation",
+    link: "consultation",
     item: "Консультации"
   },
   {
@@ -58,8 +58,6 @@ const menuItems = [
     item: "Контакты"
   }
 ];
-
-
 
 class Social extends React.Component {
   
@@ -91,61 +89,7 @@ class Menu extends React.Component {
       bgIcon: "../images/menu.svg"
     };
   }
-
-  componentDidMount() {
-
-    Events.scrollEvent.register('begin', function () {
-      console.log("begin", arguments);
-    });
-
-    Events.scrollEvent.register('end', function () {
-      console.log("end", arguments);
-    });
-
-  }
-  scrollToTop() {
-    scroll.scrollToTop();
-  }
-  scrollTo() {
-    scroller.scrollTo('scroll-to-element', {
-      duration: 800,
-      delay: 0,
-      smooth: 'easeInOutQuart'
-    })
-  }
-  scrollToWithContainer() {
-
-    let goToContainer = new Promise((resolve, reject) => {
-
-      Events.scrollEvent.register('end', () => {
-        resolve();
-        Events.scrollEvent.remove('end');
-      });
-
-      scroller.scrollTo('scroll-container', {
-        duration: 800,
-        delay: 0,
-        smooth: 'easeInOutQuart'
-      });
-
-    });
-
-    goToContainer.then(() =>
-      scroller.scrollTo('scroll-container-second-element', {
-        duration: 800,
-        delay: 0,
-        smooth: 'easeInOutQuart',
-        containerId: 'scroll-container'
-      }));
-  }
-  componentWillUnmount() {
-    Events.scrollEvent.remove('begin');
-    Events.scrollEvent.remove('end');
-  }
-
-
-  showMenu() {
-
+  showMenu() {    
       let style = this.state.navBarStyle === "none" ? "block" : "none";
       this.setState({
         navBarStyle: style
@@ -167,19 +111,21 @@ class Menu extends React.Component {
         });
       }  
   }
-
   render() {
     return (
     <section className="menu" style={{ height: this.state.height}}>
+
     <div className="wrapper">
     <div className="menu_btn" onClick={this.showMenu} style={{backgroundImage: `url(${this.state.bgIcon})`}}></div>
          <ul className="nav-bar" style = { {height: this.state.heightNavBar, opacity: "1"}}>
            {
-             this.props.itemsMenu.map(function(items) {
-                 return  <li><a href={`#${items.link}`}>{items.item}</a></li>
+             this.props.itemsMenu.map((items) => {
+                 //return  <li><a href={`#${items.link}`}>{items.item}</a></li>
+                 return <li><Link onClick={this.showMenu} activeClass="active" to={items.link} spy={true} smooth={true} offset={-70} duration= {500}>{items.item}</Link></li>
+
              })
            }
-         </ul>  
+         </ul>   
           <Social socials={propsSocials} navBarStyle={this.state.heightSocials}/>
      </div>
    </section>
@@ -194,12 +140,12 @@ class MenuDesktop extends React.Component {
         <section className="menu" id="menu">
  <div className="wrapper">
       <ul className="nav-bar">
-        <li className="active"><a href="#header">Главная</a></li>
-        <li><a href="#consultation">Консультации</a></li>
-        <li><a href="#about">Обо мне</a></li>
-        <li><a href="#workshops">Мастер-классы</a></li>
-        <li><a href="#feedbacks">Отзывы</a></li>
-        <li><a href="#contacts">Контакты</a></li>
+        <li><Link activeClass="active" to="header" spy={true} smooth={true} offset={-70} duration= {500}>Главная</Link></li>
+        <li><Link activeClass="active" to="consultation" spy={true} smooth={true} offset={-70} duration= {500}>Консультации</Link></li>
+        <li><Link activeClass="active" to="about" spy={true} smooth={true} offset={-70} duration= {500}>Обо мне</Link></li>
+        <li><Link activeClass="active" to="workshops" spy={true} smooth={true} offset={-70} duration= {500}>Мастер-классы</Link></li>
+        <li><Link activeClass="active" to="feedback" spy={true} smooth={true} offset={-70} duration= {500}>Отывы</Link></li>
+        <li><Link activeClass="active" to="contacts" spy={true} smooth={true} offset={-70} duration= {500}>Контакты</Link></li>
       </ul>  
       <Social socials={propsSocials} navBarStyle={"40px"}/>
 
@@ -881,8 +827,6 @@ class Popup extends React.Component {
   }
 }
 
-
-
 if (window.innerWidth <= 920) {
   
     ReactDOM.render(<Menu itemsMenu={menuItems}/>, document.getElementById("menu"));
@@ -891,7 +835,18 @@ if (window.innerWidth <= 920) {
     ReactDOM.render(<MenuDesktop />, document.getElementById("menu"));
   }
 
+class Preloader extends React.Component {
 
+  render() {
+    return (
+     
+        <Circle time={2000}/>
+ 
+    );
+  }
+}
+
+ReactDOM.render(<Preloader/>, document.getElementById("preloader"));
 
 //menu
 window.addEventListener('resize', function(){
@@ -903,14 +858,8 @@ window.addEventListener('resize', function(){
   }
 });
 ReactDOM.render(<Consultation/>, document.getElementById("consultationnav"));
-//ReactDOM.render(<Popup  display="none" bottom="-700px"/>, document.getElementById("popup"));
 ReactDOM.render(<Feedback/>, document.getElementById("feedbacks"));
 ReactDOM.render(<Workshops works={workshops}/>, document.getElementById("workshops"));
-/*
-  ReactDOM.render(<Hello data={propsValues}/>,
-    document.getElementById("app")
-  ); 
-*/
 
 
 
