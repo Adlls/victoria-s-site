@@ -846,7 +846,7 @@ class Preloader extends React.Component {
   }
 }
 
-ReactDOM.render(<Preloader/>, document.getElementById("preloader"));
+//ReactDOM.render(<Preloader/>, document.getElementById("preloader"));
 
 //menu
 window.addEventListener('resize', function(){
