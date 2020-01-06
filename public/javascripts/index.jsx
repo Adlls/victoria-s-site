@@ -144,7 +144,7 @@ class MenuDesktop extends React.Component {
         <li><Link activeClass="active" to="consultation" spy={true} smooth={true} offset={-70} duration= {500}>Консультации</Link></li>
         <li><Link activeClass="active" to="about" spy={true} smooth={true} offset={-70} duration= {500}>Обо мне</Link></li>
         <li><Link activeClass="active" to="workshops" spy={true} smooth={true} offset={-70} duration= {500}>Мастер-классы</Link></li>
-        <li><Link activeClass="active" to="feedback" spy={true} smooth={true} offset={-70} duration= {500}>Отывы</Link></li>
+        <li><Link activeClass="active" to="feedback" spy={true} smooth={true} offset={-70} duration= {500}>Отзывы</Link></li>
         <li><Link activeClass="active" to="contacts" spy={true} smooth={true} offset={-70} duration= {500}>Контакты</Link></li>
       </ul>  
       <Social socials={propsSocials} navBarStyle={"40px"}/>
