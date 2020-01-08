@@ -63,7 +63,7 @@ class Social extends React.Component {
   
   render() {
     return (
-      <div className="social-icons" style={{height: this.props.heightSocials, opacity: "1"}}> 
+      <div className="social-icons" style={{height: this.props.heightSocials}}> 
       {                    
                    this.props.socials.map(function(item) {
                       return <a target="_blank" href={item.href}><img src={item.img}/></a>
@@ -134,6 +134,9 @@ class Menu extends React.Component {
 }
 
 class MenuDesktop extends React.Component {
+
+ 
+
   render() {
     return (
       <div>
@@ -613,28 +616,80 @@ class Feedback extends React.Component {
           <AwesomeSlider>
                 <div>
                   <div className="body-comment">
-                      Текст
+                    Пришли на мастер-классе "Я себя знаю" вместе с сыном с главным вопросом - 
+                    куда ему поступать, если совсем непонятно, что интересно. 
+                    До этого проходили профориентацию, но осталось много вопросов.
+                    Благодаря Виктории посмотрела на все наши с сыном вопросы со 
+                    стороны, и, как она представляет, через "комплексное развитие". 
+                    Сын сейчас занимается по индивидуальной программе.
                   </div>
-                  <div className="about-comment">Марина, 31 год</div>
+                  <div className="about-comment">Елена Андреева</div>
                 </div>
                 <div>
                   <div className="body-comment">
-                      Текст
+                    После мастер-класса "Не говори, а делай!" изменилось отношение ко многим моим вопросам в поиске работы. 
+                    Спасибо Виктории за такой понятный и четкий диалог. 
+                    Мне понравилось, что было много реальных примеров. Без воды.
                   </div>
-                  <div className="about-comment">Марина, 31 год</div>
+                  <div className="about-comment">Александр Завьялов</div>
                 </div>
                 <div>
                   <div className="body-comment">
-                        Текст
+                    Виктория большая молодец! Настоящий профессиональный психолог! У меня были постоянные конфликты с дочерью 15 лет. 
+                    У обеих сильный характер. Кроме того, что дочь после индивидуальных занятий уже стала заметно меняться, так и я сама тоже. 
+                    Всем очень советую!
                   </div>
-                  <div className="about-comment">Марина, 31 год</div>
+                  <div className="about-comment">Татьяна Болдина</div>
                 </div>
                 <div>
                   <div className="body-comment">
-                       Текст
+                        Сегодня был на мастер-классе "Создание и развитие ресурсной среды человека".  
+                        Интересная модель, хотя, вроде все давно известно. Главное, что Виктория умело показывает, 
+                        как это можно применить сразу в своей жизни. 
+                        Отлично вдохновляет и  делится интересными контактами. Спасибо!
                     </div>
-                    <div className="about-comment">Марина, 31 год</div>
+                    <div className="about-comment">Евгений Самгин</div>
                 </div>
+
+                <div>
+                  <div className="body-comment">
+                      Была на тренинге "Сила сцены. Владение собой и аудиторией." Большое спасибо! 
+                      Всегда боялась выступать. На тренинге начала работать не только над голосом, 
+                      но и над своими страхами. Спасибо Виктории, все очень понравилось!
+                  </div>
+                  <div className="about-comment">Светлана Каманина</div>
+                </div>
+                <div>
+                  <div className="body-comment">
+                      Спасибо Виктории за отличный мастер-класс "Самый трудный возраст". 
+                      Никогда не смотрела на проблему с этой стороны. 
+                      Получила многие ответы для себя. Интересно теперь пойти с сыном на другие мастер-классы. 
+                      Очень динамично и полезно. Ещё раз спасибо!
+                  </div>
+                  <div className="about-comment">Анна Фадеева</div>
+                </div>
+
+                <div>
+                  <div className="body-comment">
+                      Благодарю Викторию за тренинг "Профессия - современная мама". Я многодетная мама, 
+                      и навыки профессиональной деятельности за годы декрета забылись. На тренинге Виктория 
+                      профессионально раскрыла тему и работала с группой, с каждой из нас. Оказалось, 
+                      что Виктория и сама многодетная мама, как раз использует то, о чем говорит! 
+                      Огромное спасибо!
+                  </div>
+                  <div className="about-comment">Ольга Рожкова</div>
+                </div>
+
+                <div>
+                  <div className="body-comment">
+                      Была на мастер-классе "Страх неизвестности. Профессиональное самоопределение взрослых." 
+                      Хорошо, когда такой мастер-класс ведёт психолог, а не формальный специалист. Чувствуется поддержка 
+                      и глубокий подход. У меня лично и усталость, и страхи за семью.  Собираюсь на индивидуальную консультацию, 
+                      без нее уже никуда. Виктория, спасибо, что поднимаете такие сложные темы!
+                  </div>
+                  <div className="about-comment">Елена Киселёва</div>
+                </div>
+
           </AwesomeSlider>
         </div>
           <AliceCarousel className="aliceCarousel-custome"
@@ -764,7 +819,7 @@ class Popup extends React.Component {
                       <div className="form-contain">
                         <div className="wrapper">
                           <p>
-                            Оставьте контакты и я перезвоню Вам как можно скорее. 
+                            Оставьте контакты, и я перезвоню Вам как можно скорее.<br/> 
                             Или Вы можете <a href="tel:+79670978656">позвонить мне</a> самостоятельно.
                           </p>
                           <form method="POST" action="">
@@ -863,4 +918,68 @@ ReactDOM.render(<Workshops works={workshops}/>, document.getElementById("worksho
 
 
 
+/*
+var socials = document.querySelector(".social-icons");
+var menu = document.querySelector(".menu");
+
+  if (window.innerWidth > 920) {
+    menu.style.backgroundColor = "transparent";
+    menu.style.boxShadow = "none";
+    socials.style.display = "none";
+    socials.style.opacity = "0"; 
+  }
+  else {
+    menu.style.backgroundColor = "#F4F5F8";
+    menu.style.boxShadow = "0px 0px 20px rgba(0, 0, 0, 0.1)";
+    socials.style.opacity = "1"; 
+    socials.style.display = "flex";
+  }
+
+window.onresize = function() {
+  if (window.innerWidth > 920) {
+    menu.style.backgroundColor = "transparent";
+    menu.style.boxShadow = "none";
+    socials.style.display = "none";
+    socials.style.opacity = "0"; 
+
+    window.onscroll = function() {  
+      if (window.pageYOffset >= 5) {
+        menu.style.backgroundColor = "#F4F5F8";
+        menu.style.boxShadow = "0px 0px 20px rgba(0, 0, 0, 0.1)";
+        socials.style.opacity = "1";
+      }
+      else {
+        menu.style.backgroundColor = "transparent";
+        menu.style.boxShadow = "none";
+        socials.style.opacity = "0";
+      }  
+  }
+
+
+  }
+  else {
+    menu.style.backgroundColor = "#F4F5F8";
+    menu.style.boxShadow = "0px 0px 20px rgba(0, 0, 0, 0.1)";
+    socials.style.opacity = "1"; 
+    socials.style.display = "flex";
+  }
+}
+*/
+
+var socials = document.querySelector(".social-icons");
+var menu = document.querySelector(".menu");
+window.onscroll = function() {  
+    if (window.pageYOffset >= 5) {
+      menu.style.backgroundColor = "#F4F5F8";
+      menu.style.boxShadow = "0px 0px 20px rgba(0, 0, 0, 0.1)";
+      socials.style.display = "flex";
+      socials.style.opacity = "1";      
+    }
+    else {
+      menu.style.backgroundColor = "transparent";
+      menu.style.boxShadow = "none";
+      socials.style.display = "none";
+      socials.style.opacity = "0";
+    }  
+}
 
