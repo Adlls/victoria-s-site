@@ -930,15 +930,14 @@ header {
             color: rgba(44, 44, 44, 0.75);
           }
           h2 {
-            @extend .noindentation;
-            //margin-top: 8px;
+            @extend .noindentation;           
             font-family: 'Open Sans';
             font-style: normal;
             font-weight: 600;
             font-size: 26px;
             line-height: 28px;
             color: #2C2C2C; 
-            border: 1px solid black;   
+            //border: 1px solid black;   
             height: 58px;               
           }
     }
