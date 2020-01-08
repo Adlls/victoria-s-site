@@ -25,6 +25,7 @@ body {
 }
 
 .social-icons {
+  display: none;
   align-items: center;
   z-index: 10;
 }
@@ -107,8 +108,7 @@ body {
 
 .menu {
   z-index: 1000;
-  background-color: #F4F5F8;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
   height: 56px;
   width: 100%;
   position: -webkit-sticky;
@@ -153,14 +153,31 @@ body {
   margin-left: 30px;
   list-style: none;
   cursor: pointer !important;
+  transition: 1.5s;
+  position: relative;
 }
 .menu .nav-bar li a {
   text-decoration: none;
   color: inherit;
 }
+.menu .nav-bar li::before {
+  content: "";
+  border-bottom: 1.5px solid black;
+  width: 0%;
+  position: absolute;
+  bottom: -5px;
+  transition: 0.5s;
+}
+.menu .nav-bar li:hover::before {
+  width: 100%;
+}
 .menu .nav-bar li:nth-child(1) {
   margin-left: 0px;
 }
+.menu .nav-bar .active, .menu .nav-bar .popup .top-bar ul li:hover, .popup .top-bar ul .menu .nav-bar li:hover, .menu .nav-bar .consultation .header nav ul li:hover, .consultation .header nav ul .menu .nav-bar li:hover {
+  border-bottom: 1.5px solid black;
+}
+
 header {
   position: relative;
   max-height: 960px;

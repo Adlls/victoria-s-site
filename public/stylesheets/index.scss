@@ -29,7 +29,7 @@ body {
 
 .social-icons {
   //display: flex;
-  //display: none;
+  display: none;
   align-items: center;
   //opacity: 0;
   z-index: 10;
@@ -120,9 +120,9 @@ body {
 
 .menu { 
   z-index: 1000;
-  background-color: #F4F5F8;
-  //background-color: transparent;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  //background-color: #F4F5F8;
+  background-color: transparent;
+  //box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   height: 56px;
   width: 100%;
   position: -webkit-sticky;
@@ -172,16 +172,33 @@ body {
       margin-left: 30px;
       list-style: none;
       cursor: pointer !important;
+      transition: 1.5s;
+      position: relative;
       a {
         text-decoration: none;
         color: inherit;
+      }
+      &::before {
+        content: "";
+        border-bottom: 1.5px solid black;
+        width: 0%;
+        position: absolute;
+        bottom: -5px;
+        transition: 0.5s;
+        //border-radius: 50%;
+      }
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      
       }
     }
     li:nth-child(1) {
       margin-left: 0px;
     }
     .active {
-      //border-bottom: 1px solid black;
+      border-bottom: 1.5px solid black;
     }
   }
 

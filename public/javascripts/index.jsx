@@ -114,7 +114,7 @@ class Menu extends React.Component {
   render() {
     return (
     <section className="menu" style={{ height: this.state.height}}>
-
+      
     <div className="wrapper">
     <div className="menu_btn" onClick={this.showMenu} style={{backgroundImage: `url(${this.state.bgIcon})`}}></div>
          <ul className="nav-bar" style = { {height: this.state.heightNavBar, opacity: "1"}}>
