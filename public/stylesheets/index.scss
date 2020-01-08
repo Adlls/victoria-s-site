@@ -121,7 +121,7 @@ body {
 .menu { 
   z-index: 1000;
   //background-color: #F4F5F8;
-  background-color: transparent;
+  //background-color: transparent;
   //box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   height: 56px;
   width: 100%;
@@ -1766,7 +1766,9 @@ header {
     top: 0;
     height: 35px;
     //height: 500px;
-
+    li {
+      margin-left: 0 !important;
+    }
     .wrapper {
       flex-direction: column;
 

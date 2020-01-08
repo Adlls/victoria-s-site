@@ -113,7 +113,7 @@ class Menu extends React.Component {
   }
   render() {
     return (
-    <section className="menu" style={{ height: this.state.height}}>
+    <section className="menu" style={{ height: this.state.height, backgroundColor: `#F4F5F8`}}>
 
     <div className="wrapper">
     <div className="menu_btn" onClick={this.showMenu} style={{backgroundImage: `url(${this.state.bgIcon})`}}></div>
@@ -1012,6 +1012,21 @@ window.onresize = function() {
 
 var socials = document.querySelector(".social-icons");
 var menu = document.querySelector(".menu");
+
+if(window.innerWidth > 920) {
+  if (window.pageYOffset >= 5) {
+    menu.style.backgroundColor = "#F4F5F8";
+    menu.style.boxShadow = "0px 0px 20px rgba(0, 0, 0, 0.1)";
+    socials.style.display = "flex";
+    socials.style.opacity = "1";      
+  }
+  else {
+    menu.style.backgroundColor = "transparent !important";
+    menu.style.boxShadow = "none";
+    socials.style.display = "none";
+    socials.style.opacity = "0";
+  }  
+
 window.onscroll = function() {  
     if (window.pageYOffset >= 5) {
       menu.style.backgroundColor = "#F4F5F8";
@@ -1026,4 +1041,10 @@ window.onscroll = function() {
       socials.style.opacity = "0";
     }  
 }
-
+}
+else {
+  menu.style.backgroundColor = "#F4F5F8";
+  menu.style.boxShadow = "0px 0px 20px rgba(0, 0, 0, 0.1)";
+  socials.style.display = "flex";
+  socials.style.opacity = "1";   
+}
