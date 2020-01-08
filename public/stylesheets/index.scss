@@ -198,7 +198,9 @@ body {
       margin-left: 0px;
     }
     .active {
-      border-bottom: 1.5px solid black;
+      &::before {
+        width: 100%;
+      }
     }
   }
 

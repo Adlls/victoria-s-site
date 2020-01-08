@@ -174,8 +174,8 @@ body {
 .menu .nav-bar li:nth-child(1) {
   margin-left: 0px;
 }
-.menu .nav-bar .active, .menu .nav-bar .popup .top-bar ul li:hover, .popup .top-bar ul .menu .nav-bar li:hover, .menu .nav-bar .consultation .header nav ul li:hover, .consultation .header nav ul .menu .nav-bar li:hover {
-  border-bottom: 1.5px solid black;
+.menu .nav-bar .active::before, .menu .nav-bar .popup .top-bar ul li:hover::before, .popup .top-bar ul .menu .nav-bar li:hover::before, .menu .nav-bar .consultation .header nav ul li:hover::before, .consultation .header nav ul .menu .nav-bar li:hover::before {
+  width: 100%;
 }
 
 header {
