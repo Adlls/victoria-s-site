@@ -208,10 +208,11 @@ header .title .top-col-1 h2 {
   margin-bottom: 13px;
 }
 header .title .top-col-1 p {
-  font-size: 18px;
+  font-size: 22px;
   line-height: 25px;
   color: rgba(9, 7, 9, 0.75);
   margin-bottom: 116px;
+  font-weight: 500;
 }
 header .subtitle {
   width: 365px;
@@ -822,6 +823,13 @@ header .bottom-col-1 p span {
   position: absolute;
   bottom: 0px;
 }
+.workshopsPop .frame .quotemc {
+  text-align: right !important;
+  font-style: italic !important;
+  width: 40% !important;
+  float: right;
+  margin-right: 15px !important;
+}
 .workshopsPop .frame p {
   font-family: "Open Sans";
   font-style: normal;
@@ -846,6 +854,9 @@ header .bottom-col-1 p span {
 .workshopsPop .bottom .bottom-title {
   width: 64%;
   margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 .workshopsPop .bottom .bottom-title p {
   display: none;
@@ -863,7 +874,6 @@ header .bottom-col-1 p span {
   font-size: 26px;
   line-height: 28px;
   color: #2C2C2C;
-  height: 58px;
 }
 .workshopsPop .bottom button {
   border: none;
@@ -1781,8 +1791,8 @@ header .bottom-col-1 p span {
     }
   */
   .feedback h2 {
-    font-size: 22px;
-    line-height: 28px;
+    font-size: 33px;
+    line-height: 38px;
   }
 
   .popup {
@@ -1828,8 +1838,8 @@ header .bottom-col-1 p span {
     display: none;
   }
   .consultation .header h2 {
-    font-size: 26px;
-    line-height: 28px;
+    font-size: 33px;
+    line-height: 34px;
   }
   .consultation .body h2 {
     font-size: 16px;
@@ -1851,7 +1861,7 @@ header .bottom-col-1 p span {
 
   .individualProgram h2 {
     font-size: 22px;
-    line-height: 24px;
+    line-height: 34px;
   }
   .individualProgram .optionsIndividualProgram {
     display: block;
@@ -1911,8 +1921,8 @@ header .bottom-col-1 p span {
   }
 
   .about h2 {
-    font-size: 26px;
-    line-height: 28px;
+    font-size: 33px;
+    line-height: 38px;
   }
   .about .about-items-1 .photo-items-1 {
     width: 82%;
@@ -1923,8 +1933,8 @@ header .bottom-col-1 p span {
   }
 
   .workshops h2 {
-    font-size: 22px;
-    line-height: 24px;
+    font-size: 33px;
+    line-height: 38px;
   }
 
   .workshops .wrapper:nth-child(2) {
@@ -1935,8 +1945,8 @@ header .bottom-col-1 p span {
   }
 
   .contacts .body .left-col h2 {
-    font-size: 22px;
-    line-height: 24px;
+    font-size: 33px;
+    line-height: 38px;
   }
   .contacts .body .social-icons a {
     margin-left: 38px;
@@ -2028,7 +2038,7 @@ header .bottom-col-1 p span {
   }
 
   .consultation .header h2 {
-    font-size: 26px;
+    font-size: 33px;
   }
   .consultation .header nav {
     font-size: 16px;
