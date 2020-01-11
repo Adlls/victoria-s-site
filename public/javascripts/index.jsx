@@ -120,7 +120,6 @@ class Menu extends React.Component {
          <ul className="nav-bar" style = { {height: this.state.heightNavBar, opacity: "1"}}>
            {
              this.props.itemsMenu.map((items) => {
-                 //return  <li><a href={`#${items.link}`}>{items.item}</a></li>
                  return <li><Link onClick={this.showMenu} activeClass="active" to={items.link} spy={true} smooth={true} offset={-70} duration= {500}>{items.item}</Link></li>
 
              })
