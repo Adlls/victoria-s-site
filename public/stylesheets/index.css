@@ -8,6 +8,10 @@ body {
   overflow: scroll;
 }
 
+audio {
+  width: 100%;
+}
+
 @-ms-viewport {
   width: device-width;
 }
@@ -1355,6 +1359,10 @@ header .bottom-col-1 p span {
   }
   .about .about-items-2 p {
     width: 86% !important;
+  }
+
+  .feedback .awssld {
+    height: 480px !important;
   }
 }
 @media screen and (max-width: 1410px) {

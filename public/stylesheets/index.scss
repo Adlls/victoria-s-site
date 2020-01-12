@@ -8,12 +8,16 @@ body {
  color: $defaultFontColor;
  font-family: $defaultFont;
  min-width: 320px;
- //max-width: 1600px;
+ //max-width: 1980px;
  overflow: scroll;
 
 } 
 
-@-ms-viewport { 
+audio {
+  width: 100%;
+}
+
+@-ms-viewport {  
   width: device-width;
  }
  @-o-viewport { 
@@ -1539,7 +1543,13 @@ header {
         
         }
       }
-    
+  }
+
+  .feedback {
+    .awssld {
+      height: 480px !important;
+    }
+
   }
 } 
 
@@ -1915,7 +1925,7 @@ header {
         }
       }
     }
-
+  
     .workshops {
       .seminars {
         display: block !important;
@@ -1974,7 +1984,7 @@ header {
       }
     }
     .video-content {
-     .wrapper { 
+     .wrapper {
         flex-direction: column;
         justify-content: center !important;
         align-items: center !important;
