@@ -793,9 +793,11 @@ header .bottom-col-1 p span {
 
 .workshopsPop {
   position: relative;
+  height: 100%;
 }
 .workshopsPop .popup {
-  height: auto !important;
+  height: 98%;
+  width: 95%;
 }
 .workshopsPop .wrapper {
   width: 95.7%;
@@ -837,7 +839,7 @@ header .bottom-col-1 p span {
 }
 .workshopsPop .frame {
   overflow: scroll;
-  height: 300px;
+  height: 75vh;
   margin-top: 43px;
   position: relative;
   -ms-overflow-style: none;
@@ -845,7 +847,7 @@ header .bottom-col-1 p span {
   scrollbar-width: none;
 }
 .workshopsPop .frame::-webkit-scrollbar {
-  width: 0;
+  width: 1;
 }
 .workshopsPop .frame::before {
   content: "";
@@ -879,7 +881,7 @@ header .bottom-col-1 p span {
 .workshopsPop .bottom {
   display: flex;
   justify-content: space-between;
-  margin-top: 60px;
+  margin-top: 40px;
   margin-bottom: 12px;
 }
 .workshopsPop .bottom .bottom-title {
@@ -1499,9 +1501,6 @@ header .bottom-col-1 p span {
     line-height: 29px !important;
   }
 
-  .workshopsPop .popup {
-    height: 600px;
-  }
   .workshopsPop .top {
     margin-top: 20px;
   }
@@ -1513,8 +1512,8 @@ header .bottom-col-1 p span {
     margin-right: 10px;
   }
   .workshopsPop .frame {
-    height: 200px;
-    margin-top: 13px;
+    margin-top: 23px;
+    height: 70vh;
   }
   .workshopsPop .bottom {
     margin-top: 10px;

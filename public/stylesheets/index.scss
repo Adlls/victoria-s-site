@@ -868,8 +868,11 @@ header {
 
 .workshopsPop {
   position: relative;
+  height: 100%;
+
   .popup {
-    height: auto !important;
+    height: 98%;
+    width: 95%;
   }
   .wrapper {
     width: 95.7%;
@@ -920,10 +923,10 @@ header {
   }
   .frame {
     overflow: scroll; 
-    height: 300px; 
+    height: 75vh;
     margin-top: 43px;
     position: relative;
-    &::-webkit-scrollbar { width: 0; }
+    &::-webkit-scrollbar { width: 1; }
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none; 
     scrollbar-width: none;
@@ -962,7 +965,7 @@ header {
   .bottom {
     display: flex;
     justify-content: space-between;
-    margin-top: 60px;
+    margin-top: 40px;
     margin-bottom: 12px;
       .bottom-title {
         width: 64%;
@@ -1722,7 +1725,6 @@ header {
 
     .workshopsPop {
     .popup {
-      height: 600px;
     }
     .top {
       margin-top: 20px;
@@ -1737,11 +1739,12 @@ header {
       }
     }
     .frame {
-      height: 200px;
-      margin-top: 13px;
+      margin-top: 23px;
+      height: 70vh;
     }
     .bottom {
       margin-top: 10px;
+      
       .bottom-title {
         width: auto;
         p {
