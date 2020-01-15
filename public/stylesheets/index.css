@@ -802,6 +802,10 @@ header .bottom-col-1 p span {
 .workshopsPop .wrapper {
   width: 95.7%;
 }
+.workshopsPop .innderworkshop {
+  letter-spacing: 0.02em;
+  line-height: 34px;
+}
 .workshopsPop .top {
   margin-top: 69px;
   display: none;
