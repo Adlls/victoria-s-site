@@ -944,7 +944,7 @@ header {
       position: absolute;
       bottom: 0px;
     }
-    .quotemc {
+    .quotemc { 
       text-align: right !important;
       font-style: italic !important;
       width: 40% !important;
@@ -2078,6 +2078,12 @@ header {
     }
   }
 
+  .workshopsPop {
+  
+    .frame {
+      height: 80vh;
+    }
+  }
 
 /*
   .workshopsPop {
@@ -2440,6 +2446,12 @@ header {
     .top {
       .groupP {
         margin-right: 20px !important;        
+      }
+    }
+    .frame {
+      .quotemc {
+        width: 85% !important;
+       
       }
     }
   }

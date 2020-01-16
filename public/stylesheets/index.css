@@ -1811,6 +1811,10 @@ header .bottom-col-1 p span {
     line-height: 24px !important;
   }
 
+  .workshopsPop .frame {
+    height: 80vh;
+  }
+
   /*
     .workshopsPop {
       .popup {
@@ -2067,6 +2071,9 @@ header .bottom-col-1 p span {
   }
   .workshopsPop .top .groupP {
     margin-right: 20px !important;
+  }
+  .workshopsPop .frame .quotemc {
+    width: 85% !important;
   }
 
   .popup .top-bar ul li {
