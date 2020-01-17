@@ -849,29 +849,13 @@ class Feedback extends React.Component {
             }}
         >
       
-          <div onClick={this.openPhoto.bind(this,"../images/feedback/1.jpg")} className="item" style={{backgroundImage: "url(../images/feedback/1.jpg)"}}>        
-          </div>
-
-          <div onClick={this.openPhoto.bind(this,"../images/feedback/10.jpg")} className="item" style={{backgroundImage: "url(../images/feedback/10.jpg)"}}>   
-          </div>
-
-          <div onClick={this.openPhoto.bind(this,"../images/feedback/18.jpg")} className="item" style={{backgroundImage: "url(../images/feedback/18.jpg)"}}>
-          </div>
-
-          <div className="item" style={{backgroundImage: "url(../images/feedback/19.jpg)"}}>
-          </div>
-          <div className="item" style={{backgroundImage: "url(../images/feedback/7.jpg)"}}>
-          </div>
-          <div className="item" style={{backgroundImage: "url(../images/feedback/11.jpg)"}}>
-          </div>
-          <div className="item" style={{backgroundImage: "url(../images/feedback/12.jpg)"}}>
-          </div>
-          <div className="item" style={{backgroundImage: "url(../images/feedback/13.jpg)"}}>
-          </div>
-          <div className="item" style={{backgroundImage: "url(../images/feedback/15.jpg)"}}>
-          </div>
-          <div className="item" style={{backgroundImage: "url(../images/feedback/16.jpg)"}}>
-          </div>
+      
+          {
+            this.props.photos.map((item) => {
+              return  <div onClick={this.openPhoto.bind(this, item.img)} className="item" style={{backgroundImage: `url(${item.img})`}}></div>
+            })
+          }
+          
         </AliceCarousel>
     </div> 
     );
