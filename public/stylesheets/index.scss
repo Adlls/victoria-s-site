@@ -236,6 +236,7 @@ header {
   background-position: bottom right -5%;
   background-size: 750px;
   background-repeat: no-repeat;
+  //background-attachment: fixed;
 
   .subheader {
     display: flex;
@@ -863,6 +864,19 @@ header {
         font-style: normal;
       }
     }
+  }
+}
+
+
+.feedbackPop {
+  .popup {
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: auto;
+    transform: scale(1.5);
+  
   }
 }
 
@@ -1536,6 +1550,13 @@ header {
 
 
 @media screen and (min-width: 1800px) {
+
+  .feedbackPop {
+    .popup {
+      transform: scale(2.0);
+    }
+  }
+
   header {
     background-size: 900px !important;
   }
@@ -2413,6 +2434,12 @@ header {
 }
 
 @media screen and (max-width: 520px) {
+
+  .feedbackPop {
+    .popup {
+      transform: scale(1.0);
+    }
+  }
   .feedback {
     .body-comment {
       margin-left: 0 !important;

@@ -7,6 +7,89 @@ import AliceCarousel from 'react-alice-carousel';
 import { Link, animateScroll as scroll } from "react-scroll";
 import {Circle} from 'react-preloaders';
 
+const photosFeed = [
+  {
+    img: "../images/feedback/1.jpg" 
+  },
+
+  {
+    img: "../images/feedback/2.jpg"
+  },
+
+  {
+    img: "../images/feedback/3.jpg"
+  },
+
+  {
+    img: "../images/feedback/4.jpg"
+  },
+
+  {
+    img: "../images/feedback/5.jpg"
+  },
+
+  {
+    img: "../images/feedback/6.jpg"
+  },
+
+  {
+    img: "../images/feedback/7.jpg"
+  },
+
+  {
+    img: "../images/feedback/8.jpg"
+  },
+
+  {
+     img: "../images/feedback/9.jpg"
+  },
+
+  {
+    img: "../images/feedback/10.jpg"
+  },
+
+  {
+    img: "../images/feedback/11.jpg"
+  },
+
+  {
+    img: "../images/feedback/12.jpg"
+  },
+
+  {
+    img: "../images/feedback/13.jpg"
+  }, 
+  
+  {
+    img: "../images/feedback/14.jpg"
+  },
+
+  {
+    img: "../images/feedback/15.jpg"
+  },
+
+  {
+    img: "../images/feedback/16.jpg"
+  },
+
+  {
+    img: "../images/feedback/17.jpg"
+  },
+
+  {
+    img: "../images/feedback/18.jpg"
+  },
+
+  {
+    img: "../images/feedback/19.jpg"
+  },
+
+  {
+    img: "../images/feedback/20.jpg"
+  }
+
+]
+
 const propsSocials = [ 
   {   img: "../../images/zen.svg",
       href: "https://zen.yandex.ru/id/5da83370bd639684a11c0aa2"
@@ -658,7 +741,9 @@ class Feedback extends React.Component {
 
 
   openPhoto(photo, e) {
-    //alert(param);
+
+    ReactDOM.render(<Popup urlphoto={photo} display="flex" bottom="0" typePop="feedback" second_popup={true}/>, document.getElementById("second_popup"));
+
   }
 
   render() {
@@ -763,13 +848,14 @@ class Feedback extends React.Component {
               paddingRight: 30,
             }}
         >
-          <div onClick={this.openPhoto.bind(this,"")} className="item" style={{backgroundImage: "url(../images/feedback/1.jpg)"}}>        
+      
+          <div onClick={this.openPhoto.bind(this,"../images/feedback/1.jpg")} className="item" style={{backgroundImage: "url(../images/feedback/1.jpg)"}}>        
           </div>
 
-          <div className="item" style={{backgroundImage: "url(../images/feedback/10.jpg)"}}>   
+          <div onClick={this.openPhoto.bind(this,"../images/feedback/10.jpg")} className="item" style={{backgroundImage: "url(../images/feedback/10.jpg)"}}>   
           </div>
 
-          <div className="item" style={{backgroundImage: "url(../images/feedback/18.jpg)"}}>
+          <div onClick={this.openPhoto.bind(this,"../images/feedback/18.jpg")} className="item" style={{backgroundImage: "url(../images/feedback/18.jpg)"}}>
           </div>
 
           <div className="item" style={{backgroundImage: "url(../images/feedback/19.jpg)"}}>
@@ -894,7 +980,7 @@ class Popup extends React.Component {
                 </div>
             </div>
         );
-    } else {
+    } else if(this.props.typePop === "workshops") {
      return ( 
       <div className="workshopsPop">
       <div className="overlay-popup" style={{display: this.state.display}}>
@@ -933,6 +1019,17 @@ class Popup extends React.Component {
         </section>
       </div>
   </div> );
+    } else if(this.props.typePop == "feedback") {
+     return ( 
+      <div class="feedbackPop">
+      <div className="overlay-popup" style={{display: this.state.display}}>
+            <div className="btnBackClose" onClick={this.ClosePopup}></div>
+        <section className="popup" style={{bottom: this.state.bottom, backgroundImage: "url(" + this.props.urlphoto + ")"}}> 
+            <div className="btn_close" onClick={this.ClosePopup.bind(this)}></div>
+        </section>
+      </div>
+  </div>
+     );
     }
   }
 }
@@ -968,7 +1065,7 @@ window.addEventListener('resize', function(){
   }
 });
 ReactDOM.render(<Consultation/>, document.getElementById("consultationnav"));
-ReactDOM.render(<Feedback/>, document.getElementById("feedbacks"));
+ReactDOM.render(<Feedback photos={photosFeed}/>, document.getElementById("feedbacks"));
 ReactDOM.render(<Workshops works={workshops}/>, document.getElementById("workshops"));
 
 

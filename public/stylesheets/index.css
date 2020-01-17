@@ -791,6 +791,15 @@ header .bottom-col-1 p span {
   font-style: normal;
 }
 
+.feedbackPop .popup {
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: auto;
+  transform: scale(1.5);
+}
+
 .workshopsPop {
   position: relative;
   height: 100%;
@@ -1353,6 +1362,10 @@ header .bottom-col-1 p span {
 }
 */
 @media screen and (min-width: 1800px) {
+  .feedbackPop .popup {
+    transform: scale(2);
+  }
+
   header {
     background-size: 900px !important;
   }
@@ -2059,6 +2072,10 @@ header .bottom-col-1 p span {
   }
 }
 @media screen and (max-width: 520px) {
+  .feedbackPop .popup {
+    transform: scale(1);
+  }
+
   .feedback .body-comment {
     margin-left: 0 !important;
     margin-right: 0 !important;
